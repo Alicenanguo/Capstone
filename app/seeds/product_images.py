@@ -73,6 +73,54 @@ def seed_product_images():
         preview_image = False
     )
 
+    # p4:
+    I13 = ProductImage (
+        product_id = 4,
+        url = 'https://i.etsystatic.com/24964111/r/il/e3e7ab/3536898759/il_794xN.3536898759_cu6b.jpg',
+        preview_image = True
+    )
+    I14 = ProductImage (
+        product_id = 4,
+        url = 'https://i.etsystatic.com/24964111/r/il/f09298/3536898765/il_794xN.3536898765_ffv5.jpg',
+        preview_image = False
+    )
+    I15 = ProductImage (
+        product_id = 4,
+        url = 'https://i.etsystatic.com/24964111/r/il/85bd6b/3489256014/il_794xN.3489256014_6ako.jpg',
+        preview_image = False
+    )
+    I16 = ProductImage (
+        product_id = 4,
+        url = 'https://i.etsystatic.com/24964111/r/il/7f4403/4368910375/il_794xN.4368910375_msif.jpg',
+        preview_image = False
+    )
+
+    # p5:
+    I17 = ProductImage (
+        product_id = 5,
+        url = 'https://i.etsystatic.com/20049947/r/il/658f7d/4321993539/il_794xN.4321993539_u57c.jpg',
+        preview_image = True
+    )
+    I18 = ProductImage (
+        product_id = 5,
+        url = 'https://i.etsystatic.com/20049947/r/il/aeddfe/4274593014/il_794xN.4274593014_59pk.jpg',
+        preview_image = False
+    )
+    I19 = ProductImage (
+        product_id = 5,
+        url = 'https://i.etsystatic.com/20049947/r/il/8b59d3/4274593010/il_794xN.4274593010_6fps.jpg',
+        preview_image = False
+    )
+    I20 = ProductImage (
+        product_id = 5,
+        url = 'https://i.etsystatic.com/20049947/r/il/60292c/4321993553/il_794xN.4321993553_ni4n.jpg',
+        preview_image = False
+    )
+
+
+
+
+
     db.session.add(I1)
     db.session.add(I2)
     db.session.add(I3)
@@ -85,6 +133,16 @@ def seed_product_images():
     db.session.add(I10)
     db.session.add(I11)
     db.session.add(I12)
+    db.session.add(I13)
+    db.session.add(I14)
+    db.session.add(I15)
+    db.session.add(I16)
+    db.session.add(I17)
+    db.session.add(I18)
+    db.session.add(I19)
+    db.session.add(I20)
+
+
 
 
     db.session.commit()

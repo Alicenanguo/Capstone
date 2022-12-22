@@ -31,10 +31,31 @@ def seed_products():
         preview_image = 'https://i.etsystatic.com/6634797/r/il/4a1c5d/685930451/il_794xN.685930451_qvnz.jpg'
     )
 
+    p4 = Product(
+        seller_id =4,
+        name ='12pc Wooden Ornament Set, Christmas Gift, Hanging Ornament, Holiday Decor',
+        price=6.49,
+        description ="Wooden Ornament Dimensions: Deer Length: 2.3 inches, Width: 2 inches,Circle Length: 2 inches, Width: 2 inches,Horse Length: 2 inches, Width: 2.5 inches,Tree Length: 2.2 inches, Width: 2.2 inches",
+        category='Seasonal Decor',
+        preview_image = 'https://i.etsystatic.com/24964111/r/il/e3e7ab/3536898759/il_794xN.3536898759_cu6b.jpg'
+    )
+
+    p5 = Product(
+        seller_id =5,
+        name ='Christmas Home Decor Wool and Wood Felt Reindeer Elk Tree Decorations',
+        price=18.00,
+        description ="We are blown away by everyone's love for these cute little Christmas guys! Thanks for the love Etsy Fam!!",
+        category='Seasonal Decor',
+        preview_image = 'https://i.etsystatic.com/20049947/r/il/658f7d/4321993539/il_794xN.4321993539_u57c.jpg'
+    )
+
+
 
     db.session.add(p1)
     db.session.add(p2)
     db.session.add(p3)
+    db.session.add(p4)
+    db.session.add(p5)
 
 
     db.session.commit()
