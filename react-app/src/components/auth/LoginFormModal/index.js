@@ -4,7 +4,8 @@ import LoginForm from './LoginForm';
 import './LoginForm.css'
 
 function LoginFormModal() {
-  const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    console.log("_____________",showModal)
 
   return (
     <>

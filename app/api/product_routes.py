@@ -38,6 +38,13 @@ def current_user_product():
 
     return {"products":[product.to_dict() for product in products]}
 
+# get home page products
+@product_routes.route('/home')
+def home_products():
+    products = Product.query.order_by(Product.description).limit(8)
+    # print('products in home page********',products)
+    return {"products":[product.to_dict() for product in products]}
+
 
 
 # create product
@@ -46,6 +53,7 @@ def current_user_product():
 def create_product():
     form = ProductForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    print("++++++++++",form['csrf_token'].data)
 
     if form.validate_on_submit():
 

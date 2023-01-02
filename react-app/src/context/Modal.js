@@ -1,42 +1,50 @@
-import React, { createContext, useContext, useRef, useEffect, useState } from 'react';
+import React, { useContext, useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.css';
 
-const ModalContext = createContext();
+//Create a React context called a ModalContext
+const ModalContext = React.createContext();
 
+//Create a functional component called ModalProvider
 export function ModalProvider({ children }) {
-    // console.log('-------model provider component-------')
-    // console.log(children)
-    const modalRef = useRef(null);
-    const [value, setValue] = useState(null);
+    const modalRef = useRef();
+    const [value, setValue] = useState();
 
     useEffect(() => {
-        setValue(modalRef.current);
-    }, []);
+      setValue(modalRef.current);
+    }, [])
+
+
 
     return (
-        <>
-            <ModalContext.Provider value={value}>
-                {children}
-            </ModalContext.Provider>
-            <div ref={modalRef} className='modal-wrapper'></div>
-        </>
-    )
-};
+      <>
+        <ModalContext.Provider value={value}>
+          {children}
+        </ModalContext.Provider>
+        <div ref={modalRef} />
+      </>
+    );
+  }
 
+
+
+
+
+//Create a React ref called modalRef
+
+//Create a functional component called Modal
 export function Modal({ onClose, children }) {
     const modalNode = useContext(ModalContext);
-    // console.log('modalNode', modalNode);
     if (!modalNode) return null;
 
-    // createPortal(children, container)
+    console.log("+++++++++++++++",modalNode)
     return ReactDOM.createPortal(
-        <div id='modal'>
-            <div id='modal-background' onClick={onClose} />
-            <div id='modal-content'>
-                {children}
-            </div>
-        </div>,
-        modalNode
-    )
-}
+      <div id="modal">
+        <div id="modal-background" onClick={onClose} />
+        <div id="modal-content">
+          {children}
+        </div>
+      </div>,
+      modalNode
+    );
+  }
