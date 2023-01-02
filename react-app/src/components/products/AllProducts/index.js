@@ -4,7 +4,7 @@ import { NavLink, Route, useParams } from "react-router-dom";
 
 import { getAllProducts } from "../../../store/product";
 import { getThunkOne } from "../../../store/category";
-import "./getProducts.css";
+import "./AllProducts.css";
 
 const GetProducts = () => {
   const dispatch = useDispatch();

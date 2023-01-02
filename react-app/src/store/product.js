@@ -64,6 +64,16 @@ export const getHomeProducts = () => async (dispatch) => {
   }
 }
 
+export const getOneProductThunk = (productId) => async (dispatch) => {
+  const res = await fetch(`/api/products/${productId}`);
+
+  if (res.ok) {
+      const product = await res.json();
+      dispatch(actionLoadSingle(product));
+
+  }
+}
+
 
   // todo: reduce stuff
 const initialState = { allProducts: {}, singleProduct: {} };
@@ -76,7 +86,14 @@ const productReducer = (state = initialState, action) => {
        action.all.products.forEach((product) => (allProducts[product.id] = product));
        newState.allProducts = allProducts;
          console.log('newState_getall:', newState)
-       return newState;
+      return newState;
+
+    case LOAD_ONE:
+      newState = { ...state };
+      const singleProduct = action.one;
+      newState.singleProduct = singleProduct;
+      console.log('get_one_product_reduce', newState)
+      return newState;
 
 
 

@@ -1,9 +1,54 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import db, Product, ProductImage
-from app.forms import ProductForm
+from app.models import db, Product, ProductImage,Review
+from app.forms import ProductForm,ReviewForm
 
 product_routes = Blueprint('products', __name__)
+
+#reviews:
+#get all reviews by product id
+@product_routes.route('/<int:id>/reviews')
+def product_reviews(id):
+    reviews = Review.query.filter_by(product_id=id).all()
+
+    return {'Reviews': [review.to_dict() for review in reviews]}
+
+#create review
+@product_routes.route('/<int:id>/reviews',methods=["POST"])
+@login_required
+def create_review(id):
+    form = ReviewForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    check_product = Product.query.get(id)
+    if check_product is None:
+        return {'errors': 'This product is not found.'}, 404
+    if check_product.seller_id == current_user.id:
+        return {'errors': 'you could not leave review to your own product'}, 400
+
+    check_review = Review.query.filter_by(buyer_id=current_user.id,product_id=id).all()
+    if check_review:
+        return {'error': 'You have a review for this product.'}, 400
+
+    if form.validate_on_submit():
+        review = form.data['review']
+        stars = form.data['stars']
+
+        new_review = Review(
+            buyer_id=current_user.id,
+            product_id=id,
+            review=review,
+            stars=stars
+        )
+
+        db.session.add(new_review)
+        db.session.commit()
+
+        return new_review.to_dict()
+
+    if form.errors:
+        return form.errors
+
 
 # get all products
 @product_routes.route('')
@@ -84,7 +129,7 @@ def create_product():
 # edit product
 @product_routes.route("/<int:id>", methods=["PUT"])
 @login_required
-def deit_product(id):
+def edit_product(id):
     form = ProductForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
