@@ -7,10 +7,11 @@ import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
-import GetProducts from "./components/products/getProducts";
+// import GetProducts from "./components/products/getProducts";
 import { authenticate } from './store/session';
 import GetCategories from './components/Categories';
 import HomePage from './components/HomePage';
+import GetOneProduct from './components/products/OneProduct';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -34,9 +35,6 @@ function App() {
         {/* <Route path='/login' exact={true}>
           <LoginFormModal />
         </Route> */}
-        <Route path='/' exact={true}>
-          <HomePage />
-        </Route>
 
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
@@ -51,12 +49,21 @@ function App() {
         {/* <Route path='/' exact={true} >
           <h1>My Home Page</h1>
         </Route> */}
+
         <Route path='/categories/:id' exact={true}>
           <GetCategories />
         </Route>
-        <Route exact path="/">
+
+        <Route exact path="/products/:productId">
+            <GetOneProduct />
+          </Route>
+
+        <Route path='/' exact={true}>
+        <HomePage />
+      </Route>
+        {/* <Route exact path="/">
             <GetProducts />
-        </Route>
+        </Route> */}
       </Switch>
     </BrowserRouter>
   );
