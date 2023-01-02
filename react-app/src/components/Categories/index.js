@@ -8,6 +8,7 @@ const GetCategories = () => {
     const dispatch = useDispatch();
     const { id } = useParams()
     console.log("id+++++++",id)
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const allCategory = useSelector(state => state.categories.categories)
     console.log("allcategory",allCategory)
@@ -17,17 +18,20 @@ const GetCategories = () => {
     const allProducts = useSelector(state => state.categories.categories[id]?.products)
 
     useEffect(() => {
-        dispatch(getThunkAll());
-        dispatch(getThunkOne(id))
+        dispatch(getThunkAll())
+        .then(() =>dispatch(getThunkOne(id)))
+        .then(() => setIsLoaded(true));
     }, [dispatch, id])
 
 
 
 
     return (
+        isLoaded && (
         <div>
             <div className="category_name">
-            {singleCategory?.name}
+                {singleCategory?.name}
+                {/* {console.log("singleCate_in_component",singleCategory)} */}
             </div>
 
             <div className="products_under_category">
@@ -48,7 +52,7 @@ const GetCategories = () => {
         </div>
 
 
-    )
+        ))
 }
 
 export default GetCategories;

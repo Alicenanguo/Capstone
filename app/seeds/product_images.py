@@ -383,42 +383,51 @@ def seed_product_images():
     # p17
     I61 = ProductImage (
         product_id = 17,
-        url = 'https://i.etsystatic.com/7831577/r/il/8d8a9c/2144291611/il_794xN.2144291611_my00.jpg',
+        url = 'https://i.etsystatic.com/25155098/r/il/50053d/4045930533/il_794xN.4045930533_m0ga.jpg',
         preview_image = True
     )
+    I62 = ProductImage (
+        product_id = 17,
+        url = 'https://i.etsystatic.com/25155098/r/il/916cd4/3200142775/il_794xN.3200142775_qu70.jpg',
+        preview_image = False
+    )
+    I63 = ProductImage (
+        product_id = 17,
+        url = 'https://i.etsystatic.com/25155098/r/il/7c4290/3735937485/il_794xN.3735937485_6zoq.jpg',
+        preview_image = False
+    )
+    I64 = ProductImage (
+        product_id = 17,
+        url = 'https://i.etsystatic.com/25155098/r/il/d050d4/3152427990/il_794xN.3152427990_gmz3.jpg',
+        preview_image = False
+    )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # p18
+    I65 = ProductImage (
+        product_id = 18,
+        url = 'https://i.etsystatic.com/21530912/r/il/2f15a8/3630514386/il_794xN.3630514386_9jh9.jpg',
+        preview_image = True
+    )
+    I66 = ProductImage (
+        product_id = 18,
+        url = 'https://i.etsystatic.com/21530912/r/il/3e734a/3630512104/il_794xN.3630512104_3aoy.jpg',
+        preview_image = False
+    )
+    I67 = ProductImage (
+        product_id = 18,
+        url = 'https://i.etsystatic.com/21530912/r/il/462dca/3630512096/il_75x75.3630512096_j64k.jpg',
+        preview_image = False
+    )
+    I68 = ProductImage (
+        product_id = 18,
+        url = 'https://i.etsystatic.com/21530912/r/il/e1359c/3630512092/il_75x75.3630512092_3ntf.jpg',
+        preview_image = False
+    )
+    I69 = ProductImage (
+        product_id = 18,
+        url = 'https://i.etsystatic.com/21530912/r/il/a834f1/4223765011/il_75x75.4223765011_8yfh.jpg',
+        preview_image = False
+    )
 
 
 
@@ -446,7 +455,9 @@ def seed_product_images():
     db.session.add(I18)
     db.session.add(I19)
     db.session.add(I20)
-    db.session.add_all([I21,I22,I23,I24,I25,I26,I27,I28,I29,I30,I31,I32,I33,I34,I35,I36,I37,I38,I39,I40,I41,I42,I43,I44,I45,I46])
+    db.session.add_all([I21,I22,I23,I24,I25,I26,I27,I28,I29,I30,I31,I32,I33,I34,I35,I36,I37,I38,I39,
+    I40,I41,I42,I43,I44,I45,I46,I47,I48,I49,I50,I51,I52,I53,I54,I55,I56,I57,I58,I59,I60,I61,I62,I63,I64,I65,
+    I66,I67,I68,I69])
 
 
 

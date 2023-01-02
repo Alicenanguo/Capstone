@@ -156,7 +156,16 @@ def seed_products():
         name ='Custom Pet Pillow | Personalized Pillow | Pet Memorial Gift | Custom shaped pillow | Dog Pillow | Cat Pillow | Pet Lover Gift',
         price=14.20,
         description ="Turn your pet into a custom shaped pillow that we hand make! This is the perfect gift for pet lovers. Just upload a photo of your pet to create endless possibilities! We use the highest industrial quality materials and inks.",
-        preview_image = 'https://i.etsystatic.com/7831577/r/il/8d8a9c/2144291611/il_794xN.2144291611_my00.jpg'
+        preview_image = 'https://i.etsystatic.com/25155098/r/il/50053d/4045930533/il_794xN.4045930533_m0ga.jpg'
+    )
+
+    p18 =Product(
+        seller_id =6,
+        category_id= 3,
+        name ="Wine Lovers Gift Idea, Wine Bar Decor, People Planter Wine Bottle, Boho Decor, Shelf Decor, Succulent Planter, Cute Planter Wine O'clock",
+        price=27.99,
+        description ="These little planters look so adorable holding a bottle of wine (Label on the bottles will vary, each planter sold separately).",
+        preview_image = 'https://i.etsystatic.com/21530912/r/il/2f15a8/3630514386/il_794xN.3630514386_9jh9.jpg'
     )
 
 
@@ -173,7 +182,7 @@ def seed_products():
     db.session.add(p4)
     db.session.add(p5)
     db.session.add(p6)
-    db.session.add_all([p7, p8, p9, p10, p11, p12])
+    db.session.add_all([p7, p8, p9, p10, p11, p12,p13,p14,p15,p16,p17,p18])
 
 
     db.session.commit()
