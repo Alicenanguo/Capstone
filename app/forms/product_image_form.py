@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import URLField
-from wtforms.validators import InputRequired,DataRequired,BooleanField
+from wtforms import URLField,BooleanField
+from wtforms.validators import InputRequired,DataRequired
 
 
 class ProductImageForm(FlaskForm):

@@ -63,6 +63,7 @@ def seed_users():
     db.session.add(snow)
     db.session.add(aria)
     db.session.add(aaron)
+    
     db.session.commit()
 
 
