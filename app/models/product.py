@@ -9,25 +9,26 @@ class Product(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     seller_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('categories.id')),nullable=False)
     name = db.Column(db.String(255), nullable=False)
     price = db.Column(db.Numeric(scale=2), nullable=False)
     description = db.Column(db.String(2000), nullable=False)
-    category = db.Column(db.String(255), nullable=False)
     preview_image = db.Column(db.String(255),nullable=False)
 
 
 
     user = db.relationship("User", back_populates="products")
+    category = db.relationship('Category', back_populates='products')
     product_images = db.relationship("ProductImage", back_populates='product', cascade="all, delete")
 
     def to_dict(self):
         return {
             'id': self.id,
             'seller_id': self.seller_id,
+            'category_id':self.category_id,
             'name': self.name,
             'price': self.price,
             'description': self.description,
-            'category':self.category,
             # 'product_image': [image.to_dict() for image in self.product_images]
             'preview_image':self.preview_image
         }
@@ -36,10 +37,10 @@ class Product(db.Model):
         return {
             'id': self.id,
             'seller_id': self.seller_id,
+            'category_id':self.category_id,
             'name': self.name,
             'price': self.price,
             'description': self.description,
-            'category':self.category,
             'product_image': [image.to_dict() for image in self.product_images]
 
         }
