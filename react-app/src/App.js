@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import LoginFormModal from './components/auth/LoginFormModal/index';
-import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import LoginFormModal from "./components/auth/LoginFormModal/index";
+import SignUpForm from "./components/auth/SignupFormModal/SignUpForm";
+import NavBar from "./components/NavBar";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import UsersList from "./components/UsersList";
+import User from "./components/User";
 // import GetProducts from "./components/products/getProducts";
-import { authenticate } from './store/session';
-import GetCategories from './components/Categories';
-import HomePage from './components/HomePage';
-import GetOneProduct from './components/products/OneProduct';
+import { authenticate } from "./store/session";
+import GetCategories from "./components/Categories";
+import HomePage from "./components/HomePage";
+import GetOneProduct from "./components/products/OneProduct";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -36,31 +36,31 @@ function App() {
           <LoginFormModal />
         </Route> */}
 
-        <Route path='/sign-up' exact={true}>
+        <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
 
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+        <ProtectedRoute path="/users" exact={true}>
+          <UsersList />
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
+        <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
         </ProtectedRoute>
         {/* <Route path='/' exact={true} >
           <h1>My Home Page</h1>
         </Route> */}
 
-        <Route path='/categories/:id' exact={true}>
+        <Route path="/categories/:id" exact={true}>
           <GetCategories />
         </Route>
 
         <Route exact path="/products/:productId">
-            <GetOneProduct />
-          </Route>
+          <GetOneProduct />
+        </Route>
 
-        <Route path='/' exact={true}>
-        <HomePage />
-      </Route>
+        <Route path="/" exact={true}>
+          <HomePage />
+        </Route>
         {/* <Route exact path="/">
             <GetProducts />
         </Route> */}

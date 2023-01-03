@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, useParams } from "react-router-dom";
 
 import { getOneProductThunk } from "../../../store/product";
+import GetProductReviews from "../../Reviews/ProductReviews";
 
 import "./OneProduct.css";
 
@@ -44,7 +45,10 @@ const GetOneProduct = () => {
                       alt={single.name}
                       />
                       ))}
-                </div>
+                          </div>
+                          <div>
+                              <GetProductReviews productId={productId}/>
+                          </div>
 
 
             </>
