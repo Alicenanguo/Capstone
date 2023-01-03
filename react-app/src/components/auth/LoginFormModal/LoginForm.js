@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { login } from "../../../store/session";
 import SignUpForm from "../SignupFormModal/SignUpForm";
+import "./LoginForm.css";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -38,7 +39,7 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to="/" />;
   }
 
   const signupSubmit = (e) => {
@@ -46,56 +47,68 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-        {showSignup ?
-          <SignUpForm />
-         :
+    <div className="model_login">
+      {showSignup ? (
+        <SignUpForm />
+      ) : (
         <>
-
-            <div>Sign in</div>
+          <div className="title_first_line">
+            <div className="title_signin">Sign in</div>
             <div>
-              <button onClick={() => signupSubmit()}>Register</button>
+              <button className="title_register" onClick={() => signupSubmit()}>
+                Register
+              </button>
             </div>
-
-
-
-
-      <form onSubmit={onLogin}>
-        <div>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            name="email"
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={updatePassword}
-          />
-
-          <div>
-                <button type="submit">Sign in</button>
-                <button className='demo_login' onClick={DemoUser}>Demo Login</button>
-
           </div>
+
+          <form onSubmit={onLogin}>
+            <div>
+              {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+              ))}
+              </div>
+
+              <div className="title_input_box">
+                <div className="title_box">
+                  <label htmlFor="email">Email address</label>
+                  </div>
+              <div>
+                <input className="input_box"
+                  name="email"
+                  type="text"
+                  // placeholder="Email"
+                  value={email}
+                  onChange={updateEmail}
+                />
+              </div>
+              </div>
+
+            <div className="title_input_box">
+                <div className="title_box">
+                  <label htmlFor="password">Password</label>
+                  </div>
+                  <div>
+              <input className="input_box"
+                name="password"
+                type="password"
+                // placeholder="Password"
+                value={password}
+                onChange={updatePassword}
+                    />
+                </div>
+                </div>
+
+              <div className='submit'>
+                <button className='submit_signin' type="submit">Sign in</button>
+                <button className="demo_login" onClick={DemoUser}>
+                  Demo Login
+                </button>
           </div>
-      </form>
-    </>
-          }
-        </div>
+
+          </form>
+        </>
+      )}
+    </div>
   );
 };
 

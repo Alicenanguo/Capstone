@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
-import { signUp } from '../../../store/session';
-import LoginForm from '../LoginFormModal/LoginForm';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { signUp } from "../../../store/session";
+import LoginForm from "../LoginFormModal/LoginForm";
 // import * as sessionActions from "../../../store/session";
+import "./SignupFrom.css";
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [firstName, setfirstName] = useState('');
-  const [lastName, setlastName] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
   const [showLogin, setShowLogin] = useState(false);
 
-  const user = useSelector(state => state.session.user);
+  const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
@@ -31,14 +32,12 @@ const SignUpForm = () => {
           password,
         })
       ).catch(async (res) => {
-
         const data = await res.json();
-        console.log('erro_info_____',data.errors)
-        if (data && typeof data.errors === 'object') {
+        console.log("erro_info_____", data.errors);
+        if (data && typeof data.errors === "object") {
           setErrors(Object.values(data.errors));
-        }
-        else if (data && data.errors) {
-          setErrors(data.errors)
+        } else if (data && data.errors) {
+          setErrors(data.errors);
         }
       });
     }
@@ -46,8 +45,6 @@ const SignUpForm = () => {
       "Confirm Password field must be the same as the Password field",
     ]);
   };
-
-
 
   //     const data = await dispatch(signUp(firstName, lastName, username, email, password));
   //     if (data) {
@@ -83,98 +80,126 @@ const SignUpForm = () => {
   };
 
   const loginSubmit = (e) => {
-    setShowLogin(true)
-  }
+    setShowLogin(true);
+  };
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to="/" />;
   }
 
   return (
     <>
-      {
-        showLogin ? <LoginForm />
-        :
-          <form onSubmit={onSignUp} className='signup_form_container'>
-            <div className='create_accout'>Create your account</div>
-            <div className='register_is_easy'>Registration is easy.</div>
-        <div className='error_messasge'>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
+      <div className="model_signup">
+        {showLogin ? (
+          <LoginForm />
+        ) : (
+          <form onSubmit={onSignUp} className="signup_form_container">
+            <div className="create_accout">Create your account</div>
+            <div className="register_is_easy">Registration is easy.</div>
+            <div className="error_messasge">
+              {errors.map((error, ind) => (
+                <div key={ind}>{error}</div>
+              ))}
             </div>
 
-          <div className='input_content'>
-          <label>User Name</label>
-          <input
-            type='text'
-            name='firstname'
-            onChange={updatefirstName}
-            value={firstName}
-          ></input>
-        </div>
-
-        <div className='input_content'>
-          <label>First Name</label>
-          <input
-            type='text'
-            name='lastname'
-            onChange={updatelastName}
-            value={lastName}
-          ></input>
+            <div className="title_input_box">
+            <div className="title_box">
+                <label>
+                  User Name<span>*</span>
+                </label>
+              </div>
+              <div>
+                <input className="input_box"
+                  type="text"
+                  name="firstname"
+                  onChange={updatefirstName}
+                  value={firstName}
+                ></input>
+              </div>
             </div>
 
-          <div className='input_content'>
-          <label>Last Name</label>
-          <input
-            type='text'
-            name='username'
-            onChange={updateUsername}
-            value={username}
-          ></input>
+            <div className="title_input_box">
+            <div className="title_box">
+              <label>
+                    First Name<span>*</span>
+              </label>
+                    </div>
+              <input className="input_box"
+                type="text"
+                name="lastname"
+                onChange={updatelastName}
+                value={lastName}
+              ></input>
             </div>
 
-        <div className='input_content'>
-          <label>Email</label>
-          <input
-            type='text'
-            name='email'
-            onChange={updateEmail}
-            value={email}
-          ></input>
+              <div className="title_input_box">
+              <div className="title_box">
+              <label>
+                Last Name<span>*</span>
+                  </label>
+                  </div>
+              <input className="input_box"
+                type="text"
+                name="username"
+                onChange={updateUsername}
+                value={username}
+              ></input>
             </div>
 
-        <div className='input_content'>
-          <label>Password</label>
-          <input
-            type='password'
-            name='password'
-            onChange={updatePassword}
-            value={password}
-          ></input>
+              <div className="title_input_box">
+              <div className="title_box">
+              <label>
+                Email address<span>*</span>
+                  </label>
+                  </div>
+              <input className="input_box"
+                type="text"
+                name="email"
+                onChange={updateEmail}
+                value={email}
+              ></input>
             </div>
 
-        <div className='input_content'>
-          <label>Repeat Password</label>
-          <input
-            type='password'
-            name='repeat_password'
-            onChange={updateRepeatPassword}
-            value={repeatPassword}
-            required={true}
-          ></input>
+              <div className="title_input_box">
+              <div className="title_box">
+              <label>
+                Password<span>*</span>
+                </label>
+                </div>
+              <input className="input_box"
+                type="password"
+                name="password"
+                onChange={updatePassword}
+                value={password}
+              ></input>
             </div>
 
+              <div className="title_input_box">
+              <div className="title_box">
+              <label>
+                Repeat Password<span>*</span>
+                  </label>
+                  </div>
+              <input className="input_box"
+                type="password"
+                name="repeat_password"
+                onChange={updateRepeatPassword}
+                value={repeatPassword}
+                required={true}
+              ></input>
+            </div>
+
+            <div className="link_to_login">
+              <div className="already">Already have an account?</div>
+                <div className="submit_to_login">
+                  <button onClick={() => loginSubmit()}>Log In</button>
+                  </div>
+            </div>
             <div>
-              Already have an account?
-              <button onClick={() => loginSubmit()}>Log In</button>
+              <button className="submit_signin" type="submit">Sign Up</button>
             </div>
-            <div>
-              <button type='submit'>Sign Up</button>
-            </div>
-
-
-      </form>
-        }
+          </form>
+        )}
+      </div>
     </>
   );
 };
