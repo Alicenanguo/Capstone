@@ -20,7 +20,7 @@ const CreateProduct = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [preview_image, setPreviewImage] = useState("");
-  const [category_id, setCategoryId] = useState(1);
+  const [category_id, setCategoryId] = useState("");
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -75,7 +75,7 @@ const CreateProduct = () => {
   const handleChange = (event) => {
     const selectedIndex = event.target.selectedIndex;
     console.log(`Selected index: ${selectedIndex}`);
-    return selectedIndex;
+    setCategoryId(selectedIndex)
   };
   console.log("errors@@@@@@@@@", validationErrors);
   return (
