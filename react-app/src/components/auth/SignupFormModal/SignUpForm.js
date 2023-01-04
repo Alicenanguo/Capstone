@@ -10,8 +10,8 @@ const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [first_name, setfirstName] = useState("");
+  const [last_name, setlastName] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [showLogin, setShowLogin] = useState(false);
@@ -24,13 +24,13 @@ const SignUpForm = () => {
     if (password === repeatPassword) {
       setErrors([]);
       return dispatch(
-        signUp({
-          firstName,
-          lastName,
+        signUp(
+          first_name,
+          last_name,
           email,
           username,
           password,
-        })
+        )
       ).catch(async (res) => {
         const data = await res.json();
         console.log("erro_info_____", data.errors);
@@ -112,7 +112,7 @@ const SignUpForm = () => {
                   type="text"
                   name="firstname"
                   onChange={updatefirstName}
-                  value={firstName}
+                  value={first_name}
                 ></input>
               </div>
             </div>
@@ -127,7 +127,7 @@ const SignUpForm = () => {
                 type="text"
                 name="lastname"
                 onChange={updatelastName}
-                value={lastName}
+                value={last_name}
               ></input>
             </div>
 

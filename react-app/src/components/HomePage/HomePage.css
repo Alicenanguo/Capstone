@@ -1,3 +1,49 @@
-.welcome {
-    
+.home_title {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: light;
+    padding: 20px 0 15px;
+    background-color: #FDEBD2;
+    border-top: 2px solid rgb(225, 225, 225);
+    position: relative;
+    z-index: 2;
+    color: rgb(71, 81, 86);
+
+}
+
+#not_login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.first_line {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.sec_line {
+    font-weight: light;
+    font-size: 28px;
+}
+
+.all_category_homepage {
+    display: flex;
+    flex-direction: row;
+    width:1090px;
+    height: 180px;
+    justify-content: space-around;
+    padding:30px;
+    margin: 0px auto;
+
+
+}
+
+.category_homepage_img {
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }

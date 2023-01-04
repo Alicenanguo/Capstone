@@ -105,7 +105,7 @@ def create_product():
         name = form.data["name"]
         price = form.data["price"]
         description=form.data["description"]
-        category=form.data["category"]
+        category_id=form.data["category_id"]
         preview_image = form.data["preview_image"]
 
         new_product = Product(
@@ -113,7 +113,7 @@ def create_product():
             name=name,
             price=price,
             description=description,
-            category=category,
+            category_id=category_id,
             preview_image=preview_image
 
     )
@@ -122,7 +122,6 @@ def create_product():
         db.session.commit()
 
         return new_product.to_dict()
-
     if form.errors:
             return form.errors
 

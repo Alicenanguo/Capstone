@@ -12,6 +12,8 @@ import { authenticate } from "./store/session";
 import GetCategories from "./components/Categories";
 import HomePage from "./components/HomePage";
 import GetOneProduct from "./components/products/OneProduct";
+import CreateProduct from "./components/products/CreateProduct";
+import GetCurrentProduct from "./components/products/userProduct";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -57,6 +59,16 @@ function App() {
         <Route exact path="/products/:productId">
           <GetOneProduct />
         </Route>
+
+        <ProtectedRoute path="/create" exact={true}>
+          <CreateProduct />
+        </ProtectedRoute>
+
+        <ProtectedRoute path="/shop-manager" exact={true}>
+          <GetCurrentProduct />
+        </ProtectedRoute>
+
+
 
         <Route path="/" exact={true}>
           <HomePage />
