@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, useParams } from "react-router-dom";
 
-import { getAllReviewsTHUNK } from "../../../store/review";
+import { getAllProductReviews  } from "../../../store/review";
 import "./ProductReviews.css";
 
 const GetProductReviews = ({ productId }) => {
@@ -17,7 +17,7 @@ const GetProductReviews = ({ productId }) => {
   console.log("reviews_getproductReviews", reviews);
 
   useEffect(() => {
-    dispatch(getAllReviewsTHUNK(productId)).then(() => setIsLoaded(true));
+    dispatch(getAllProductReviews(productId)).then(() => setIsLoaded(true));
   }, [dispatch, productId]);
 
   let reviewsArr;

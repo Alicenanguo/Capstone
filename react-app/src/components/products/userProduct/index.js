@@ -4,6 +4,9 @@ import { NavLink, Route, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import { getCurrentProduct } from "../../../store/product";
+import DeleteProduct from "../DeleteProduct";
+import UpdateProductModal from "../EditProductModal";
+
 
 function GetCurrentProduct() {
   const dispatch = useDispatch();
@@ -71,10 +74,10 @@ useEffect(() => {
                           id="listing_edit_button"
                           to={`/products/${productId}/edit`}
                         >
-                          {/* <UpdateSpotModal spot={spot} spotId={spot.id} /> */}
+                        <UpdateProductModal product={el} productId={productId} />
                         </div>
                         <div className="listing_delete_button">
-                          {/* <DeleteSpot spotId={spot.id} /> */}
+                          <DeleteProduct productId={el.id} />
                         </div>
                       </div>
                     </div>

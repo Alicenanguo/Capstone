@@ -179,8 +179,8 @@ const CreateProduct = () => {
             </label>
           </div>
 
-          <div className="create_selling_list">
-            <label className="create_selling_title">Category</label>
+          {/* <div className="create_selling_list">
+            <label className="create_selling_title">Category</label> */}
 
             {/* <select id="my-select" onChange={handleChange} value={handleChange()} >
         {allArr.map((option, index) => (
@@ -190,8 +190,26 @@ const CreateProduct = () => {
         ))}
       </select> */}
 
-            <select value={category_id} onChange={handleChange} required>
-              <option value="" disabled>
+            <div className="create_selling_list">
+              <label>
+                <div className="create_selling_title">Select a category</div>
+                <select
+            id="category_id"
+            type="text"
+            name="category_id"
+            onChange={handleChange}
+                value={allCategory.category_id}
+            required
+          >
+            {allArr.map((el) => (
+              <option key={el?.id} value={el?.name}>{el?.name}</option>
+            ))}
+          </select>
+              </label>
+            </div>
+
+            {/* <select value={category_id} onChange={handleChange} required>
+              <option value='' disabled>
                 Select a category
               </option>
               {allArr.map((el) => (
@@ -200,7 +218,7 @@ const CreateProduct = () => {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
 
           <div className="create_product_submit">
             <button type="submit" className="add_product_button">

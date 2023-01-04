@@ -26,9 +26,11 @@ def create_review(id):
     if check_product.seller_id == current_user.id:
         return {'errors': 'you could not leave review to your own product'}, 400
 
-    check_review = Review.query.filter_by(buyer_id=current_user.id,product_id=id).all()
+    check_review = Review.query.filter_by(product_id=id).all()
     if check_review:
-        return {'error': 'You have a review for this product.'}, 400
+        for el in check_review:
+            if el.buyer_id == current_user.id:
+                return {'errors': 'You have a review for this product.'},403
 
     if form.validate_on_submit():
         review = form.data['review']
@@ -141,8 +143,8 @@ def edit_product(id):
                 product.price = form.data["price"]
             if form.data["description"]:
                 product.description = form.data["description"]
-            if form.data["category"]:
-                product.category = form.data["category"]
+            if form.data["category_id"]:
+                product.category_id = form.data["category_id"]
             if form.data["preview_image"]:
                 product.preview_image = form.data["preview_image"]
 
