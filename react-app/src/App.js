@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import LoginFormModal from "./components/auth/LoginFormModal/index";
 import SignUpForm from "./components/auth/SignupFormModal/SignUpForm";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
@@ -14,6 +14,7 @@ import HomePage from "./components/HomePage";
 import GetOneProduct from "./components/products/OneProduct";
 import CreateProduct from "./components/products/CreateProduct";
 import GetCurrentProduct from "./components/products/userProduct";
+import UserReviews from "./components/Reviews/UserReviews";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +39,7 @@ function App() {
           <LoginFormModal />
         </Route> */}
 
-        <Route path="/sign-up" exact={true}>
+        {/* <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
 
@@ -47,7 +48,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         {/* <Route path='/' exact={true} >
           <h1>My Home Page</h1>
         </Route> */}
@@ -64,11 +65,14 @@ function App() {
           <CreateProduct />
         </ProtectedRoute>
 
+        <ProtectedRoute  exact path="/reviews/current">
+            <UserReviews />
+          </ProtectedRoute >
+
+
         <ProtectedRoute path="/shop-manager" exact={true}>
           <GetCurrentProduct />
         </ProtectedRoute>
-
-
 
         <Route path="/" exact={true}>
           <HomePage />

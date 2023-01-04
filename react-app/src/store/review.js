@@ -35,7 +35,7 @@ const actionGetUserReview = (userReviewInfo) => ({
 })
 
 // todo:thunks section
-export const getAllReviewsTHUNK = (productId) => async (dispatch) => {
+export const getAllProductReviews = (productId) => async (dispatch) => {
     const res = await fetch(`/api/products/${productId}/reviews`);
 
     if (res.ok) {
@@ -47,7 +47,7 @@ export const getAllReviewsTHUNK = (productId) => async (dispatch) => {
     }
 }
 
-export const getUserReviewTHUNK = () => async (dispatch) => {
+export const getUserReview = () => async (dispatch) => {
     const res = await fetch('/api/reviews/current');
 
     if (res.ok) {
@@ -57,7 +57,7 @@ export const getUserReviewTHUNK = () => async (dispatch) => {
     }
 }
 
-export const createReviewsTHUNK = (reviewInfo, productId) => async (dispatch) => {
+export const createReviews = (reviewInfo, productId) => async (dispatch) => {
 
     const resReview = await fetch(`/api/products/${productId}/reviews`, {
         method: 'POST',
@@ -71,6 +71,12 @@ export const createReviewsTHUNK = (reviewInfo, productId) => async (dispatch) =>
         console.log('newReview_createReview________thunk', newReview)
         dispatch(actionCreate(newReview))
         return newReview;
+    }
+    if (resReview.status < 500) {
+        const data = await resReview.json()
+        console.log("data_in_add_review_thunk",data)
+        if (data.errors)
+            return data
     }
 }
 
@@ -88,7 +94,7 @@ export const editReviewTHUNK = (review) => async (dispatch) => {
     }
 }
 
-export const deleteReviewTHUNK = (reviewId) => async (dispatch) => {
+export const deleteReview = (reviewId) => async (dispatch) => {
     const res = await fetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE',
     })
@@ -124,7 +130,7 @@ const reviewsReducer = (state = initialState, action) => {
         case CREATE:
             newState = { ...state }
             newState.userReviews[action.newReview.id] = action.newReview
-            console.log('newState_review_create:', newState)
+            console.log('newState_review_create++++++++++++++++:', newState)
             return newState;
 
         case EDIT:

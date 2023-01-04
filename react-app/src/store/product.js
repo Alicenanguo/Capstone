@@ -93,6 +93,34 @@ export const createProductTHUNK = (product) => async (dispatch) => {
   }
 };
 
+export const updateProductTHUNK = (product,productId) => async dispatch => {
+  console.log("product_in_update_thunk".product)
+  const res = await fetch(`/api/products/${productId}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product)
+  })
+  if (res.ok) {
+    const update = await res.json();
+    console.log('update_in_thunk',update)
+    dispatch(actionUpdate(update));
+    return update;
+  }
+}
+
+export const deleteProductTHUNK = (productId) => async dispatch => {
+
+  const res = await fetch(`/api/products/${productId}`, {
+    method: 'DELETE',
+  })
+  if (res.ok) {
+    dispatch(actionRemove(productId))
+    return res
+  }
+
+}
+
+
 // todo: reduce stuff
 const initialState = { allProducts: {}, singleProduct: {} };
 
@@ -118,7 +146,7 @@ const productReducer = (state = initialState, action) => {
     case LOAD_CURRENT:
       newState = {...state}
       let current = {};
-     
+
       action.userProduct.products.forEach((product) => (current[product.id] = product));
       newState.allProducts = current
         return newState;
@@ -133,6 +161,26 @@ const productReducer = (state = initialState, action) => {
       };
       console.log("newState_create:", newCreate);
       return newCreate;
+
+    case UPDATE:
+      let updateState = {
+        ...state,
+        singleProduct:{ ...state.singleProduct, ...action.updateProduct}
+      }
+      console.log('newState_update:', updateState)
+      return updateState;
+
+    case DELETE:
+       const deleted = {
+          ...state,
+          allProducts: { ...state.allProducts },
+          singleProduct:{}
+        }
+        delete deleted.allProducts[action.ProductId]
+        return deleted;
+
+
+
 
     default:
       return state;

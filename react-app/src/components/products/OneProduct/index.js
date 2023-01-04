@@ -4,6 +4,7 @@ import { NavLink, Route, useParams } from "react-router-dom";
 
 import { getOneProductThunk } from "../../../store/product";
 import GetProductReviews from "../../Reviews/ProductReviews";
+import CreateReviewsModal from "../../Reviews/CreateReviewModal";
 
 import "./OneProduct.css";
 
@@ -14,7 +15,7 @@ const GetOneProduct = () => {
   const { productId } = useParams();
 
   const single = useSelector((state) => state.products.singleProduct);
-  console.log('single#########',single)
+  console.log("single#########", single);
 
   const user = useSelector((state) => state.session.user);
 
@@ -30,39 +31,43 @@ const GetOneProduct = () => {
         <div className="single_spots">
           {single.id && (
             <>
-                          <div className="single_name">{single?.name}</div>
+              <div className="single_name">{single?.name}</div>
 
-                          <div>${single?.price}</div>
+              <div>${single?.price}</div>
 
-                          <div>{single?.description}</div>
+              <div>{single?.description}</div>
 
-                          {/* <div>{single?.category_id}</div> */}
+              {/* <div>{single?.category_id}</div> */}
 
               <div className="product_img">
-
-                {single?.product_image.length >0 ?
+                {single?.product_image.length > 0 ? (
                   single.product_image.map((el) => (
-                      <img
+                    <img
                       key={el.id}
                       className="single_img"
                       src={el.url}
                       alt={single.name}
                     />
-                    ))
-                    :
-                    <img
+                  ))
+                ) : (
+                  <img
                     key={single.id}
                     className="single_img"
                     src={single.preview_image}
-                    alt={single.name} />
-
-                }
-                          </div>
-                          <div>
-                              <GetProductReviews productId={productId}/>
-                          </div>
-
-
+                    alt={single.name}
+                  />
+                )}
+              </div>
+              <div className="create_review_spotList">
+                {user &&
+                  user.id &&
+                  single.seller_id !== user.id && (
+                    <CreateReviewsModal productId={productId} />
+                  )}
+              </div>
+              <div>
+                <GetProductReviews productId={productId} />
+              </div>
             </>
           )}
         </div>
