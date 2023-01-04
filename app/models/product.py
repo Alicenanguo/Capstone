@@ -42,6 +42,7 @@ class Product(db.Model):
             'name': self.name,
             'price': self.price,
             'description': self.description,
+            'preview_image':self.preview_image,
             'product_image': [image.to_dict() for image in self.product_images]
 
         }

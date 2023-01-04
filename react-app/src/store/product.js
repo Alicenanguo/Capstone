@@ -7,99 +7,135 @@ const CREATE = "products/CREATE";
 const UPDATE = "products/UPDATE";
 const DELETE = "products/DELETE";
 
-
 // todo:define action creators
 
 const actionLoad = (all) => ({
-    type: LOAD,
-    all,
-  });
+  type: LOAD,
+  all,
+});
 
-  const actionLoadSingle = (one) => ({
-    type: LOAD_ONE,
-    one,
-  });
+const actionLoadSingle = (one) => ({
+  type: LOAD_ONE,
+  one,
+});
 
-  const actionCurrentSpot = (userProduct) => ({
-    type: LOAD_CURRENT,
-    userProduct,
-  });
+const actionCurrentProduct = (userProduct) => ({
+  type: LOAD_CURRENT,
+  userProduct,
+});
 
-  const actioCreate = (newProduct) => ({
-    type: CREATE,
-    newProduct,
-  });
+const actioCreate = (newProduct) => ({
+  type: CREATE,
+  newProduct,
+});
 
+const actionUpdate = (updateProduct) => ({
+  type: UPDATE,
+  updateProduct,
+});
 
+const actionRemove = (productId) => ({
+  type: DELETE,
+  productId,
+});
 
-  const actionUpdate = (updateProduct) => ({
-    type: UPDATE,
-    updateProduct
-  });
-
-  const actionRemove = (productId) => ({
-    type: DELETE,
-    productId,
-  });
-
-
-  // todo:thunks section
+// todo:thunks section
 export const getAllProducts = () => async (dispatch) => {
-    const res = await fetch('api/products');
+  const res = await fetch("/api/products");
 
-    if (res.ok) {
-        const list = await res.json();
-        dispatch(actionLoad(list))
-    }
-
-}
+  if (res.ok) {
+    const list = await res.json();
+    dispatch(actionLoad(list));
+  }
+};
 
 export const getHomeProducts = () => async (dispatch) => {
-  const res = await fetch('api/products/home');
+  const res = await fetch("/api/products/home");
 
   if (res.ok) {
     const homePage = await res.json();
-    console.log('home_product_in_thunk',homePage)
-    dispatch(actionLoad(homePage))
+    console.log("home_product_in_thunk", homePage);
+    dispatch(actionLoad(homePage));
   }
-}
+};
 
 export const getOneProductThunk = (productId) => async (dispatch) => {
   const res = await fetch(`/api/products/${productId}`);
 
   if (res.ok) {
-      const product = await res.json();
-      dispatch(actionLoadSingle(product));
+    const product = await res.json();
+    dispatch(actionLoadSingle(product));
+  }
+};
 
+export const getCurrentProduct = () => async (dispatch) => {
+  const res = await fetch("/api/products/current")
+
+  if (res.ok) {
+    const currentProduct = await res.json();
+    dispatch(actionCurrentProduct(currentProduct))
   }
 }
 
+export const createProductTHUNK = (product) => async (dispatch) => {
+  const res = await fetch(`/api/products`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  });
+  console.log("res in create_thunk", res);
+  if (res.ok) {
+    const newProduct = await res.json();
+    dispatch(actioCreate(newProduct));
+    return newProduct;
+  }
+};
 
-  // todo: reduce stuff
+// todo: reduce stuff
 const initialState = { allProducts: {}, singleProduct: {} };
 
 const productReducer = (state = initialState, action) => {
   let newState = {};
   switch (action.type) {
     case LOAD:
-       let allProducts = {};
-       action.all.products.forEach((product) => (allProducts[product.id] = product));
-       newState.allProducts = allProducts;
-         console.log('newState_getall:', newState)
+      let allProducts = {};
+      action.all.products.forEach(
+        (product) => (allProducts[product.id] = product)
+      );
+      newState.allProducts = allProducts;
+      console.log("newState_getall:", newState);
       return newState;
 
     case LOAD_ONE:
       newState = { ...state };
       const singleProduct = action.one;
       newState.singleProduct = singleProduct;
-      console.log('get_one_product_reduce', newState)
+      console.log("get_one_product_reduce", newState);
       return newState;
 
+    case LOAD_CURRENT:
+      newState = {...state}
+      let current = {};
+     
+      action.userProduct.products.forEach((product) => (current[product.id] = product));
+      newState.allProducts = current
+        return newState;
 
-
+    case CREATE:
+      let newCreate = {
+        ...state,
+        singleProduct: {
+          ...state.singleProduct,
+          [action.newProduct.id]: action.newProduct,
+        },
+      };
+      console.log("newState_create:", newCreate);
+      return newCreate;
 
     default:
-       return state;
+      return state;
   }
 };
 

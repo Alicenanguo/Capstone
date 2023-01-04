@@ -14,6 +14,7 @@ const GetOneProduct = () => {
   const { productId } = useParams();
 
   const single = useSelector((state) => state.products.singleProduct);
+  console.log('single#########',single)
 
   const user = useSelector((state) => state.session.user);
 
@@ -35,16 +36,27 @@ const GetOneProduct = () => {
 
                           <div>{single?.description}</div>
 
+                          {/* <div>{single?.category_id}</div> */}
+
               <div className="product_img">
 
-                  {single.product_image?.map((el) => (
+                {single?.product_image.length >0 ?
+                  single.product_image.map((el) => (
                       <img
                       key={el.id}
                       className="single_img"
                       src={el.url}
                       alt={single.name}
-                      />
-                      ))}
+                    />
+                    ))
+                    :
+                    <img
+                    key={single.id}
+                    className="single_img"
+                    src={single.preview_image}
+                    alt={single.name} />
+
+                }
                           </div>
                           <div>
                               <GetProductReviews productId={productId}/>

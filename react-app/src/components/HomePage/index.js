@@ -36,14 +36,14 @@ function HomePage() {
       <div>
         <div className="user_welcome">
           {user ? (
-            <p>{`Welcome back, ${user.firstName}!`}</p>
+            <p className="home_title">{`Welcome back, ${user.firstName}!`}</p>
           ) : (
-            <div>
-              <p>Discover the magic of Etsy</p>
-              <p>
+            <div className="home_title" id='not_login'>
+              <div className="first_line">Discover the magic of Nansty</div>
+              <div className="sec_line">
                 Get thoughtfully crafted goods, vintage treasures, and unique
                 finds
-              </p>
+              </div>
             </div>
           )}
 
@@ -54,7 +54,7 @@ function HomePage() {
               //   }
               <div className="category_list_homepage" key={el?.id}>
                 <NavLink to={`/categories/${el?.id}`}>
-                  <img
+                  <img 
                     className="category_homepage_img"
                     src={el?.category_image}
                     alt={el?.name}
