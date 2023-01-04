@@ -6,7 +6,9 @@ import { getOneProductThunk } from "../../../store/product";
 import GetProductReviews from "../../Reviews/ProductReviews";
 import CreateReviewsModal from "../../Reviews/CreateReviewModal";
 
+
 import "./OneProduct.css";
+import StarRatings from "react-star-ratings";
 
 const GetOneProduct = () => {
   const dispatch = useDispatch();
@@ -58,6 +60,9 @@ const GetOneProduct = () => {
                   />
                 )}
               </div>
+
+              
+
               <div className="create_review_spotList">
                 {user &&
                   user.id &&

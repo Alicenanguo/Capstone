@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, useParams } from "react-router-dom";
 import { getThunkAll, getThunkOne } from "../../store/category";
+import StarRating from 'react-star-ratings'
 
 
 const GetCategories = () => {
@@ -41,6 +42,24 @@ const GetCategories = () => {
                             <img className="cate_product_image" src={el?.preview_image} alt={el?.name}>
                             </img>
                         </NavLink>
+
+                        <div className="getall_review_stars">
+                <StarRating
+                  numberofStars={5}
+                  rating={el?.average_rating}
+                  starRatingColor='rgb(57,57,57)'
+                  starEmptyColor='rgb(227,227,227)'
+                  starDimension='18px'
+                  starSpacing='2px'
+
+                  />
+                        </div>
+
+
+                        <div>
+                            ({el?.review_nums})
+                        </div>
+
                         <div className="cate_product_price">
                             ${el?.price}
                         </div>

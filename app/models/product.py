@@ -22,6 +22,15 @@ class Product(db.Model):
     product_images = db.relationship("ProductImage", back_populates='product', cascade="all, delete")
     reviews = db.relationship('Review', back_populates='product',cascade="all, delete")
 
+    def average_rating(self):
+        if len(self.reviews) == 0:
+            return 0
+        else:
+            average = sum(review.stars for review in self.reviews) / len(self.reviews)
+            return round(average,1)
+
+
+
     def to_dict(self):
         return {
             'id': self.id,
@@ -31,7 +40,9 @@ class Product(db.Model):
             'price': self.price,
             'description': self.description,
             # 'product_image': [image.to_dict() for image in self.product_images]
-            'preview_image':self.preview_image
+            'preview_image':self.preview_image,
+            'review_nums':len(self.reviews),
+            'average_rating':self.average_rating()
         }
 
     def to_dict_detail(self):
@@ -43,6 +54,9 @@ class Product(db.Model):
             'price': self.price,
             'description': self.description,
             'preview_image':self.preview_image,
-            'product_image': [image.to_dict() for image in self.product_images]
+            'product_image': [image.to_dict() for image in self.product_images],
+            'review_nums':len(self.reviews),
+            'average_rating':self.average_rating(),
+            'reviews':[review.to_dict() for review in self.reviews]
 
         }

@@ -23,27 +23,24 @@ const SignUpForm = () => {
     e.preventDefault();
     if (password === repeatPassword) {
       setErrors([]);
-      return dispatch(
-        signUp(
-          first_name,
-          last_name,
-          email,
-          username,
-          password,
-        )
-      ).catch(async (res) => {
-        const data = await res.json();
-        console.log("erro_info_____", data.errors);
-        if (data && typeof data.errors === "object") {
-          setErrors(Object.values(data.errors));
-        } else if (data && data.errors) {
-          setErrors(data.errors);
-        }
-      });
+      const data = await dispatch(
+        signUp(first_name, last_name, email, username, password)
+      );
+      // .catch(async (res) => {
+      // const data = await res.json();
+      // console.log("erro_info_____", data.errors);
+      // if (data && typeof data.errors === "object") {
+      //   setErrors(Object.values(data.errors));
+      // } else
+
+      if (data && data.errors) {
+        setErrors(...Object.values(data.errors));
+      }
+    } else {
+      setErrors([
+        "Confirm Password field must be the same as the Password field",
+      ]);
     }
-    return setErrors([
-      "Confirm Password field must be the same as the Password field",
-    ]);
   };
 
   //     const data = await dispatch(signUp(firstName, lastName, username, email, password));
@@ -86,6 +83,9 @@ const SignUpForm = () => {
     return <Redirect to="/" />;
   }
 
+  console.log("errores_in_signup", errors);
+  console.log('user_name__________',username)
+
   return (
     <>
       <div className="model_signup">
@@ -102,28 +102,45 @@ const SignUpForm = () => {
             </div>
 
             <div className="title_input_box">
-            <div className="title_box">
+              <div className="title_box">
                 <label>
                   User Name<span>*</span>
                 </label>
               </div>
               <div>
-                <input className="input_box"
+                <input
+                  className="input_box"
                   type="text"
-                  name="firstname"
-                  onChange={updatefirstName}
-                  value={first_name}
+                  name="username"
+                  onChange={updateUsername}
+                  value={username}
                 ></input>
               </div>
             </div>
 
             <div className="title_input_box">
-            <div className="title_box">
-              <label>
-                    First Name<span>*</span>
-              </label>
-                    </div>
-              <input className="input_box"
+              <div className="title_box">
+                <label>
+                  First Name<span>*</span>
+                </label>
+              </div>
+              <input
+                className="input_box"
+                type="text"
+                name="firstname"
+                onChange={updatefirstName}
+                value={first_name}
+              ></input>
+            </div>
+
+            <div className="title_input_box">
+              <div className="title_box">
+                <label>
+                  Last Name<span>*</span>
+                </label>
+              </div>
+              <input
+                className="input_box"
                 type="text"
                 name="lastname"
                 onChange={updatelastName}
@@ -131,27 +148,14 @@ const SignUpForm = () => {
               ></input>
             </div>
 
-              <div className="title_input_box">
+            <div className="title_input_box">
               <div className="title_box">
-              <label>
-                Last Name<span>*</span>
-                  </label>
-                  </div>
-              <input className="input_box"
-                type="text"
-                name="username"
-                onChange={updateUsername}
-                value={username}
-              ></input>
-            </div>
-
-              <div className="title_input_box">
-              <div className="title_box">
-              <label>
-                Email address<span>*</span>
-                  </label>
-                  </div>
-              <input className="input_box"
+                <label>
+                  Email address<span>*</span>
+                </label>
+              </div>
+              <input
+                className="input_box"
                 type="text"
                 name="email"
                 onChange={updateEmail}
@@ -159,13 +163,14 @@ const SignUpForm = () => {
               ></input>
             </div>
 
-              <div className="title_input_box">
+            <div className="title_input_box">
               <div className="title_box">
-              <label>
-                Password<span>*</span>
+                <label>
+                  Password<span>*</span>
                 </label>
-                </div>
-              <input className="input_box"
+              </div>
+              <input
+                className="input_box"
                 type="password"
                 name="password"
                 onChange={updatePassword}
@@ -173,13 +178,14 @@ const SignUpForm = () => {
               ></input>
             </div>
 
-              <div className="title_input_box">
+            <div className="title_input_box">
               <div className="title_box">
-              <label>
-                Repeat Password<span>*</span>
-                  </label>
-                  </div>
-              <input className="input_box"
+                <label>
+                  Repeat Password<span>*</span>
+                </label>
+              </div>
+              <input
+                className="input_box"
                 type="password"
                 name="repeat_password"
                 onChange={updateRepeatPassword}
@@ -190,12 +196,14 @@ const SignUpForm = () => {
 
             <div className="link_to_login">
               <div className="already">Already have an account?</div>
-                <div className="submit_to_login">
-                  <button onClick={() => loginSubmit()}>Log In</button>
-                  </div>
+              <div className="submit_to_login">
+                <button onClick={() => loginSubmit()}>Log In</button>
+              </div>
             </div>
             <div>
-              <button className="submit_signin" type="submit">Sign Up</button>
+              <button className="submit_signin" type="submit">
+                Sign Up
+              </button>
             </div>
           </form>
         )}

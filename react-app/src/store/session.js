@@ -70,7 +70,7 @@ export const logout = () => async (dispatch) => {
 };
 
 
-export const signUp = (first_name, last_name, username, email, password) => async (dispatch) => {
+export const signUp = (first_name, last_name, email, username, password) => async (dispatch) => {
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
@@ -79,12 +79,13 @@ export const signUp = (first_name, last_name, username, email, password) => asyn
     body: JSON.stringify({
       first_name,
       last_name,
-      username,
       email,
+      username,
       password,
 
     }),
   });
+  console.log('response_in_signup_tunk',response)
 
   if (response.ok) {
     const data = await response.json();
@@ -93,7 +94,7 @@ export const signUp = (first_name, last_name, username, email, password) => asyn
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
-      return data.errors;
+      return data;
     }
   } else {
     return ['An error occurred. Please try again.']

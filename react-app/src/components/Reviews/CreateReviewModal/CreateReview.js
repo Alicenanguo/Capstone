@@ -61,7 +61,14 @@ const CreateReviews = ({ productId, setShowModal }) => {
     }
   };
   console.log("errors_in_add_reviews", validationErrors);
-  const ratingStar = [1, 2, 3, 4, 5];
+
+  const cancelSubmit = (e) => {
+      e.preventDefault();
+      setShowModal(false);
+      history.push(`/products/${productId}`);
+    };
+
+    const ratingStar = [1, 2, 3, 4, 5];
 
   return (
     <>
@@ -111,10 +118,16 @@ const CreateReviews = ({ productId, setShowModal }) => {
               ></textarea>
             </div>
           </label>
-        </div>
+              </div>
+
+              <div>
         <button type="submit" id="submit_button">
           Create Review
-        </button>
+              </button>
+              <button className="cancel_product_button" onClick={cancelSubmit}>
+              Cancel
+                  </button>
+                  </div>
       </form>
     </>
   );
