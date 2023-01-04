@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, useParams } from "react-router-dom";
 
-import { getAllProductReviews  } from "../../../store/review";
+import { getAllProductReviews } from "../../../store/review";
+import StarRating from 'react-star-ratings'
 import "./ProductReviews.css";
 
 const GetProductReviews = ({ productId }) => {
@@ -21,9 +22,11 @@ const GetProductReviews = ({ productId }) => {
   }, [dispatch, productId]);
 
   let reviewsArr;
+  
   console.log("reviewsArr____getproductReviews", reviews);
   if (isLoaded) {
     reviewsArr = Object.values(reviews);
+
   }
 
   return (
@@ -36,6 +39,19 @@ const GetProductReviews = ({ productId }) => {
                 <div>
                         <p className="review_by_name">{el?.user.first_name}{' '}{el?.user.last_name}</p>
                 </div>
+
+                <div className="review_stars">
+                <StarRating
+                  numberofStars={5}
+                  rating={el.stars}
+                  starRatingColor='rgb(57,57,57)'
+                  starEmptyColor='rgb(227,227,227)'
+                  starDimension='18px'
+                  starSpacing='2px'
+
+                />
+
+              </div>
                 <div className="review_create_time">
                         <p> {el?.createAt.slice(5, 11)},{' '}{el?.createAt.slice(12, 17)}</p>
                 </div>

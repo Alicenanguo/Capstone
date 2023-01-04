@@ -61,9 +61,12 @@ def sign_up():
     """
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    print('_________________________')
     print('form$$$$$$$$',form.validate_on_submit())
+    print("form.errors",form.errors)
+    print('+++++++++++++++++++++++++++++++++')
     if form.validate_on_submit():
-        print("signup work________________")
+        print("signup work________________",form.data)
         user = User(
             first_name=form.data['first_name'],
             last_name=form.data['last_name'],
@@ -75,8 +78,8 @@ def sign_up():
         db.session.commit()
         login_user(user)
         return user.to_dict()
-    print('user++++++++++++++++++++++++')
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    print('user++++++++++++++++++++++++',validation_errors_to_error_messages(form.errors))
+    return {'errors': form.errors}, 401
 
 
 @auth_routes.route('/unauthorized')

@@ -39,7 +39,7 @@ class SignUpForm(FlaskForm):
         'username', validators=[DataRequired(), username_exists,
         Length(max=255, message="Username could not greater than 255 characters")
         ])
-    email = StringField('email', validators=[DataRequired(), user_exists,
+    email = StringField('email', validators=[DataRequired(), user_exists, check_email,
         Length(max=255, message="Email could not greater than 255 characters")
         ])
     password = StringField('password', validators=[DataRequired(),

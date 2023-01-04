@@ -86,7 +86,7 @@ const CreateProduct = () => {
         onSubmit={onSubmit}
       >
         <div id="create_your_product" className="create_your_product">
-          <h2>Sell Your Product</h2>
+          <h2>{`Hi! ${user.firstName}, start your bussiness here`}</h2>
         </div>
         {/* {hasSubmitted && validationErrors.length > 0 && (
           <div className="err-div">
@@ -103,7 +103,7 @@ const CreateProduct = () => {
         <div className="create_selling_list_container">
           <div className="create_selling_list">
             <label>
-              <div className="create_selling_title">Name</div>
+              <div className="create_selling_title"> Product Name</div>
               <input
                 id="name"
                 type="text"
@@ -143,7 +143,7 @@ const CreateProduct = () => {
 
           <div className="create_selling_list">
             <label>
-              <div className="create_selling_title">Description</div>
+              <div className="create_selling_title">Product Description</div>
               <input
                 id="description"
                 type="text"

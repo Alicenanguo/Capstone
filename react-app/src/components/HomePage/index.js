@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, useParams } from "react-router-dom";
 import { getThunkAll } from "../../store/category";
 import { getHomeProducts } from "../../store/product";
+import StarRating from 'react-star-ratings'
 import "./HomePage.css";
 
 function HomePage() {
@@ -54,7 +55,7 @@ function HomePage() {
               //   }
               <div className="category_list_homepage" key={el?.id}>
                 <NavLink to={`/categories/${el?.id}`}>
-                  <img 
+                  <img
                     className="category_homepage_img"
                     src={el?.category_image}
                     alt={el?.name}
@@ -73,8 +74,21 @@ function HomePage() {
                     className="products_homepage_img"
                         src={el?.preview_image}
                         alt={el?.name} />
-                    </NavLink>
-                    <p>${el?.price}</p>
+                </NavLink>
+
+                {/* <div className="getall_review_stars">
+                <StarRating
+                  numberofStars={5}
+                  rating={el.average_rating}
+                  starRatingColor='rgb(57,57,57)'
+                  starEmptyColor='rgb(227,227,227)'
+                  starDimension='18px'
+                  starSpacing='2px'
+
+                  />
+                </div> */}
+
+                  <div>${el?.price}</div>
 
 
               </div>
