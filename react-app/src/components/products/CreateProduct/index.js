@@ -20,7 +20,7 @@ const CreateProduct = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [preview_image, setPreviewImage] = useState("");
-  const [category_id, setCategoryId] = useState("");
+  const [category_id, setCategoryId] = useState("1");
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -74,10 +74,10 @@ const CreateProduct = () => {
 
   const handleChange = (event) => {
     const selectedIndex = event.target.selectedIndex;
-    console.log(`Selected index: ${selectedIndex}`);
+    console.log(`Selected index: ${selectedIndex}`,typeof selectedIndex);
     setCategoryId(selectedIndex)
   };
-  console.log("errors@@@@@@@@@", validationErrors);
+  //console.log("errors@@@@@@@@@", validationErrors);
   return (
     <>
       <form
@@ -192,17 +192,21 @@ const CreateProduct = () => {
 
             <div className="create_selling_list">
               <label>
-                <div className="create_selling_title">Select a category</div>
+                <div className="create_selling_title">Category</div>
                 <select
             id="category_id"
             type="text"
             name="category_id"
             onChange={handleChange}
-                value={allCategory.category_id}
+                value={allCategory[category_id]?.name}
             required
           >
+            <option value="" disabled>
+              Select a category
+            </option>
             {allArr.map((el) => (
-              <option key={el?.id} value={el?.name}>{el?.name}</option>
+              <option key={el?.id} value={el?.name}>{el?.name}
+                </option>
             ))}
           </select>
               </label>
