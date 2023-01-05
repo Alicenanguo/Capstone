@@ -11,14 +11,16 @@ const UpdateProduct = ({ product, setShowModal }) => {
     const history = useHistory();
 
     const user = useSelector((state) => state.session.user);
-    const allCategory = useSelector((state) => state.categories.categories);
+  const allCategory = useSelector((state) => state.categories.categories);
+  console.log(allCategory)
     const allArr = Object.values(allCategory);
 
     const [name, setName] = useState(product.name);
     const [description, setDescription] = useState(product.description);
     const [price, setPrice] = useState(product.price);
     const [preview_image, setPreviewImage] = useState(product.preview_image);
-    const [category_id, setCategoryId] = useState(product.category_id);
+  const [category_id, setCategoryId] = useState(product.category_id);
+  console.log('category_id==============',category_id)
 
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -171,7 +173,7 @@ const UpdateProduct = ({ product, setShowModal }) => {
             <div className="update_selling_list">
               <label className="update_selling_title">Category</label>
 
-              <select value={allCategory.category_id} onChange={handleChange} required>
+              <select value={allCategory[category_id]?.name} onChange={handleChange} required>
                 <option value="" disabled>
                   Select a category
                 </option>
