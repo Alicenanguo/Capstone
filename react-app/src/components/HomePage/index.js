@@ -4,6 +4,7 @@ import { NavLink, Route, useParams } from "react-router-dom";
 import { getThunkAll } from "../../store/category";
 import { getHomeProducts } from "../../store/product";
 import StarRating from 'react-star-ratings'
+import GetProducts from "../products/AllProducts";
 import "./HomePage.css";
 
 function HomePage() {
@@ -67,6 +68,105 @@ function HomePage() {
           </div>
 
           <div className="homepage_all_products">
+              {/* first card */}
+            <div className="first_card">
+              <div className="first_product">
+              <NavLink to={`/products/${productArr[0].id}`}>
+                  <img className="first_img"
+                    src={productArr[0].preview_image}
+                    alt={productArr[0].name}
+                  />
+                </NavLink>
+                <div className="home_price">${ productArr[0].price}</div>
+
+              </div>
+
+            <div className="second_product">
+              <NavLink to={`/products/${productArr[1].id}`}>
+                  <img className="second_img"
+                    src={productArr[1].preview_image}
+                    alt={productArr[1].name}
+                    />
+                </NavLink>
+                <div className="home_price">${ productArr[1].price}</div>
+                </div>
+            </div>
+
+            {/* second card */}
+            <div className="second_card">
+              <div className="third_product">
+              <NavLink to={`/products/${productArr[2].id}`}>
+                  <img className="third_img"
+                    src={productArr[2].preview_image}
+                    alt={productArr[2].name}
+                  />
+                </NavLink>
+                <div className="home_price">${ productArr[2].price}</div>
+
+              </div>
+
+            <div className="fourth_product">
+              <NavLink to={`/products/${productArr[3].id}`}>
+                  <img className="fourth_img"
+                    src={productArr[3].preview_image}
+                    alt={productArr[3].name}
+                    />
+                </NavLink>
+                <div className="home_price">${ productArr[3].price}</div>
+                </div>
+            </div>
+
+            {/* 3 card */}
+            <div className="third_card">
+              <div className="fifth_product">
+              <NavLink to={`/products/${productArr[4].id}`}>
+                  <img className="fifth_img"
+                    src={productArr[4].preview_image}
+                    alt={productArr[4].name}
+                  />
+                </NavLink>
+                <div className="home_price">${ productArr[4].price}</div>
+
+              </div>
+
+            <div className="six_product">
+              <NavLink to={`/products/${productArr[6].id}`}>
+                  <img className="six_img"
+                    src={productArr[6].preview_image}
+                    alt={productArr[6].name}
+                    />
+                </NavLink>
+                <div className="home_price">${ productArr[6].price}</div>
+                </div>
+            </div>
+
+             {/* 4 card */}
+             <div className="fourth_card">
+              <div className="seven_product">
+              <NavLink to={`/products/${productArr[5].id}`}>
+                  <img className="seven_img"
+                    src={productArr[5].preview_image}
+                    alt={productArr[5].name}
+                  />
+                </NavLink>
+                <div className="home_price">${ productArr[5].price}</div>
+
+              </div>
+
+            <div className="eight_product">
+              <NavLink to={`/products/${productArr[7].id}`}>
+                  <img className="eight_img"
+                    src={productArr[7].preview_image}
+                    alt={productArr[7].name}
+                    />
+                </NavLink>
+                <div className="home_price">${ productArr[7].price}</div>
+                </div>
+            </div>
+
+          </div>
+
+          {/* <div className="homepage_all_products">
             {productArr?.map((el) => (
                 <div className="product_show_cards" key={el?.id}>
                     <NavLink to={`/products/${el?.id}`}>
@@ -76,28 +176,19 @@ function HomePage() {
                         alt={el?.name} />
                 </NavLink>
 
-                {/* <div className="getall_review_stars">
-                <StarRating
-                  numberofStars={5}
-                  rating={el.average_rating}
-                  starRatingColor='rgb(57,57,57)'
-                  starEmptyColor='rgb(227,227,227)'
-                  starDimension='18px'
-                  starSpacing='2px'
-
-                  />
-                </div> */}
-
                   <div>${el?.price}</div>
-
-
               </div>
             ))}
+          </div> */}
+          
+          <div>
+            <GetProducts />
           </div>
+
         </div>
       </div>
     )
-  );
-}
+    );
+  }
 
-export default HomePage;
+  export default HomePage;

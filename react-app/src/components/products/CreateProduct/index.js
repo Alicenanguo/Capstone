@@ -86,7 +86,7 @@ const CreateProduct = () => {
         onSubmit={onSubmit}
       >
         <div id="create_your_product" className="create_your_product">
-          <h2>{`Hi! ${user.firstName}, start your bussiness here`}</h2>
+          <h2>{`Hi! ${user.firstName}! start your bussiness here`}</h2>
         </div>
         {/* {hasSubmitted && validationErrors.length > 0 && (
           <div className="err-div">
@@ -221,12 +221,14 @@ const CreateProduct = () => {
           </div> */}
 
           <div className="create_product_submit">
-            <button type="submit" className="add_product_button">
+            <div><button type="submit" className="add_product_button">
               Add Product
             </button>
-            <button className="cancel_product_button" onClick={cancelSubmit}>
+              </div>
+            <div><button className="cancel_product_button_create" onClick={cancelSubmit}>
               Cancel
             </button>
+            </div>
           </div>
         </div>
       </form>

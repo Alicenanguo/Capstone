@@ -1,0 +1,15 @@
+.updateProduct_form {
+    border-radius: 12px;
+    border:2px solid;
+    width:550px;
+    height:600px;
+    display:flex;
+    flex-direction:column;
+    background-color: white;
+
+
+    font-weight:300;
+    padding:0 24px;
+    font-size: 25px;
+}
+

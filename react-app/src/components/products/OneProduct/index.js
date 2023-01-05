@@ -30,18 +30,12 @@ const GetOneProduct = () => {
   return (
     <div className="getOneProduct_container">
       {isLoaded && (
-        <div className="single_spots">
+        <div className="single_product">
           {single.id && (
             <>
-              <div className="single_name">{single?.name}</div>
+              <div className='upper'>
 
-              <div>${single?.price}</div>
-
-              <div>{single?.description}</div>
-
-              {/* <div>{single?.category_id}</div> */}
-
-              <div className="product_img">
+              <div className="product_img" >
                 {single?.product_image.length > 0 ? (
                   single.product_image.map((el) => (
                     <img
@@ -59,9 +53,18 @@ const GetOneProduct = () => {
                     alt={single.name}
                   />
                 )}
-              </div>
+                </div>
+                <div className='one_product_right'>
+                  <div className='seller_name'>{single?.user.first_name}</div>
+              <div className="single_name">{single?.name}</div>
 
-              
+              <div>${single?.price}</div>
+
+                <div>{single?.description}</div>
+                </div>
+                </div>
+
+               <div className='down'>
 
               <div className="create_review_spotList">
                 {user &&
@@ -72,7 +75,8 @@ const GetOneProduct = () => {
               </div>
               <div>
                 <GetProductReviews productId={productId} />
-              </div>
+                </div>
+                </div>
             </>
           )}
         </div>

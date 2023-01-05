@@ -47,3 +47,46 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+
+.user_welcome {
+
+    width: auto;
+    margin:0 auto;
+
+}
+
+.homepage_all_products {
+    display:flex;
+    justify-content: space-between;
+    padding:15px 35px;
+    width: auto;
+    margin:0 auto;
+    max-width:90rem;
+    display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(2, 300px);
+}
+
+.first_card,
+.second_card,
+.third_card,
+.fourth_card {
+    width:150px;
+    height: 150px;
+}
+
+.first_img,
+.second_img,
+.third_img,
+.fourth_img,
+.fifth_img,
+.six_img,
+.seven_img,
+.eight_img
+{
+    width:280px;
+    height:200px;
+    object-fit: cover;
+
+}

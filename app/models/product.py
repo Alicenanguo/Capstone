@@ -57,6 +57,10 @@ class Product(db.Model):
             'product_image': [image.to_dict() for image in self.product_images],
             'review_nums':len(self.reviews),
             'average_rating':self.average_rating(),
-            'reviews':[review.to_dict() for review in self.reviews]
+            'reviews':[review.to_dict() for review in self.reviews],
+            'user':{
+                "first_name": self.user.first_name,
+                "last_name": self.user.last_name
+            },
 
         }

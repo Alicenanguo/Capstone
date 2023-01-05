@@ -1,0 +1,41 @@
+.getOneProduct_container{
+    padding:15px 35px;
+    width: auto;
+    margin:0 auto;
+    max-width:90rem;
+    display: grid;
+    margin-top: 10px;
+
+}
+
+.upper {
+    display:flex;
+    flex-direction: row;
+    height: 500px;
+}
+
+.product_img {
+    display:flex;
+    flex-direction: column;
+
+}
+
+.product_img {
+    width:100px;
+    height:100px;
+    object-fit: cover;
+}
+
+.single_product{
+    display:flex;
+    flex-direction: column;
+}
+.seller_name {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.all_product_review {
+    display: flex;
+    flex-direction: row;
+}

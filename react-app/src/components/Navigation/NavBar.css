@@ -11,10 +11,82 @@
 .header_container {
     display:flex;
     justify-content: space-between;
+    padding:15px 35px;
+    width: auto;
+    margin:0 auto;
+    max-width:90rem
+
 }
 
 .header_right {
     display:flex;
     justify-content: space-between;
+
+}
+
+.home_button {
+    font-size:30px;
+    text-decoration: none;
+    color:#f76e29;
+
+}
+
+
+.profilebutton_div {
+    position:absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.profilebutton_div:hover {
+   border:2px solid grey;
+    background-color:white;
+    border-radius: 50%;
+    ;
+
+}
+
+.user_logo {
+    display:flex;
+    flex-direction: row;
+    border:none;
+
+}
+
+
+.upperRight_button {
+    display: flex;
+    border: none;
+    background-color: #FFF;
+    cursor: pointer;
+    font-size: 23px;
+    color: rgb(110, 110, 110);
+    padding-left: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 40%;
+}
+.fa-user-circle{
+    margin-right: 7px;
+}
+
+/* .fa-user-circle,
+.fa-caret-down {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    margin-right: 13px;
+    border: none;
+
+} */
+
+.header_right {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    position:relative
+
 
 }

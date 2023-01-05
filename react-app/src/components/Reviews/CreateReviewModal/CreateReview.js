@@ -120,7 +120,7 @@ const CreateReviews = ({ productId, setShowModal }) => {
           </label>
               </div>
 
-              <div>
+              <div className="create_product_submit">
         <button type="submit" id="submit_button">
           Create Review
               </button>

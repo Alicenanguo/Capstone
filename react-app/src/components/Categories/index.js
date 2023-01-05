@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, useParams } from "react-router-dom";
 import { getThunkAll, getThunkOne } from "../../store/category";
 import StarRating from 'react-star-ratings'
+import './Categories.css'
 
 
 const GetCategories = () => {
@@ -29,7 +30,7 @@ const GetCategories = () => {
 
     return (
         isLoaded && (
-        <div>
+        <div className="category_contanier">
             <div className="category_name">
                 {singleCategory?.name}
                 {/* {console.log("singleCate_in_component",singleCategory)} */}

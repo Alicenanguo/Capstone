@@ -82,7 +82,7 @@ const UpdateProduct = ({ product, setShowModal }) => {
         <>
         <form
           id="create_container"
-          className="createProduct_form"
+          className="updateProduct_form"
           onSubmit={onSubmit}
         >
           <div id="create_your_product" className="create_your_product">
