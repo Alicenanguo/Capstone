@@ -139,7 +139,7 @@ def seed_product_images():
     # p7:
     I24 = ProductImage (
         product_id = 7,
-        url = 'https://i.etsystatic.com/24218949/r/il/ae959c/3484977548/il_794xN.3484977548_lkgs.jpg',
+        url = 'https://i.etsystatic.com/23702777/r/il/14c918/4184624086/il_794xN.4184624086_s698.jpg',
         preview_image = True
     )
 

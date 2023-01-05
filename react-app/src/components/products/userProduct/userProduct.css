@@ -1,0 +1,25 @@
+.manage_listing_container {
+    padding:15px 35px;
+    width: auto;
+    margin:0 auto;
+    max-width:90rem;
+    display: grid;
+    margin-top: 10px;
+}
+
+.all_your_selling {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.currentProduct_info {
+    display:flex;
+    flex-direction: row;
+    border-top: 2px solid rgb(230, 212, 212);
+    padding:15px
+}
+
+.listing_product_img {
+    width:500px;
+    height:300px
+}

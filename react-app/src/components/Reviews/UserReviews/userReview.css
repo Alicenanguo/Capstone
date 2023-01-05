@@ -1,0 +1,24 @@
+.user_reviews_Info_conntainer {
+    padding:15px 35px;
+    width: auto;
+    margin:0 auto;
+    max-width:90rem;
+    display: grid;
+    margin-top: 10px;
+}
+
+.user_review_name {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.user_review_el {
+    display: flex;
+    flex-direction: row;
+}
+
+.user_review_Img_review {
+    width:500px;
+    height:300px;
+    object-fit: cover;
+}

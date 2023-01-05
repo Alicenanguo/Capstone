@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Route, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import StarRating from 'react-star-ratings'
 
 import { getCurrentProduct } from "../../../store/product";
 import DeleteProduct from "../DeleteProduct";
 import UpdateProductModal from "../EditProductModal";
+import './userProduct.css'
 
 
 function GetCurrentProduct() {
@@ -67,7 +69,24 @@ useEffect(() => {
                         </p>
 
                         <div className="listing_product_price">${el?.price}</div>
-                      </div>
+
+                        <div className="all_product_review">
+                        <div className="all_product_review_stars">
+                <StarRating
+                  numberofStars={5}
+                  rating={el?.average_rating}
+                  starRatingColor='rgb(57,57,57)'
+                  starEmptyColor='rgb(227,227,227)'
+                  starDimension='18px'
+                  starSpacing='2px'
+
+                  />
+                          </div>
+
+                <div className="all_product_review_nums">({el?.review_nums})</div>
+                </div>
+                          </div>
+
 
                       <div className="edit_delete_button">
                         <div

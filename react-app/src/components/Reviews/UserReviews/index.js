@@ -41,7 +41,7 @@ const UserReviews = () => {
 
   return (
     <div className="user_reviews_Info_conntainer">
-      <p className="user_review_name">{`Hi! ${sessionUser.firstName}, check all your Reviws`}</p>
+      <p className="user_review_name">{`Hi, ${sessionUser.firstName}! check all your Reviws`}</p>
 
       <div className="user_single_review">
         {reviews &&

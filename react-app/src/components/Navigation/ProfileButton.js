@@ -44,8 +44,11 @@ function ProfileButton({isLoaded,setShowLogInModal, setShowSignUpModal}) {
     <>
       <div className="profilebutton_div">
         <button onClick={openMenu} className='upperRight_button'>
-        <i className="fa-solid fa-bars"></i>
-        <i className="fa-solid fa-circle-user"></i>
+
+        <i className="fas fa-user-circle"></i>
+          {/* <i className="fa-solid fa-circle-user"></i> */}
+            <i class="fa-solid fa-caret-down"></i>
+           
 
         </button>
 
