@@ -40,7 +40,9 @@ const CreateProduct = () => {
     if (!price || price <= 0)
       errors.minusPrice="Please enter a price greater than 0";
     if (isNaN(price)) errors.noNumber="Price must be a number";
-    if (!preview_image) errors.noImage="need a image for the product";
+    if (!preview_image) errors.noImage = "need a image for the product";
+    if ((!preview_image.startsWith('http://')) && (!preview_image.startsWith('https://')))
+      errors.brokenImage = "Url must start with 'http://' or 'https://'";
 
     setValidationErrors(errors);
   }, [name, description, price, preview_image]);
@@ -167,14 +169,17 @@ const CreateProduct = () => {
               <div className="create_selling_title">Image Url</div>
               <input
                 id="previewImage"
-                type="url"
+                type="text"
                 name="previewImage"
                 onChange={(e) => setPreviewImage(e.target.value)}
                 value={preview_image}
-                required
+                // required
               />
               {hasSubmitted && validationErrors.noImage && (
                 <div className='errors_info'>*{validationErrors.noImage}</div>
+              )}
+              {hasSubmitted && validationErrors.brokenImage && (
+                <div className='errors_info'>*{validationErrors.brokenImage}</div>
               )}
             </label>
           </div>

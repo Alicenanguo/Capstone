@@ -26,9 +26,13 @@ const NavBar = () => {
         <div className="header_right">
           {user ? (
             <>
-              <div>
-                <NavLink to="/shop-manager" exact activeClassName="active">
+              <div className='shop_manager'>
+                <NavLink to="/shop-manager" exact >
+                  <div>
                   <i className="fa-solid fa-shop" />
+           
+
+                  </div>
                 </NavLink>
               </div>
               <div>
