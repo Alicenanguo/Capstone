@@ -35,10 +35,9 @@ function HomePage() {
 
   return (
     isLoaded && (
-      <div>
-        <div className="user_welcome">
+      <>
           {user ? (
-            <p className="home_title">{`Welcome back, ${user.firstName}!`}</p>
+            <div className="home_title">{`Welcome back, ${user.firstName}!`}</div>
           ) : (
             <div className="home_title" id='not_login'>
               <div className="first_line">Discover the magic of Nansty</div>
@@ -49,12 +48,14 @@ function HomePage() {
             </div>
           )}
 
+
           <div className="all_category_homepage">
             {allArr?.map((el) => (
               //   {
               //     console.log("+++++++++el", el);
               //   }
               <div className="category_list_homepage" key={el?.id}>
+                <div className="home_category-img">
                 <NavLink to={`/categories/${el?.id}`}>
                   <img
                     className="category_homepage_img"
@@ -62,22 +63,26 @@ function HomePage() {
                     alt={el?.name}
                   ></img>
                 </NavLink>
-                <p>{el?.name}</p>
+                  </div>
+                <div className="home_category_name">{el?.name}</div>
               </div>
             ))}
-          </div>
+        </div>
 
+        <div className="user_welcome">
           <div className="homepage_all_products">
               {/* first card */}
             <div className="first_card">
               <div className="first_product">
-              <NavLink to={`/products/${productArr[0].id}`}>
+
+                <NavLink className='w-100' to={`/products/${productArr[0].id}`}>
                   <img className="first_img"
                     src={productArr[0].preview_image}
                     alt={productArr[0].name}
-                  />
-                </NavLink>
+                    />
                 <div className="home_price">${ productArr[0].price}</div>
+                </NavLink>
+
 
               </div>
 
@@ -93,7 +98,7 @@ function HomePage() {
             </div>
 
             {/* second card */}
-            <div className="second_card">
+            <div className="third_card">
               <div className="third_product">
               <NavLink to={`/products/${productArr[2].id}`}>
                   <img className="third_img"
@@ -180,13 +185,13 @@ function HomePage() {
               </div>
             ))}
           </div> */}
-          
+
           <div>
             <GetProducts />
           </div>
 
         </div>
-      </div>
+      </>
     )
     );
   }

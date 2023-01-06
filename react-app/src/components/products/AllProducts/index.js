@@ -4,7 +4,7 @@ import { NavLink, Route, useParams } from "react-router-dom";
 
 import { getAllProducts } from "../../../store/product";
 import { getThunkOne } from "../../../store/category";
-import StarRating from 'react-star-ratings'
+import StarRating from "react-star-ratings";
 import "./AllProducts.css";
 
 const GetProducts = () => {
@@ -27,42 +27,55 @@ const GetProducts = () => {
   }
   console.log("productArr", productArr);
 
-
-
   return (
     isLoaded && (
-      <div className="all_product_container">
-        <div className="text">Recommand for You:</div>
-          {product && productArr.map(product => (
       <>
+      {/* <div className="rabbit">
+        <div className="recommend_pic">
+        <img
+        className="pic_get_all"
+        src='https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg'
+        alt='rabbit'
+        />
+      </div> */}
+        <div className="text">Recommand for You:</div>
+        {/* </div> */}
+        <div className="all_product_container">
+          {product &&
+            productArr.map((product) => (
+              <>
+                <div className="product_item" key={product?.id}>
+                  <NavLink to={`/products/${product.id}`}>
+                    <img
+                      className="product_img_all"
+                      src={product?.preview_image}
+                      alt={product.name}
+                    />
+                  </NavLink>
+                  {/* <div>{product.name}</div> */}
+                <div className="all_product_price">${product?.price}</div>
 
-                       <div className='product_item' key={product?.id}>
-                       <NavLink to={`/products/${product.id}`}>
-                           <img className='product_img_all' src={product?.preview_image} alt={product.name} />
-                            </NavLink>
-           </div>
-              <div className="all_product_price">${product?.price}</div>
+                <div className="all_product_review">
+                  <div className="all_product_review_stars">
+                    <StarRating
+                      numberofStars={5}
+                      rating={product?.average_rating}
+                      starRatingColor="rgb(57,57,57)"
+                      starEmptyColor="rgb(227,227,227)"
+                      starDimension="18px"
+                      starSpacing="2px"
+                      />
+                  </div>
 
-              <div className="all_product_review">
-               <div className="all_product_review_stars">
-                <StarRating
-                  numberofStars={5}
-                  rating={product?.average_rating}
-                  starRatingColor='rgb(57,57,57)'
-                  starEmptyColor='rgb(227,227,227)'
-                  starDimension='18px'
-                  starSpacing='2px'
-
-                  />
-              </div>
-
-                <div className="all_product_review_nums">({product?.review_nums})</div>
+                  <div className="all_product_review_nums">
+                    ({product?.review_nums})
+                  </div>
                 </div>
-        </>
-                        ))
-        }
+                      </div>
+              </>
+            ))}
         </div>
-
+      </>
     )
   );
 };

@@ -11,10 +11,10 @@
 .header_container {
     display:flex;
     justify-content: space-between;
-    padding:15px 35px;
-    width: auto;
+    padding:15px 36px;
+    max-width: 1400px;
     margin:0 auto;
-    max-width:90rem
+
 
 }
 
@@ -33,17 +33,21 @@
 
 
 .profilebutton_div {
-    position:absolute;
+    position:relative;
     z-index: 3;
     display: flex;
     justify-content: center;
+    /* outline:1px solid black; */
+    height: 46px;
 }
 
 .profilebutton_div:hover {
-   border:2px solid grey;
-    background-color:white;
-    border-radius: 50%;
-    ;
+   /* border:1px solid grey; */
+    background-color:rgb(226, 223, 223);
+    border-radius: 40%;
+
+
+
 
 }
 
@@ -58,7 +62,7 @@
 .upperRight_button {
     display: flex;
     border: none;
-    background-color: #FFF;
+    background-color: transparent;
     cursor: pointer;
     font-size: 23px;
     color: rgb(110, 110, 110);
@@ -66,6 +70,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 40%;
+    text-decoration: none;
+
 }
 .fa-user-circle{
     margin-right: 7px;
@@ -89,4 +95,104 @@
     position:relative
 
 
+}
+
+.fa-shop {
+
+    color:rgb(75, 73, 73);
+
+
+}
+
+.my_review {
+    text-decoration: none;
+    color:black
+
+}
+
+.info_navigation {
+    text-decoration: none;
+    color: black;
+}
+
+#manage_listings {
+    text-decoration: none;
+    color:black
+}
+
+.profile-dropdown {
+    position:absolute;
+    top:45px;
+    right:20px;
+    border:1px solid rgba(34, 34, 34, 0.15);
+    border-radius: 12px;
+    background-color: #FFF;
+    width:120px;
+    font-size: 15px;
+    min-width: 100px;
+    max-width: 300px;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-height: 480px;
+    padding-left: 0;
+    text-decoration: none;
+
+}
+
+.info_navigation,
+.info_navigation,
+.logout_button_drop {
+    margin: 8px 5px;
+
+
+}
+
+.shop_manager {
+    width:20px;
+    margin-right:20px;
+
+}
+
+.shop_manager:hover {
+    background-color: rgb(226, 223, 223);
+    border-radius: 50%;
+    /* padding:10px 10px; */
+}
+
+
+.fa-gift,
+.fa-book,
+.fa-cart-shopping
+.fa-right-from-bracket
+{
+    margin-right: 5px;
+}
+
+.nav_bar_log_out {
+
+    padding-left: 6px;
+    margin-left: 6px;
+}
+
+.my_sell {
+    color:black;
+    margin-left:5px;
+}
+.button_logout {
+    border:none;
+    border-radius: 10px;
+    margin-left:5px;
+    cursor: pointer;
+    color:grey
+}
+
+.logout_button_drop {
+    border:none;
+    border-radius: 30%;
+    padding:5px 5px;
+
+}
+
+.fa-book {
+    margin-left:2px
 }

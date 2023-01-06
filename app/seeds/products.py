@@ -168,6 +168,8 @@ def seed_products():
         preview_image = 'https://i.etsystatic.com/21530912/r/il/2f15a8/3630514386/il_794xN.3630514386_9jh9.jpg'
     )
 
+    
+
 
 
 

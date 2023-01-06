@@ -88,7 +88,7 @@ def current_user_product():
 # get home page products
 @product_routes.route('/home')
 def home_products():
-    products = Product.query.order_by(Product.description).limit(8)
+    products = Product.query.order_by('price').limit(8)
     # print('products in home page********',products)
     return {"products":[product.to_dict() for product in products]}
 

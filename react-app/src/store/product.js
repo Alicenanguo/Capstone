@@ -7,6 +7,8 @@ const CREATE = "products/CREATE";
 const UPDATE = "products/UPDATE";
 const DELETE = "products/DELETE";
 
+const LOAD_HOME ="product/LOAD_HOME"
+
 // todo:define action creators
 
 const actionLoad = (all) => ({
@@ -39,6 +41,10 @@ const actionRemove = (productId) => ({
   productId,
 });
 
+// const actionLoadHome = (product) => ({
+//   type: LOAD_HOME,
+//   product,
+// });
 // todo:thunks section
 export const getAllProducts = () => async (dispatch) => {
   const res = await fetch("/api/products");
@@ -129,6 +135,7 @@ const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD:
       let allProducts = {};
+      console.log('action_all_')
       action.all.products.forEach(
         (product) => (allProducts[product.id] = product)
       );
