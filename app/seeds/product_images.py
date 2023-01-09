@@ -276,7 +276,7 @@ def seed_product_images():
 
     I46 = ProductImage (
         product_id = 12,
-        url = 'https://i.etsystatic.com/14125488/r/il/6c5e71/4453844762/il_794xN.4453844762_fcq9.jpgg',
+        url = 'https://i.etsystatic.com/14125488/r/il/6c5e71/4453844762/il_794xN.4453844762_fcq9.jpg',
         preview_image = False
     )
 

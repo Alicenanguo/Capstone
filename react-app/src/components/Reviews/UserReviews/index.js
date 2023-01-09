@@ -23,7 +23,10 @@ const UserReviews = () => {
   }, [dispatch]);
 
   if (reviewsArr.length === 0) {
-    return "Sorry, You do not have any reviews.";
+    return <div className="no_reviews">
+    <i class="fa-solid fa-face-sad-tear"></i>
+      Sorry! You do not have any reviews.
+    </div>;
   }
 
   const handleDeleted = async (reviewId) => {
@@ -52,6 +55,7 @@ const UserReviews = () => {
                   className="user_review_Img_review"
                   src={el?.product?.preview_image}
                   alt={el?.id}
+                  onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
                 />
               </div>
 
@@ -74,11 +78,11 @@ const UserReviews = () => {
                   </div>
 
                   <div className="user_review_content">
-                    <p>{el?.review}</p>
+                    <p className="content">{el?.review}</p>
                   </div>
                 </div>
                 <div className="review_create_time">
-                  {el?.createAt.slice(5, 11)}, {el?.createAt.slice(12, 17)}
+                  {el?.createAt?.slice(5, 11)}, {el?.createAt?.slice(12, 17)}
                 </div>
 
                 <div className="userReview_delete_button">

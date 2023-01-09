@@ -42,7 +42,17 @@ const CreateProduct = () => {
     if (isNaN(price)) errors.noNumber="Price must be a number";
     if (!preview_image) errors.noImage = "need a image for the product";
     if ((!preview_image.startsWith('http://')) && (!preview_image.startsWith('https://')))
-      errors.brokenImage = "Url must start with 'http://' or 'https://'";
+      errors.brokenImage_start = "Url must start with 'http://' or 'https://'";
+    // if ((!preview_image.endsWith("pdf")) && (!preview_image.endsWith("png")) && (!preview_image.endsWith("jpg")) &&
+    //     (!preview_image.endsWith("jpeg")) && (!preview_image.endsWith("jpeg")))
+    //   errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
+    const endArr = ['pdf', 'png', 'jpg', 'jpeg', 'gif']
+    let count = 0;
+    endArr.map(el => {
+      if (preview_image.includes(el)) count++
+    }
+    )
+    if (count === 0) errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
 
     setValidationErrors(errors);
   }, [name, description, price, preview_image]);
@@ -87,7 +97,7 @@ const CreateProduct = () => {
         className="createProduct_form"
         onSubmit={onSubmit}
       >
-        <div id="create_your_product" className="create_your_product">
+        <div id="create_your_product" className="c">
           <h2>{`Hi! ${user.firstName}! start your bussiness here`}</h2>
         </div>
         {/* {hasSubmitted && validationErrors.length > 0 && (
@@ -178,8 +188,11 @@ const CreateProduct = () => {
               {hasSubmitted && validationErrors.noImage && (
                 <div className='errors_info'>*{validationErrors.noImage}</div>
               )}
-              {hasSubmitted && validationErrors.brokenImage && (
-                <div className='errors_info'>*{validationErrors.brokenImage}</div>
+              {hasSubmitted && validationErrors.brokenImage_start && (
+                <div className='errors_info'>*{validationErrors.brokenImage_start}</div>
+              )}
+              {hasSubmitted && validationErrors.brokenImage_end && (
+                <div className='errors_info'>*{validationErrors.brokenImage_end}</div>
               )}
             </label>
           </div>

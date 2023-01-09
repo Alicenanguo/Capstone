@@ -22,7 +22,7 @@ const GetProductReviews = ({ productId }) => {
   }, [dispatch, productId]);
 
   let reviewsArr;
-  
+
   console.log("reviewsArr____getproductReviews", reviews);
   if (isLoaded) {
     reviewsArr = Object.values(reviews);
@@ -36,11 +36,11 @@ const GetProductReviews = ({ productId }) => {
           {reviews &&
             reviewsArr.map((el) => (
               <div key={el?.id} className="review_el">
-                <div>
-                        <p className="review_by_name">{el?.user.first_name}{' '}{el?.user.last_name}</p>
-                </div>
+
+
 
                 <div className="review_stars">
+
                 <StarRating
                   numberofStars={5}
                   rating={el.stars}
@@ -52,13 +52,16 @@ const GetProductReviews = ({ productId }) => {
                 />
 
               </div>
-                <div className="review_create_time">
-                        <p> {el?.createAt.slice(5, 11)},{' '}{el?.createAt.slice(12, 17)}</p>
-                </div>
+
                 <div>
                   <p className="review_content">{el?.review}</p>
                 </div>
                 {/* <div>{el.reviewImages && el.reviewImages.url}</div> */}
+                <div className="review_title">
+                        <span className="review_by_name">{el?.user.first_name}{' '}{el?.user.last_name}</span>
+
+                        <span className="review_create_time"> {el?.createAt.slice(5, 11)},{' '}{el?.createAt.slice(12, 17)}</span>
+                </div>
               </div>
             ))}
         </div>

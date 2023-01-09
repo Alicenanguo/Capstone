@@ -1,0 +1,9 @@
+.Product_delete_button {
+    padding:10px 15px;
+    border: none;
+    border-radius: 30px;
+    color:white;
+    background-color: black;
+    margin-right: 30px;
+    cursor: pointer;
+}

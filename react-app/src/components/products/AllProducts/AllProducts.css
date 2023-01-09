@@ -36,6 +36,7 @@
     width:100%;
     height:230px;
     object-fit: cover;
+    border-radius: 12px;
 }
 .all_product_price {
     position: absolute;
@@ -96,4 +97,8 @@
 
 
 
+}
+
+.fa-face-smile {
+    padding-right: 5px;
 }

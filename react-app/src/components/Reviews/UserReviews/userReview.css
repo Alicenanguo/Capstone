@@ -1,5 +1,6 @@
 .user_reviews_Info_conntainer {
-    padding:15px 35px;
+    padding:15px 65px;
+
     width: auto;
     margin:0 auto;
     max-width:90rem;
@@ -8,17 +9,73 @@
 }
 
 .user_review_name {
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 20px;
+    padding:0 40px;
 }
 
 .user_review_el {
     display: flex;
     flex-direction: row;
+    border-top: 1px solid rgb(239, 233, 233);
+    padding-top: 15px;
+    margin-bottom: 10px;
+    padding:15px 40px;
 }
 
 .user_review_Img_review {
     width:500px;
     height:300px;
     object-fit: cover;
+    border-radius: 15px;
+
+
+}
+
+.user_review_right {
+    padding-left: 25px;
+    padding-top: 0;
+
+}
+
+.user_list_review_name {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.user_review_content {
+    line-height: 25px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.userReview_delete_button button {
+    padding:10px 20px;
+    border:none;
+    border-radius: 30px;
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+
+.userReview_delete_button {
+    padding-top:30px;
+}
+
+.content {
+    margin-bottom: 3px;
+    padding-bottom: 0;
+}
+
+.no_reviews {
+    padding-left: 65px;
+    margin-left: 65px;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.fa-face-sad-tear {
+    padding-left: 10px;
+    padding-right: 5px;
 }

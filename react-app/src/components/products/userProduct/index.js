@@ -35,7 +35,10 @@ useEffect(() => {
   if (isLoaded) {
     currentProductArr = Object.values(currentProduct);
     if (currentProductArr.length === 0) {
-      return "Sorry, you do not have any product for selling.";
+      return <div className="no_reviews">
+        <i class="fa-solid fa-face-sad-tear"></i>
+        Sorry! you do not have any product for selling.
+      </div>
     }
   }
 
@@ -44,7 +47,7 @@ useEffect(() => {
       {isLoaded && (
         <>
           <div className="currentUser_product">
-            <div className="all_your_selling">
+            <div className="user_review_name">
               All your products for selling
             </div>
             {currentProductArr?.length > 0 &&

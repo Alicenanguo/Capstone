@@ -42,7 +42,15 @@ const UpdateProduct = ({ product, setShowModal }) => {
         if (isNaN(price)) errors.noNumber="Price must be a number";
       if (!preview_image) errors.noImage = "need a image for the product";
       if ((!preview_image.startsWith('http://')) && (!preview_image.startsWith('https://')))
-      errors.brokenImage = "Url must start with 'http://' or 'https://'";
+        errors.brokenImage_start = "Url must start with 'http://' or 'https://'";
+        const endArr = ['pdf', 'png', 'jpg', 'jpeg', 'gif']
+        let count = 0;
+        endArr.map(el => {
+          if (preview_image.includes(el)) count++
+        }
+        )
+        if (count === 0) errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
+
 
         setValidationErrors(errors);
     }, [name, description, price, preview_image]);
@@ -85,19 +93,20 @@ const UpdateProduct = ({ product, setShowModal }) => {
     return (
         <>
         <form
-          id="create_container"
+          id="create_container_edit"
           className="updateProduct_form"
           onSubmit={onSubmit}
         >
-          <div id="create_your_product" className="create_your_product">
-            <h2>Edit Your Product</h2>
+          <div id="create_your_product_edit" >
+            <div className="update_your_product">Edit Your Product</div>
           </div>
 
           <div className="update_selling_list_container">
             <div className="update_selling_list">
               <label>
                 <div className="update_selling_title">Name</div>
-                <input
+                <textarea
+                  rows={3}
                   id="name"
                   type="text"
                   name="name"
@@ -117,7 +126,7 @@ const UpdateProduct = ({ product, setShowModal }) => {
             <div className="update_selling_list">
               <label>
                 <div className="update_selling_title">Price</div>
-                <input
+                <textarea
                   id="price"
                   type="number"
                   name="price"
@@ -137,7 +146,7 @@ const UpdateProduct = ({ product, setShowModal }) => {
             <div className="update_selling_list">
               <label>
                 <div className="update_selling_title">Description</div>
-                <input
+                <textarea
                   id="description"
                   type="text"
                   name="description"
@@ -158,7 +167,7 @@ const UpdateProduct = ({ product, setShowModal }) => {
             <div className="update_selling_list">
               <label>
                 <div className="update_selling_title">Image Url</div>
-                <input
+                <textarea
                   id="previewImage"
                   type="text"
                   name="previewImage"
@@ -169,21 +178,24 @@ const UpdateProduct = ({ product, setShowModal }) => {
                 {hasSubmitted && validationErrors.noImage && (
                   <div className='errors_info'>*{validationErrors.noImage}</div>
                 )}
-                {hasSubmitted && validationErrors.brokenImage && (
-                  <div className='errors_info'>*{validationErrors.brokenImage}</div>
+                {hasSubmitted && validationErrors.brokenImage_start && (
+                  <div className='errors_info'>*{validationErrors.brokenImage_start}</div>
                 )}
+                {hasSubmitted && validationErrors.brokenImage_end && (
+                <div className='errors_info'>*{validationErrors.brokenImage_end}</div>
+              )}
               </label>
             </div>
 
             <div className="update_selling_list">
               <label className="update_selling_title">Category</label>
 
-              <select value={allCategory[category_id]?.name} onChange={handleChange} required>
+              <select className="cate_select_name" value={allCategory[category_id]?.name} onChange={handleChange} required>
                 <option value="" disabled>
                   Select a category
                 </option>
                 {allArr.map((el) => (
-                  <option key={el?.id} value={el?.name}>
+                  <option className="cate_select_name" key={el?.id} value={el?.name}>
                     {el?.name}
                   </option>
                 ))}

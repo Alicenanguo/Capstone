@@ -31,16 +31,17 @@ const GetCategories = () => {
     return (
         isLoaded && (
         <div className="category_contanier">
-            <div className="category_name">
-                {singleCategory?.name}
+                <div className="category_name">
+                <i class="fa-solid fa-champagne-glasses"></i>
+                Enjoy Your {singleCategory?.name}
                 {/* {console.log("singleCate_in_component",singleCategory)} */}
             </div>
 
             <div className="products_under_category">
                 {allProducts?.map(el => (
-                    <div className="cate_all_products_container" key={el.id}>
+                    <div  className="cate_all_products_container" key={el.id}>
                         <NavLink to={`/products/${el.id}`}>
-                            <img className="cate_product_image" src={el?.preview_image} alt={el?.name}>
+                            <img id='category_img' className="cate_product_image" src={el?.preview_image} alt={el?.name}>
                             </img>
                         </NavLink>
 
@@ -54,12 +55,12 @@ const GetCategories = () => {
                   starSpacing='2px'
 
                   />
+                  <span className="cate_review_num">
+                      ({el?.review_nums})
+                  </span>
                         </div>
 
 
-                        <div>
-                            ({el?.review_nums})
-                        </div>
 
                         <div className="cate_product_price">
                             ${el?.price}

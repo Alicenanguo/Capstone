@@ -1,0 +1,44 @@
+.add_review_button {
+   margin-top: 20px;
+   padding:15px;
+   font-size: 15px;
+   border:none;
+   border-radius: 30px;
+   cursor: pointer;
+   background-color: black;
+   color:white;
+
+
+}
+
+.add_review {
+    margin-right: 0;
+
+}
+
+
+.review_by_name{
+    font-size: 13px;
+    color:black;
+    padding-right: 10px;
+}
+
+.review_create_time{
+    font-size: 13px;
+    color:black;
+}
+
+.review_title {
+    margin-bottom: 30px;
+    padding-left: 13px;
+}
+
+.review_content {
+    margin: 10px;
+    margin-left: 0;
+    line-height: 25px;
+    font-size: 16px;
+    padding-left: 13px;
+    margin-bottom: 0;
+
+}
