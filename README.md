@@ -82,7 +82,32 @@ Nansty is an online marketplace that connects sellers with buyers. It is primari
 ![Screen Shot 2023-01-08 at 10 45 50 PM](https://user-images.githubusercontent.com/106508822/211253483-ec00afe6-816f-41af-af23-5732d552e8c3.png)
 
 ## Sign in
+![Screen Shot 2023-01-08 at 10 51 50 PM](https://user-images.githubusercontent.com/106508822/211254179-34b95aaf-92a3-4136-97a3-ddc5b95ef2bf.png)
 
+## Sign up
+![Screen Shot 2023-01-08 at 10 52 26 PM](https://user-images.githubusercontent.com/106508822/211254244-b495e8d6-1b14-42cd-9f05-d2b512657728.png)
 
+## Get all products by category
+![Screen Shot 2023-01-08 at 10 54 49 PM](https://user-images.githubusercontent.com/106508822/211254488-09748028-1ac5-4dbe-b270-0a3719a167aa.png)
 
+## Product page
+![Screen Shot 2023-01-08 at 10 57 04 PM](https://user-images.githubusercontent.com/106508822/211254788-5c0cd69c-227c-49f0-ae08-b71292d3f498.png)
+
+## Create a product
+![Screen Shot 2023-01-08 at 10 53 18 PM](https://user-images.githubusercontent.com/106508822/211254351-2a368350-a469-49eb-bf06-22325d45e2c6.png)
+
+## Product list of the logged in user
+![Screen Shot 2023-01-08 at 10 59 16 PM](https://user-images.githubusercontent.com/106508822/211255079-fe2b5328-cc60-48fc-b936-9e0f6d5adfbe.png)
+
+## Write a review 
+![Screen Shot 2023-01-08 at 11 00 10 PM](https://user-images.githubusercontent.com/106508822/211255204-7a5e27cf-9206-4095-823a-57a58986850f.png)
+
+## Review lise of the logged in user
+![Screen Shot 2023-01-08 at 11 01 06 PM](https://user-images.githubusercontent.com/106508822/211255329-c6f91d06-e7f5-4a5e-80b0-ffc31fb78b02.png)
+
+## Developer
+
+* Wanting Lu
+  * https://github.com/Alicenanguo
+  * https://www.linkedin.com/in/nan-guo-a7762325a/
 
