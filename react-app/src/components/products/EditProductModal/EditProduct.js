@@ -174,6 +174,7 @@ const UpdateProduct = ({ product, setShowModal }) => {
                   onChange={(e) => setPreviewImage(e.target.value)}
                   value={preview_image}
                   required
+                  onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                 />
                 {hasSubmitted && validationErrors.noImage && (
                   <div className='errors_info'>*{validationErrors.noImage}</div>
