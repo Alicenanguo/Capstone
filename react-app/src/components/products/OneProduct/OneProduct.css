@@ -4,6 +4,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 36px;
+    word-wrap: break-word;
 
 }
 
@@ -22,8 +23,8 @@
 
 .product_img {
     display: grid;
-  grid-template-columns: repeat(2, 330px);
-  grid-template-rows: repeat(2,300px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2,1fr);
     width:100%;
     padding:30px 0;
     padding-left: 30px;

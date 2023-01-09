@@ -32,6 +32,9 @@
     padding-left: 25px;
     padding-top: 0;
 }
+#listing_name {
+    color:black
+}
 
 .listing_product_name {
     font-size: 20px;
