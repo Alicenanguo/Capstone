@@ -79,4 +79,6 @@ Nansty is an online marketplace that connects sellers with buyers. It is primari
 # Features
 
 ## Homepage
+![Screen Shot 2023-01-08 at 10 45 50 PM](https://user-images.githubusercontent.com/106508822/211253483-ec00afe6-816f-41af-af23-5732d552e8c3.png)
+
 
