@@ -6,6 +6,7 @@
     max-width:90rem;
     display: grid;
     margin-top: 10px;
+    word-wrap: break-word;
 }
 
 .user_review_name {

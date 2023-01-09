@@ -65,7 +65,7 @@ useEffect(() => {
 
                     <div className="listing_right">
                       <div className="listing_product_address">
-                        <NavLink to={`/products/${el?.id}`}>
+                        <NavLink id='listing_name' to={`/products/${el?.id}`}>
                           <div className="listing_product_name">{el?.name}</div>
                         </NavLink>
                         <p className="listing_product_description">
