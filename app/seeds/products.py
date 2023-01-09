@@ -168,7 +168,111 @@ def seed_products():
         preview_image = 'https://i.etsystatic.com/21530912/r/il/2f15a8/3630514386/il_794xN.3630514386_9jh9.jpg'
     )
 
-    
+    #Kids Toy
+    p19 =Product(
+        seller_id =1,
+        category_id= 4,
+        name ="Smartwo Early Educational Montessori Sensory Activities Wooden Toy, Rocket Theme for Kid's Imaginative and Joyful Play & Spaceman Game",
+        price=33.99,
+        description ="🚀 Montessori Activities for Toddlers. This wooden activity cube is designed to build kid's sensory, promote fine motor skills, hand-eye coordination, shape / color recognition and number counting. An intergrated early education toy for 2-5 years old boy girl kids.",
+        preview_image = 'https://i.etsystatic.com/26006631/r/il/a14ddf/4454484896/il_794xN.4454484896_9nbi.jpg'
+    )
+
+    p20 =Product(
+        seller_id =2,
+        category_id= 4,
+        name ="Kids Thanksgiving Decor, Turkey Toy, Thanksgiving Gift, Turkey Puzzle, Thanksgiving Kids Gift, Thanksgiving Toy",
+        price=64.89,
+        description ="Just in time for the Thanksgiving holiday, this standing turkey puzzle toy will make the perfect toy. Whether you would like to give your favorite child a cute gift when they visit on Thanksgiving or you just want to inspire their imagination with a fun Thanksgiving themed toy, this guy is right for you.",
+        preview_image = 'https://i.etsystatic.com/6110380/r/il/6793cd/487176363/il_794xN.487176363_5f8t.jpg'
+    )
+
+    p21 =Product(
+        seller_id =3,
+        category_id= 4,
+        name ="Childrens Teepee, Beige Teepee tent, montessori tent, teepees with pompoms, Kids playhouse, Tipi, wigwam, cream-colored teepee",
+        price=94.29,
+        description ="Beige teepee tent is a perfect place to play, read or solve jigsaw puzzles. Teepee is a retreat where children are free to build their own little world, protected from sunlight and wind. The entrance of Kids Teepee is made from two layers of cotton and can be closed.",
+        preview_image = 'https://i.etsystatic.com/14596500/r/il/47e47b/3562546765/il_794xN.3562546765_3r5y.jpg'
+    )
+
+    p22 =Product(
+        seller_id =4,
+        category_id= 4,
+        name ="Perpetual Calendar, Preschool Calendar, Montessori calendar for kids learning Seasons, Monthly calendar, Homeschool calendar, Waldorf Toys",
+        price=69.99,
+        description ="This beautifully handcrafted Perpetual calendar could be a wonderful educational toy for your child. It will be a great addition to the nursery and will help your baby to learn dates and numbers, days, months, and seasons. Help your child keep track of time, show him how to use a Montessori calendar.",
+        preview_image = 'https://i.etsystatic.com/32753543/r/il/a03c0f/4053315436/il_794xN.4053315436_9g6n.jpg'
+    )
+
+    p23 =Product(
+        seller_id =5,
+        category_id= 4,
+        name ="Felt weather play set Fridge Magnets for kids Preschool Learning educational game Montessori developing toys 1st Birthday Gift for kids",
+        price=8.00,
+        description ="This cute felt weather toys are made from eco-friendly felt and is entirely hand cut and sewn. We can make them as simple toys, ornaments(with loop) or with magnets. Magnets are sewn inside and safe for baby. It fits beautifully in the hand and can be hand-washed gently with wool-friendly soap. Makes a great baby shower or christening gift.",
+        preview_image = 'https://i.etsystatic.com/13267136/r/il/c1da32/1969717905/il_794xN.1969717905_tomw.jpg'
+    )
+
+    p24 =Product(
+        seller_id =6,
+        category_id= 4,
+        name ="Wooden forest with colored trees | Peg dolls set of trees | Wooden toy set | Wooden kids toys | Waldorf toys | Wooden montessori toys set",
+        price=23.22,
+        description ="This wooden eco toy allows kids to enhance their motor skills, role-playing, logical thinking, and movement patterns.",
+        preview_image = 'https://i.etsystatic.com/35057718/r/il/9b2cdc/3814892432/il_794xN.3814892432_a8ar.jpg'
+    )
+
+    #Wedding Shop
+    p25 =Product(
+        seller_id =1,
+        category_id= 5,
+        name ="50 PCS Wedding Favors for Guests in bulk | Rustic Wedding Favors | Personalized Gifts | Bridal Shower Favors | Thank You Favors",
+        price=31.50,
+        description ="After received the order, please keep their boxes open. Because these candles have natural dried flowers.",
+        preview_image = 'https://i.etsystatic.com/23794722/r/il/6b1869/2491977546/il_794xN.2491977546_j8cg.jpg'
+    )
+
+    p26 =Product(
+        seller_id =2,
+        category_id= 5,
+        name ="Women's Ball-Gown 1/2 Sleeves V-Neck Floral Lace Wedding Gown, Court Train Bridal Wedding Dresses",
+        price=320.41,
+        description ="A definition of traditional and modern style of wedding dress. Made from tulle and lace, this stunning dress has a fit bodice with a delicate neckline and a skirt that billows from the natural waist down to the floor. Pair this lovely dress with stylish jewelries for an elegant look.",
+        preview_image = 'https://i.etsystatic.com/21088855/r/il/1fe7fd/3108792782/il_794xN.3108792782_qol2.jpg'
+    )
+
+    p27 =Product(
+        seller_id =3,
+        category_id= 5,
+        name ="Open-toe BridalShoes I PearlHeels I Bridesmaid Stiletto Sandals I BridalShoes I Brautschuhe I WeddingPearlShoes I Hochzeitschuhe I Handmade",
+        price=172.91,
+        description ="Beautiful classy high heels inlaid with rich pearls all around, refined with leather lining and insole, heels are about 10 cm high, quick release buckles, non-slip outer rubber sole provides stability and long-term comfortable walking.Dress up your feet with these completely feminine sandals, enjoy a timeless and legend look at your wedding.",
+        preview_image = 'https://i.etsystatic.com/24253130/r/il/a90f10/4525479741/il_794xN.4525479741_eksk.jpg'
+    )
+
+    #Craft supplies
+    p28 =Product(
+        seller_id =1,
+        category_id= 6,
+        name ="Transparent Embroidery Kits, embroidery starter kit, floral embroidery kits, transparent embroidery pattern, needlepoint kits, diy gift",
+        price=10.12,
+        description ="This hand embroidery kit will include everything you need to start the project and it is a great Kit for Beginners too! These embroidery kits are the best gifts for mom , sewing lovers and embroidery lovers, a great present for Christmas and the mothers day.",
+        preview_image = 'https://i.etsystatic.com/24169104/r/il/f6aef2/3969807618/il_794xN.3969807618_lw9q.jpg'
+    )
+    p29 =Product(
+        seller_id =2,
+        category_id= 6,
+        name ="Personalized Rainbow Craft Kit - Lasercut Wood - Yarn & Tools included!",
+        price=14.50,
+        description ="A plastic, kid-friendly yarn-weaving needle is included, making this craft a simple and easy introduction to hand-stitching and sewing.",
+        preview_image = 'https://i.etsystatic.com/5767277/r/il/cf7978/2621253599/il_794xN.2621253599_btcy.jpg'
+    )
+
+
+
+
+
 
 
 
@@ -184,7 +288,8 @@ def seed_products():
     db.session.add(p4)
     db.session.add(p5)
     db.session.add(p6)
-    db.session.add_all([p7, p8, p9, p10, p11, p12,p13,p14,p15,p16,p17,p18])
+    db.session.add_all([p7, p8, p9, p10, p11, p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,
+    p23,p24,p25,p26,p27,p28,p29])
 
 
     db.session.commit()
