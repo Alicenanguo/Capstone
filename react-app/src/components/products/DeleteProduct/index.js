@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { getCurrentProduct } from "../../../store/product";
 
 import {deleteProductTHUNK} from '../../../store/product'
+import './DeleteProduct.css'
 
 const DeleteProduct = ({ productId }) => {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const DeleteProduct = ({ productId }) => {
 
 
 
-  
+
 
     const onSubmit = async (e) => {
         e.preventDefault();

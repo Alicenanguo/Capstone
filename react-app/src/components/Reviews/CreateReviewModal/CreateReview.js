@@ -19,6 +19,14 @@ const CreateReviews = ({ productId, setShowModal }) => {
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
+  useEffect(() => {
+    const errors = [];
+    if (review.length > 2000)
+      errors.push( "Review could not greater than 2000 characters.");
+
+    setValidationErrors(errors);
+  }, [review]);
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -63,12 +71,12 @@ const CreateReviews = ({ productId, setShowModal }) => {
   console.log("errors_in_add_reviews", validationErrors);
 
   const cancelSubmit = (e) => {
-      e.preventDefault();
-      setShowModal(false);
-      history.push(`/products/${productId}`);
-    };
+    e.preventDefault();
+    setShowModal(false);
+    history.push(`/products/${productId}`);
+  };
 
-    const ratingStar = [1, 2, 3, 4, 5];
+  const ratingStar = [1, 2, 3, 4, 5];
 
   return (
     <>
@@ -77,7 +85,7 @@ const CreateReviews = ({ productId, setShowModal }) => {
 
         {hasSubmitted && validationErrors.length > 0 && (
           <div className="err-div">
-            <ul className="error_container">
+            <ul className='errors_info' id='errors_show_above'>
               {validationErrors?.map((error, idx) => (
                 <li className="error" key={idx}>
                   {error}
@@ -98,7 +106,7 @@ const CreateReviews = ({ productId, setShowModal }) => {
             required
           >
             {ratingStar.map((el) => (
-              <option key={el}>{el}</option>
+              <option  key={el}>{el}</option>
             ))}
           </select>
         </label>
@@ -116,18 +124,19 @@ const CreateReviews = ({ productId, setShowModal }) => {
                 value={review}
                 required
               ></textarea>
+
             </div>
           </label>
-              </div>
+        </div>
 
-              <div className="create_product_submit">
-        <button type="submit" id="submit_button">
-          Create Review
-              </button>
-              <button className="cancel_product_button" onClick={cancelSubmit}>
-              Cancel
-                  </button>
-                  </div>
+        <div className="create_product_submit">
+          <button type="submit" id="submit_button">
+            Create Review
+          </button>
+          <button className="cancel_product_button" onClick={cancelSubmit}>
+            Cancel
+          </button>
+        </div>
       </form>
     </>
   );

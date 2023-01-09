@@ -2,10 +2,12 @@
     border-radius: 12px;
     border:2px solid white;
     width:400px;
-    height:480px;
+    padding:10px 20px;
+
     display:flex;
     flex-direction:column;
     background-color: white;
+    height:fit-content;
 
 
 
@@ -15,8 +17,15 @@
 
 }
 
+#stars {
+    margin-left: 10px;
+    padding:0 10px;
+    border-radius: 12px;
+}
 
-
+#review {
+    margin-top: 3px;
+}
 
 
 .review_info {
@@ -99,5 +108,13 @@ textarea {
 .create_product_submit {
 display: flex;
 flex-direction: row;
+padding-bottom: 40px;
 
-  }
+}
+
+.create_review_content textarea {
+    width:380px;
+    height:100px;
+    line-height: 20px;
+    margin-top: 0;
+}

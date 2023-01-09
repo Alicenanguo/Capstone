@@ -38,7 +38,10 @@ const GetProducts = () => {
         alt='rabbit'
         />
       </div> */}
-        <div className="text">Recommand for You:</div>
+        <div className="text">
+        <i class="fa-regular fa-face-smile"></i>
+          Recommand for You:
+        </div>
         {/* </div> */}
         <div className="all_product_container">
           {product &&
@@ -50,6 +53,8 @@ const GetProducts = () => {
                       className="product_img_all"
                       src={product?.preview_image}
                       alt={product.name}
+                      onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+
                     />
                   </NavLink>
                   {/* <div>{product.name}</div> */}

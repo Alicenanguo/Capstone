@@ -41,8 +41,8 @@ span {
 .link_to_login {
     display: flex;
     flex-direction: row;
-    margin-left: 30px;
-    margin-top: 15px;
+    margin-left: 40px;
+    margin-top: 20px;
     color: rgb(62, 59, 59);
 
 }

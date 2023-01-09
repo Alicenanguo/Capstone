@@ -14,7 +14,9 @@ function CreateReviewsModal({productId}) {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Add Your Review</button>
+      <div className='add_review'>
+        <button className='add_review_button' onClick={() => setShowModal(true)}>Add Your Review</button>
+        </div>
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

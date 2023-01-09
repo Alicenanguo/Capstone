@@ -62,11 +62,11 @@ const LoginForm = () => {
           </div>
 
           <form onSubmit={onLogin}>
-            <div>
+            <ul className='errors_info' id='errors_show_above'>
               {errors.map((error, ind) => (
                 <div key={ind}>{error}</div>
               ))}
-              </div>
+              </ul>
 
               <div className="title_input_box">
                 <div className="title_box">

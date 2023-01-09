@@ -84,7 +84,7 @@ const SignUpForm = () => {
   }
 
   console.log("errores_in_signup", errors);
-  console.log('user_name__________',username)
+  console.log("user_name__________", username);
 
   return (
     <>
@@ -95,11 +95,11 @@ const SignUpForm = () => {
           <form onSubmit={onSignUp} className="signup_form_container">
             <div className="create_accout">Create your account</div>
             <div className="register_is_easy">Registration is easy.</div>
-            <div className="error_messasge">
+            <ul className='errors_info' id='errors_show_above'>
               {errors.map((error, ind) => (
                 <div key={ind}>{error}</div>
               ))}
-            </div>
+            </ul>
 
             <div className="title_input_box">
               <div className="title_box">
@@ -113,7 +113,8 @@ const SignUpForm = () => {
                   type="text"
                   name="username"
                   onChange={updateUsername}
-                  value={username}
+                    value={username}
+                    required
                 ></input>
               </div>
             </div>
@@ -129,7 +130,8 @@ const SignUpForm = () => {
                 type="text"
                 name="firstname"
                 onChange={updatefirstName}
-                value={first_name}
+                  value={first_name}
+                  required
               ></input>
             </div>
 
@@ -144,7 +146,8 @@ const SignUpForm = () => {
                 type="text"
                 name="lastname"
                 onChange={updatelastName}
-                value={last_name}
+                  value={last_name}
+                  required
               ></input>
             </div>
 
@@ -159,7 +162,8 @@ const SignUpForm = () => {
                 type="text"
                 name="email"
                 onChange={updateEmail}
-                value={email}
+                  value={email}
+                  required
               ></input>
             </div>
 
@@ -174,7 +178,8 @@ const SignUpForm = () => {
                 type="password"
                 name="password"
                 onChange={updatePassword}
-                value={password}
+                  value={password}
+                  required
               ></input>
             </div>
 
@@ -189,21 +194,28 @@ const SignUpForm = () => {
                 type="password"
                 name="repeat_password"
                 onChange={updateRepeatPassword}
-                value={repeatPassword}
+                  value={repeatPassword}
+                  required
                 // required={true}
+                //   onKeyPress={(e) => {
+                //   if (e.key === 'Enter')
+                //   console.log("press enter");
+                // }}
               ></input>
             </div>
 
-            <div className="link_to_login">
-              <div className="already">Already have an account?</div>
-              <div className="submit_to_login">
-                <button onClick={() => loginSubmit()}>Log In</button>
-              </div>
-            </div>
             <div>
               <button className="submit_signin" type="submit">
                 Sign Up
               </button>
+            </div>
+
+            <div className="link_to_login">
+              <div className="already">Already have an account?</div>
+
+              <div className="submit_to_login">
+                <button onClick={() => loginSubmit()}>Log In</button>
+              </div>
             </div>
           </form>
         )}

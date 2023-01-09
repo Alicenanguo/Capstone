@@ -103,3 +103,19 @@ html {
     margin-top: 15px;
 
 }
+
+.login_signup_button {
+    padding:10px 25px;
+    border-radius: 30px;
+    border:none;
+    font-size:18px;
+    cursor: pointer;
+
+}
+
+#errors_show_above {
+    padding-left:30px;
+    padding-top: 0;
+    padding-top: 0;
+    padding-bottom: 10px;
+}
