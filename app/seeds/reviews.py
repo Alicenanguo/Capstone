@@ -424,6 +424,179 @@ def seed_reviews():
         updateAt=datetime.now()
      )
 
+     #p19:
+     R48=Review(
+        product_id = 19,
+        buyer_id = 5,
+        review ="My one-year-old brother loves this board so much. It keeps him busy for at least half an hour. Best decision ever.",
+        stars=4,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+     R49=Review(
+        product_id = 19,
+        buyer_id = 4,
+        review ="Definitely not handmade or local and you can find this on Amazon. In fact my shipping notification from UPS said Amazon and threw me off since I had not ordered anything from there.",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+     #20
+     R50=Review(
+        product_id = 20,
+        buyer_id = 6,
+        review ="I love the idea of this puzzle - but I really wish it was bigger. It's only about 6 inches high and I wish it was closer to 10 inches. I like to have it out in November for the kids to play with and it'd look better on a coffee table if it was bigger.",
+        stars=3,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+     R51=Review(
+        product_id = 20,
+        buyer_id = 3,
+        review ="Challenging puzzle, but worth it. Very clever piecing. Great as a stand-up decoration as well.",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+     #21
+     R52=Review(
+        product_id = 21,
+        buyer_id = 4,
+        review ="Perfect control!!!! The tipi is sublime, refined and perfectly decorates my daughter's room. Small reading corner or cabin is really great!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+     R53=Review(
+        product_id = 21,
+        buyer_id = 3,
+        review ="I love this teepee! Beautiful and great quality. My daughter loves it too, so pleased I bought it. The floor cushion is lovely and comfortable.",
+        stars=4,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+     #p22
+     R54=Review(
+        product_id = 22,
+        buyer_id = 2,
+        review ="Beautiful!!! It arrive quickly and it is absolutely perfect for our LO to learn from!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+     R55=Review(
+        product_id = 22,
+        buyer_id = 3,
+        review ="I ordered this for my grandson’s 3rd birthday. For the price I paid, I thought the quality of the wood was going to be much sturdier. It’s very light weight wood, that had a very small split in the wooden case. I hope that’s not indicative of the rest of the wood splitting.",
+        stars=4,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+      #p23
+     R56=Review(
+        product_id = 23,
+        buyer_id = 1,
+        review ="Really cute toys/magnets! My little nephews were so excited. They are well made and arrived packed in cute wrapping paper too! Thank you so much!!!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+      #p24
+     R57=Review(
+        product_id = 24,
+        buyer_id = 5,
+        review ="Absolutely adorable little trees. I love all the details!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+     #p25
+     R58=Review(
+        product_id = 25,
+        buyer_id = 2,
+        review ="I'm planning my daughters wedding that's coming up. I'm always super nervous about making online purchases for something that is so special & important. I'm so so glad I did!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+     R59=Review(
+        product_id = 25,
+        buyer_id = 5,
+        review ="They are definitely smaller than expected, but very cute and beautiful. The only little thing was that many arrived with the personalized little heart detached, I'm going to need to use my glue gun to fix about 10 out of the 50 I ordered.",
+        stars=4,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+     #p26
+     R60=Review(
+        product_id = 26,
+        buyer_id = 3,
+        review ="This scarf is sooo awesome!! I had my doubts today before picking it up at the post office but when I opened it and put it on they all vanished! The color is perfect!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+     R61=Review(
+        product_id = 26,
+        buyer_id = 4,
+        review ="It's beautiful. I love it.",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+      #p27
+     R62=Review(
+        product_id = 27,
+        buyer_id = 6,
+        review ="These arrived sooner than I anticipated and were so beautiful. My friends, family and I were so impressed after worrying that they'd look cheap. Amazing craftsmanship! Perfect for my wedding.",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+     #p28
+     R63=Review(
+        product_id = 28,
+        buyer_id = 3,
+        review ="While I can't yet comment on the finished project, these were a gift for my daughter, they came quickly with all materials included. The quality of the materials was excellent, the yarn colors were vibrant and my daughter was super excited to give embroidery a try! Thank you!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+     R64=Review(
+        product_id = 28,
+        buyer_id = 3,
+        review ="This kit is really pretty and helpful for beginners, but the needles that come with it are way too small for the floss.",
+        stars=2,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+     #29
+     R65=Review(
+        product_id = 29,
+        buyer_id = 4,
+        review ="These are gorgeous and even better than I was expecting! The seller was extremely responsive and even made a very tight delivery window for me when I asked if this was possible. Wonderful experience!",
+        stars=5,
+        createAt=datetime.now(),
+        updateAt=datetime.now()
+     )
+
+
+
+
+
+
+
+
 
 
 
@@ -435,7 +608,8 @@ def seed_reviews():
 
 
      db.session.add_all([R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R17,R18,R19,R20,R21,R22,R23,R24,R25,
-     R26,R27,R28,R29,R30,R31,R32,R33,R34,R35,R36,R37,R38,R39,R40,R41,R42,R43,R44,R45,R46,R47])
+     R26,R27,R28,R29,R30,R31,R32,R33,R34,R35,R36,R37,R38,R39,R40,R41,R42,R43,R44,R45,R46,R47,R48,R49,R50,R51,R52,R53,
+     R54,R55,R56,R57,R58,R59,R60,R61,R62,R63,R64,R65])
 
      db.session.commit()
 

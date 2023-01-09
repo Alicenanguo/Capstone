@@ -76,111 +76,111 @@ function HomePage() {
             <div className="first_card">
               <div className="first_product">
 
-                <NavLink className='w-100' to={`/products/${productArr[0].id}`}>
+                <NavLink className='w-100' to={`/products/${productArr[19]?.id}`}>
                   <img className="first_img"
-                    src={productArr[0].preview_image}
-                    alt={productArr[0].name}
+                    src={productArr[19]?.preview_image}
+                    alt={productArr[19]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                     />
-                <div className="home_price">${ productArr[0].price}</div>
+                <div className="home_price">${ productArr[19]?.price}</div>
                 </NavLink>
 
 
               </div>
 
             <div className="second_product">
-              <NavLink to={`/products/${productArr[1].id}`}>
+              <NavLink to={`/products/${productArr[1]?.id}`}>
                   <img className="second_img"
-                    src={productArr[1].preview_image}
-                    alt={productArr[1].name}
+                    src={productArr[1]?.preview_image}
+                    alt={productArr[1]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
                 </NavLink>
-                <div className="home_price">${ productArr[1].price}</div>
+                <div className="home_price">${ productArr[1]?.price}</div>
                 </div>
             </div>
 
             {/* second card */}
             <div className="third_card">
               <div className="third_product">
-              <NavLink to={`/products/${productArr[2].id}`}>
+              <NavLink to={`/products/${productArr[2]?.id}`}>
                   <img className="third_img"
-                    src={productArr[2].preview_image}
-                    alt={productArr[2].name}
+                    src={productArr[2]?.preview_image}
+                    alt={productArr[2]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg";}}
 
                   />
                 </NavLink>
-                <div className="home_price">${ productArr[2].price}</div>
+                <div className="home_price">${ productArr[2]?.price}</div>
 
               </div>
 
             <div className="fourth_product">
-              <NavLink to={`/products/${productArr[3].id}`}>
+              <NavLink to={`/products/${productArr[28]?.id}`}>
                   <img className="fourth_img"
-                    src={productArr[3].preview_image}
-                    alt={productArr[3].name}
+                    src={productArr[28]?.preview_image}
+                    alt={productArr[28]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                     />
                 </NavLink>
-                <div className="home_price">${ productArr[3].price}</div>
+                <div className="home_price">${ productArr[28]?.price}</div>
                 </div>
             </div>
 
             {/* 3 card */}
             <div className="third_card">
               <div className="fifth_product">
-              <NavLink to={`/products/${productArr[4].id}`}>
+              <NavLink to={`/products/${productArr[4]?.id}`}>
                   <img className="fifth_img"
-                    src={productArr[4].preview_image}
-                    alt={productArr[4].name}
+                    src={productArr[4]?.preview_image}
+                    alt={productArr[4]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                   />
                 </NavLink>
-                <div className="home_price">${ productArr[4].price}</div>
+                <div className="home_price">${ productArr[4]?.price}</div>
 
               </div>
 
             <div className="six_product">
-              <NavLink to={`/products/${productArr[6].id}`}>
+              <NavLink to={`/products/${productArr[23]?.id}`}>
                   <img className="six_img"
-                    src={productArr[6].preview_image}
-                    alt={productArr[6].name}
+                    src={productArr[23]?.preview_image}
+                    alt={productArr[23]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
                 </NavLink>
-                <div className="home_price">${ productArr[6].price}</div>
+                <div className="home_price">${ productArr[23]?.price}</div>
                 </div>
             </div>
 
              {/* 4 card */}
              <div className="fourth_card">
               <div className="seven_product">
-              <NavLink to={`/products/${productArr[5].id}`}>
+              <NavLink to={`/products/${productArr[27]?.id}`}>
                   <img className="seven_img"
-                    src={productArr[5].preview_image}
-                    alt={productArr[5].name}
+                    src={productArr[27]?.preview_image}
+                    alt={productArr[27]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                   />
                 </NavLink>
-                <div className="home_price">${ productArr[5].price}</div>
+                <div className="home_price">${ productArr[27]?.price}</div>
 
               </div>
 
             <div className="eight_product">
-              <NavLink to={`/products/${productArr[7].id}`}>
+              <NavLink to={`/products/${productArr[25]?.id}`}>
                   <img className="eight_img"
-                    src={productArr[7].preview_image}
-                    alt={productArr[7].name}
+                    src={productArr[25]?.preview_image}
+                    alt={productArr[25]?.name}
                     onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
                 </NavLink>
-                <div className="home_price">${ productArr[7].price}</div>
+                <div className="home_price">${ productArr[25]?.price}</div>
                 </div>
             </div>
 

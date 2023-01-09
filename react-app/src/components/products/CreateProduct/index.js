@@ -116,7 +116,7 @@ const CreateProduct = () => {
           <div className="create_selling_list">
             <label>
               <div className="create_selling_title"> Product Name</div>
-              <input
+              <textarea
                 id="name"
                 type="text"
                 name="name"
@@ -156,7 +156,7 @@ const CreateProduct = () => {
           <div className="create_selling_list">
             <label>
               <div className="create_selling_title">Product Description</div>
-              <input
+              <textarea
                 id="description"
                 type="text"
                 name="description"
@@ -177,7 +177,7 @@ const CreateProduct = () => {
           <div className="create_selling_list">
             <label>
               <div className="create_selling_title">Image Url</div>
-              <input
+              <textarea
                 id="previewImage"
                 type="text"
                 name="previewImage"
