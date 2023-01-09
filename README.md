@@ -107,7 +107,7 @@ Nansty is an online marketplace that connects sellers with buyers. It is primari
 
 ## Developer
 
-* Wanting Lu
+* Nan Guo
   * https://github.com/Alicenanguo
   * https://www.linkedin.com/in/nan-guo-a7762325a/
 
