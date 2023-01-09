@@ -41,8 +41,13 @@ const GetCategories = () => {
                 {allProducts?.map(el => (
                     <div  className="cate_all_products_container" key={el.id}>
                         <NavLink to={`/products/${el.id}`}>
-                            <img id='category_img' className="cate_product_image" src={el?.preview_image} alt={el?.name}>
-                            </img>
+                            <img
+                                id='category_img'
+                                className="cate_product_image"
+                                src={el?.preview_image}
+                                alt={el?.name}
+                                onError={e => { e.currentTarget.src = "/default.jpeg"; }}
+                            />
                         </NavLink>
 
                         <div className="getall_review_stars">

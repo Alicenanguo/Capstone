@@ -53,7 +53,7 @@ const GetProducts = () => {
                       className="product_img_all"
                       src={product?.preview_image}
                       alt={product.name}
-                      onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                      onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
                   </NavLink>

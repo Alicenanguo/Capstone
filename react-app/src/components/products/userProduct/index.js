@@ -59,7 +59,7 @@ useEffect(() => {
                         className="listing_product_img"
                         src={el.preview_image}
                         alt={el.name}
-                        onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                        onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                       />
                     </div>
 

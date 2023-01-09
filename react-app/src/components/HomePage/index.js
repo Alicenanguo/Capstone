@@ -61,7 +61,7 @@ function HomePage() {
                     className="category_homepage_img"
                     src={el?.category_image}
                       alt={el?.name}
-                      onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                      onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                   ></img>
                 </NavLink>
                   </div>
@@ -80,7 +80,7 @@ function HomePage() {
                   <img className="first_img"
                     src={productArr[0].preview_image}
                     alt={productArr[0].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                     />
                 <div className="home_price">${ productArr[0].price}</div>
                 </NavLink>
@@ -93,7 +93,7 @@ function HomePage() {
                   <img className="second_img"
                     src={productArr[1].preview_image}
                     alt={productArr[1].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
                 </NavLink>
@@ -108,7 +108,7 @@ function HomePage() {
                   <img className="third_img"
                     src={productArr[2].preview_image}
                     alt={productArr[2].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg";}}
+                    onError={e => { e.currentTarget.src = "/default.jpeg";}}
 
                   />
                 </NavLink>
@@ -121,7 +121,7 @@ function HomePage() {
                   <img className="fourth_img"
                     src={productArr[3].preview_image}
                     alt={productArr[3].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                     />
                 </NavLink>
                 <div className="home_price">${ productArr[3].price}</div>
@@ -135,7 +135,7 @@ function HomePage() {
                   <img className="fifth_img"
                     src={productArr[4].preview_image}
                     alt={productArr[4].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                   />
                 </NavLink>
@@ -148,7 +148,7 @@ function HomePage() {
                   <img className="six_img"
                     src={productArr[6].preview_image}
                     alt={productArr[6].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
                 </NavLink>
@@ -163,7 +163,7 @@ function HomePage() {
                   <img className="seven_img"
                     src={productArr[5].preview_image}
                     alt={productArr[5].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                   />
                 </NavLink>
@@ -176,7 +176,7 @@ function HomePage() {
                   <img className="eight_img"
                     src={productArr[7].preview_image}
                     alt={productArr[7].name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
                 </NavLink>

@@ -55,7 +55,7 @@ const UserReviews = () => {
                   className="user_review_Img_review"
                   src={el?.product?.preview_image}
                   alt={el?.id}
-                  onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                  onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                 />
               </div>
 

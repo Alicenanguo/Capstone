@@ -41,7 +41,7 @@ const GetOneProduct = () => {
                   <img src={single?.preview_image}
                     className="single_img"
                     alt={single.name}
-                    onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                    onError={e => { e.currentTarget.src = "/default.jpeg"; }}
 
                     />
 
@@ -65,7 +65,7 @@ const GetOneProduct = () => {
                         className="single_img"
                         src={el.url}
                         alt={single.name}
-                        onError={e => { e.currentTarget.src = "https://as2.ftcdn.net/v2/jpg/01/37/87/23/1000_F_137872395_EqvoLs5itkB46bMoG2EYyvHtBQzvUcuZ.jpg"; }}
+                        onError={e => { e.currentTarget.src = "/default.jpeg"; }}
                       />
                     ))
                   )
