@@ -55,6 +55,11 @@ const CreateProduct = () => {
     if (count === 0) errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
 
     setValidationErrors(errors);
+
+    // if (Object.values(errors).length) {
+    //   return;
+    // }
+
   }, [name, description, price, preview_image]);
 
   const onSubmit = async (e) => {
@@ -70,13 +75,12 @@ const CreateProduct = () => {
       category_id,
     };
 
-    const result = await dispatch(createProductTHUNK(productInfo));
-    console.log("result", result);
+    const arr = Object.values(validationErrors)
 
-    const arr= Object.values(validationErrors)
+    if (arr.length === 0) {
+      await dispatch(createProductTHUNK(productInfo))
+      .then((result)=> history.push(`/products/${result.id}`))
 
-    if (result && arr.length === 0) {
-      history.push(`/products/${result.id}`);
     }
   };
   const cancelSubmit = (e) => {
