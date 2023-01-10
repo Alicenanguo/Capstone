@@ -68,13 +68,15 @@ const UpdateProduct = ({ product, setShowModal }) => {
           category_id,
         };
 
-        const result = await dispatch(updateProductTHUNK(productInfo,product.id));
-        console.log("result in update_product", result);
+
 
         const arr= Object.values(validationErrors)
 
-    if (result && arr.length === 0) {
-      history.push(`/products/${result.id}`);
+        if (arr.length === 0) {
+          await dispatch(updateProductTHUNK(productInfo, product.id))
+          .then((result)=>history.push(`/products/${result.id}`))
+
+
     }
     };
 
