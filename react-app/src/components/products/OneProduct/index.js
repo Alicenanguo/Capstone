@@ -143,7 +143,7 @@ const GetOneProduct = () => {
                     <StarRating
                   numberofStars={5}
                   rating={single?.average_rating}
-                  starRatingColor='rgb(57,57,57)'
+                  starRatingColor='rgb(2,2,21)'
                   starEmptyColor='rgb(227,227,227)'
                   starDimension='20px'
                   starSpacing='2px'
