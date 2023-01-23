@@ -15,6 +15,7 @@ import GetOneProduct from "./components/products/OneProduct";
 import CreateProduct from "./components/products/CreateProduct";
 import GetCurrentProduct from "./components/products/userProduct";
 import UserReviews from "./components/Reviews/UserReviews";
+import GetCart from "./components/Carts/GetCarts";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -73,6 +74,10 @@ function App() {
         <ProtectedRoute path="/shop-manager" exact={true}>
           <GetCurrentProduct />
         </ProtectedRoute>
+
+        <ProtectedRoute path='/carts' exact={true} >
+              <GetCart />
+            </ProtectedRoute>
 
         <Route path="/" exact={true}>
           <HomePage />

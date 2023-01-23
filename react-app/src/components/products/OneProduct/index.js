@@ -1,18 +1,24 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Route, useParams } from "react-router-dom";
+import { NavLink, Route, useParams,useHistory } from "react-router-dom";
 
 import { getOneProductThunk } from "../../../store/product";
 import GetProductReviews from "../../Reviews/ProductReviews";
 import CreateReviewsModal from "../../Reviews/CreateReviewModal";
+import { createCartThunk } from "../../../store/cart";
+import CreateCart from "../../Carts/createCart";
 
 
 import StarRating from "react-star-ratings";
 import "./OneProduct.css";
 
 const GetOneProduct = () => {
+  const history= useHistory()
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [errors, setErrors] = useState([]);
+
 
   const { productId } = useParams();
 
@@ -26,6 +32,27 @@ const GetOneProduct = () => {
   }, [dispatch, productId]);
 
   if (!single) return null;
+
+  const addCart = async (e) => {
+    e.preventDefault();
+    if (user) {
+      const addProduct = await dispatch(createCartThunk(single.id,{quantity}))
+        .catch(async (res) => {
+          const result = await res.json();
+          if (result && result.errors)
+            setErrors(result.errors)
+        })
+      if (addProduct) {
+        setErrors([])
+      }
+    } else {
+      await window.alert('Please sign in')
+      history.push('/login')
+    }
+    // const isExist = carts.find(cart => cart.itemId === +productId)
+
+
+  }
 
   return (
     <div className="getOneProduct_container">
@@ -103,6 +130,7 @@ const GetOneProduct = () => {
               <div className="single_name">{single?.name}</div>
 
                   <div className="single_price">${single?.price}</div>
+                 {/* <div> <CreateCart product={single} isExist={isExist}/></div> */}
 
 
                 </div>
@@ -115,13 +143,20 @@ const GetOneProduct = () => {
                     <StarRating
                   numberofStars={5}
                   rating={single?.average_rating}
-                  starRatingColor='rgb(57,57,57)'
+                  starRatingColor='rgb(2,2,21)'
                   starEmptyColor='rgb(227,227,227)'
                   starDimension='20px'
                   starSpacing='2px'
 
                 />
 
+                  </div>
+                  <div>
+                    <NavLink to='/carts'>
+                  <button onClick={addCart} className='one-prod-top-right-cartbutton'>
+                                    Add to Cart
+                      </button>
+                    </NavLink>
                   </div>
 
               <div className="create_review_spotList">
