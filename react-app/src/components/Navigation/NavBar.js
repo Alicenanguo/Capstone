@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import LoginFormModal from "../auth/LoginFormModal";
 import LogoutButton from "../auth/LogoutButton";
 import ProfileButton from "./ProfileButton";
+import CartNav from "./Cart";
 
 import "./NavBar.css";
 
@@ -30,7 +31,7 @@ const NavBar = () => {
                 <NavLink to="/shop-manager" exact >
                   <div>
                   <i className="fa-solid fa-shop" />
-           
+
 
                   </div>
                 </NavLink>
@@ -38,15 +39,25 @@ const NavBar = () => {
               <div>
                 <ProfileButton user={user} />
               </div>
+              <div className='navbar_shooping_cart'>
+                <CartNav />
+
+              </div>
             </>
           ) : (
             <>
               <div>
-                <LoginFormModal />
+                  <LoginFormModal />
+                  <div className='navbar_shooping_cart'>
+                  <i class="fa-solid fa-cart-shopping"></i>
+
+                    </div>
+
               </div>
             </>
           )}
         </div>
+
       </div>
     </nav>
   );

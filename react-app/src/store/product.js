@@ -45,6 +45,7 @@ const actionRemove = (productId) => ({
 //   type: LOAD_HOME,
 //   product,
 // });
+
 // todo:thunks section
 export const getAllProducts = () => async (dispatch) => {
   const res = await fetch("/api/products");
