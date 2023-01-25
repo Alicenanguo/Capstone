@@ -126,11 +126,20 @@ const GetOneProduct = () => {
 
                 />
 
-              </div>
+                  </div>
+
               <div className="single_name">{single?.name}</div>
 
                   <div className="single_price">${single?.price}</div>
-                 {/* <div> <CreateCart product={single} isExist={isExist}/></div> */}
+                  {/* <div> <CreateCart product={single} isExist={isExist}/></div> */}
+
+                  <div>
+                    <NavLink to='/carts'>
+                  <button onClick={addCart} className='one-prod-top-right-cartbutton'>
+                                    Add to Cart
+                      </button>
+                    </NavLink>
+                  </div>
 
 
                 </div>
@@ -151,13 +160,7 @@ const GetOneProduct = () => {
                 />
 
                   </div>
-                  <div>
-                    <NavLink to='/carts'>
-                  <button onClick={addCart} className='one-prod-top-right-cartbutton'>
-                                    Add to Cart
-                      </button>
-                    </NavLink>
-                  </div>
+
 
               <div className="create_review_spotList">
                 {user &&
