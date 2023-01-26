@@ -36,7 +36,7 @@ const GetOneProduct = () => {
   const addCart = async (e) => {
     e.preventDefault();
     if (user) {
-      const addProduct = await dispatch(createCartThunk(single.id,{quantity}))
+      const addProduct = await dispatch(createCartThunk(product))
         .catch(async (res) => {
           const result = await res.json();
           if (result && result.errors)
