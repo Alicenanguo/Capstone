@@ -47,9 +47,9 @@ export const createCartThunk = (product) => async (dispatch) => {
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify(product),
         })
-        console.log("response_in_cerate_cart_thunk",response)
         if (response.ok) {
             const cart = await response.json();
+            console.log("response_in_cerate_cart_thunk",cart)
             dispatch(actionCreate(cart));
             return cart;
         }

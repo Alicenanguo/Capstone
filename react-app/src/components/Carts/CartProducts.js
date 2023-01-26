@@ -8,7 +8,7 @@ const CartProducts = ({ product }) => {
     const history = useHistory()
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(product?.quantity)
-    const [productNum, setProductNum] = useState(product?.Product.quantity)
+    const [productNum, setProductNum] = useState(product?.Product?.quantity)
     const [errors, setErrors] = useState([]);
 
     let carts = useSelector(state => Object.values(state.carts.Cart))
