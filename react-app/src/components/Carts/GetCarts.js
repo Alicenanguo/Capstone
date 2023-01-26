@@ -38,7 +38,7 @@ const GetCart = () => {
     let price = 0;
       for (let i = 0; i < carts.length; i++) {
         let product=carts[i]
-          price += product.quantity * product.Product.price;
+          price += product.quantity * product?.Product?.price;
           console.log('quantitiy',product.quantity)
     }
     return price.toFixed(2);
