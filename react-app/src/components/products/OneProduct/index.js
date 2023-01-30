@@ -6,7 +6,7 @@ import { getOneProductThunk } from "../../../store/product";
 import GetProductReviews from "../../Reviews/ProductReviews";
 import CreateReviewsModal from "../../Reviews/CreateReviewModal";
 import { createCartThunk } from "../../../store/cart";
-import CreateCart from "../../Carts/createCart";
+import CreateCart from "../../Carts/CreateCart";
 
 
 import StarRating from "react-star-ratings";
@@ -15,6 +15,7 @@ import "./OneProduct.css";
 const GetOneProduct = () => {
   const history= useHistory()
   const dispatch = useDispatch();
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [errors, setErrors] = useState([]);
@@ -25,34 +26,25 @@ const GetOneProduct = () => {
   const single = useSelector((state) => state.products.singleProduct);
   console.log("single#########", single);
 
+  const All = useSelector(state => Object.values(state.products.allProducts));
+  const product = All.find(el => el.id === +productId)
+
   const user = useSelector((state) => state.session.user);
+
+  const carts = useSelector(state => Object.values(state.carts.Cart))
+
+
+  const check = carts.find(el => el.product_id === +productId)
 
   useEffect(() => {
     dispatch(getOneProductThunk(productId)).then(() => setIsLoaded(true));
   }, [dispatch, productId]);
 
   if (!single) return null;
-
-  const addCart = async (e) => {
-    e.preventDefault();
-
-       const addProduct = await dispatch(createCartThunk(single.id,{quantity}))
-        .catch(async (res) => {
-          const result = await res.json();
-          console.log('result',result)
-          if (result && result.errors)
-            setErrors(result.errors)
-        })
-      if (addProduct) {
-        setErrors([])
-      }else {
-      await window.alert('Please sign in')
-      history.push('/login')
-    }
-    // const isExist = carts.find(cart => cart.itemId === +productId)
+  if (!product) return null
+  if (!carts) return null
 
 
-  }
 
   return (
     <div className="getOneProduct_container">
@@ -134,11 +126,7 @@ const GetOneProduct = () => {
                   {/* <div> <CreateCart product={single} isExist={isExist}/></div> */}
 
                   <div>
-                    <NavLink to='/carts'>
-                  <button onClick={addCart} className='one-prod-top-right-cartbutton'>
-                                    Add to Cart
-                      </button>
-                    </NavLink>
+                  <CreateCart product={product} check = {check} />
                   </div>
 
 
