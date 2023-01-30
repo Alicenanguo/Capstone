@@ -14,24 +14,24 @@ def current_user_cart():
     return {'Carts':[cart.to_dict() for cart in carts]}
 
 #add items to cart
-# @cart_routes.route('', methods=['POST'])
-# @login_required
-# def add_cart():
-#     form = CartForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
+@cart_routes.route('', methods=['POST'])
+@login_required
+def add_cart():
+    form = CartForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
 
-#     if form.validate_on_submit():
-#         new_cart = Cart(
-#             user_id = current_user.id,
-#             product_id = form.data['product_id'],
-#             quantity = form.data['quantity'],
-#         )
-#         db.session.add(new_cart)
-#         db.session.commit()
+    if form.validate_on_submit():
+        new_cart = Cart(
+            user_id = current_user.id,
+            product_id = form.data['product_id'],
+            quantity = form.data['quantity'],
+        )
+        db.session.add(new_cart)
+        db.session.commit()
 
-#         return new_cart.to_dict()
-#     if form.errors:
-#             return form.errors
+        return new_cart.to_dict()
+    if form.errors:
+            return form.errors
 
 #edit product in cart
 @cart_routes.route('/<int:id>', methods=['PUT'])

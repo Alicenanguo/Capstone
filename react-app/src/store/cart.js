@@ -11,14 +11,14 @@ const actionLoad = (cart) => ({
     cart,
   });
 
-const actionCreate = (product) => ({
+const actionCreate = (cart) => ({
     type: CREATE,
-    product,
+    cart,
   });
 
-const actionUpdate = (product) => ({
+const actionUpdate = (cart) => ({
     type: UPDATE,
-    product,
+    cart,
   });
 
 const actionRemove = (id) => ({
@@ -39,24 +39,27 @@ export const getCartProductsThunk = () => async (dispatch) => {
     }
 };
 
-export const createCartThunk = (id, quantity) => async (dispatch) => {
-    try {
+export const createCartThunk = (cart) => async (dispatch) => {
+
         // console.log('id_in_cart_create_thunk',productId)
-        const response = await fetch(`/api/products/${id}/cart`, {
+        const res = await fetch(`/api/carts`, {
             method: 'POST',
             headers: { 'Content-Type': "application/json" },
-            body: JSON.stringify({ "quantity": quantity }),
+            body: JSON.stringify(cart),
         })
-        if (response.ok) {
-            const cart = await response.json();
-            console.log("response_in_cerate_cart_thunk",cart)
+        if (res.ok) {
+            const data = await res.json();
+            console.log("response_in_cerate_cart_thunk",data)
             dispatch(actionCreate(cart));
-            return cart;
+            return data;
         }
-    } catch (err) {
-        console.log(err);
-        throw err;
+        else {
+
+            const else_data = await res.json()
+            throw else_data
     }
+
+
 }
 
 export const updateCartThunk = (id, product) => async (dispatch) => {
@@ -131,7 +134,7 @@ const cartReducer = (state = initialState, action) => {
                 Cart: { ...state.Cart }
             };
             const newCreate = { ...action.product };
-            newState.Cart[action.product.id] = newCreate;
+            newState.Cart[action.product?.id] = newCreate;
             // console.log("add_product_to_cart ", newState)
             return newState;
 
@@ -141,7 +144,7 @@ const cartReducer = (state = initialState, action) => {
                 Cart: { ...state.Cart }
             };
             const updateCart = { ...action.product };
-            newState.Cart[action.product.id] = updateCart;
+            newState.Cart[action.product?.id] = updateCart;
             // console.log("add_product_in_cart ", newState)
             return newState;
 
