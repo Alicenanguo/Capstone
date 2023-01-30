@@ -35,17 +35,17 @@ const GetOneProduct = () => {
 
   const addCart = async (e) => {
     e.preventDefault();
-    if (user) {
-      const addProduct = await dispatch(createCartThunk(single))
+
+       const addProduct = await dispatch(createCartThunk(single.id,{quantity}))
         .catch(async (res) => {
           const result = await res.json();
+          console.log('result',result)
           if (result && result.errors)
             setErrors(result.errors)
         })
       if (addProduct) {
         setErrors([])
-      }
-    } else {
+      }else {
       await window.alert('Please sign in')
       history.push('/login')
     }
