@@ -4,26 +4,45 @@ import { updateCartThunk } from '../../store/cart';
 
 import './cart.css'
 
-function UpdateCart({ cart }) {
+function UpdateCart({ cart, total, setTotal, priceList,sum}) {
     const dispatch = useDispatch()
 
     const [quantity, setQuantity] = useState(cart.quantity)
+
     let price = quantity * cart?.Product?.price
+    priceList[cart.id] = price
+
+    let newSum = 0;
+    Object.values(priceList).forEach(el =>
+        newSum += el
+
+    )
+    console.log("newSum",newSum)
+
+    sum = newSum
+
+    console.log("priceList+++++++",priceList)
 
     const update = {
         quantity
     }
 
-    useEffect((quantity) => {
+    useEffect(() => {
         updateCartThunk(cart.id,update)
     }, [quantity])
-
+console.log('total-in-update',total)
     return (
         <div>
          <select
                 id="number"
                 type="number"
-                onChange={(e) => setQuantity(e.target.value)}
+                onChange={(e) => {
+                    setQuantity(e.target.value)
+                    // console.log("setQuantity______",e.target.value * cart?.Product?.price,Number(e.target.value * cart?.Product?.price),typeof Number(total))
+                    // setTotal(Number(total) + Number(e.target.value * cart?.Product?.price))
+                }
+                }
+
                 value={quantity}
                 min="1"
 
@@ -35,8 +54,10 @@ function UpdateCart({ cart }) {
                 ))}
               </select>
         <div>
-            ${price.toFixed(2)}
-        </div>
+                ${price.toFixed(2)}
+
+            </div>
+            <div><span>{newSum}</span></div>
     </div>
 
     )
