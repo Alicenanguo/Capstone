@@ -4,6 +4,8 @@ import { createCartThunk,updateCartThunk } from '../../store/cart';
 
 import { useHistory } from 'react-router-dom';
 
+import './cart.css';
+
 function CreateCart({product, check}) {
     const history = useHistory()
     const dispatch = useDispatch()
@@ -49,7 +51,7 @@ function CreateCart({product, check}) {
                 value={quantity}
                 >
 
-                {[...Array(16).keys()].slice(1).map((num) => (
+                {[...Array(11).keys()].slice(1).map((num) => (
                     <option
                         key={num}
                         value={num}
