@@ -18,6 +18,7 @@ const GetCart = () => {
   const [errors, setErrors] = useState([]);
   const [total, setTotal] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+
   // const [priceList, setPriceList] = useState({})
 
   // const [quantity, setQuantity] = useState(cart.quantity)
@@ -28,6 +29,7 @@ const GetCart = () => {
     priceList[el["id"]] = el?.Product?.price * el?.quantity;
   });
   console.log("cart_in_getCart", carts);
+  console.log("priceList-in-getcart",priceList)
   // let finalPrice = carts.reduce((final, cart) => final + cart?.Product?.price * cart?.quantity, 0)
   const finalPrice = (carts) => {
     let price = 0;
@@ -50,6 +52,8 @@ const GetCart = () => {
       .then(() => setIsLoaded(true));
   }, [dispatch, sum]);
   console.log("total-in-cart-check", typeof total);
+
+
 
   if (!carts || !isLoaded) {
     return null;
