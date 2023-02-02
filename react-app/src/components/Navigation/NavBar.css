@@ -14,6 +14,8 @@
     padding:15px 36px;
     max-width: 1400px;
     margin:0 auto;
+    border-bottom: 2px solid rgb(242, 237, 237);
+    margin-bottom: 30px;
 
 
 }
@@ -25,7 +27,7 @@
 }
 
 .home_button {
-    font-size:30px;
+    font-size:40px;
     text-decoration: none;
     color:#f76e29;
 
@@ -205,3 +207,5 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+

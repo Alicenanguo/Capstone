@@ -63,6 +63,8 @@ export const createCartThunk = (cart) => async (dispatch) => {
 }
 
 export const updateCartThunk = (id, product) => async (dispatch) => {
+    console.log('id-in-thunk', product, id)
+    
     try {
         const response = await fetch(`/api/carts/${id}`, {
             method: 'PUT',

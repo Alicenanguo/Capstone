@@ -9,6 +9,7 @@ class Cart(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+
     product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('products.id')), nullable=False)
     # order_id = db.Column(db.Integer, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
@@ -36,6 +37,7 @@ class Cart(db.Model):
         }
 
     def to_dict_detail(self):
+        # const product = Product.query
         return {
             'id': self.id,
             'user_id': self.user_id,
@@ -43,13 +45,19 @@ class Cart(db.Model):
             # 'order_id': self.order_id,
             'quantity': self.quantity,
             "User": self.user.to_dict(),
-            'Product': {
-                "id": self.product.id,
-                'seller_id': self.product.seller_id,
-                'category_id': self.product.category_id,
-                'name': self.product.name,
-                'description': self.product.description,
-                'price': self.product.price,
-                'preview_image': self.product.preview_image
-            }
+            'Product':self.product.to_dict_detail()
+            # {
+            #     "id": self.product.id,
+            #     'seller_id': self.product.seller_id,
+            #     'category_id': self.product.category_id,
+            #     'name': self.product.name,
+            #     'description': self.product.description,
+            #     'price': self.product.price,
+            #     'preview_image': self.product.preview_image,
+            #     'user':{
+            #     "first_name": self.user.first_name,
+            #     "last_name": self.user.last_name
+            # },
+            # },
+
         }

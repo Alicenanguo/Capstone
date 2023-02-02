@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { updateCartThunk } from '../../store/cart';
-import Total from './Total';
+
 
 import './cart.css'
 
@@ -29,11 +29,13 @@ function UpdateCart({ cart, total, setTotal, priceList,sum}) {
     }
 
     useEffect(() => {
-        updateCartThunk(cart.id,update)
-    }, [quantity,priceList])
+        console.log("$$$$$$$$$$$$$$$$$")
+
+       dispatch(updateCartThunk(cart.id, update))
+    }, [quantity])
 console.log('total-in-update',total)
     return (
-        <div>
+        <div className='update-container'>
          <select
                 id="number"
                 type="number"
@@ -59,9 +61,7 @@ console.log('total-in-update',total)
 
             </div>
             {/* <div><span>{newSum}</span></div> */}
-            <div>
-                <Total priceList={priceList} />
-            </div>
+
     </div>
 
     )
