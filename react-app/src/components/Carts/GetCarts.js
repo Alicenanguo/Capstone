@@ -89,7 +89,7 @@ const GetCart = () => {
                 <div className="text-keep-shopping">
                   <NavLink
                     to={""}
-                    activeStyle={{
+                    style={{
                       textDecoration: "none",
                       color: "black",
                     }}
@@ -121,6 +121,7 @@ const GetCart = () => {
               {carts.map((el) => (
                 <>
                   <div className="third-part">
+                   
                     <div className="store-info">
                       <img
                         className="icon-store"
@@ -139,7 +140,7 @@ const GetCart = () => {
                       <div>
                         <NavLink
                           to={`/products/${el?.product_id}`}
-                          activeStyle={{
+                          style={{
                             textDecoration: "none",
                             color: "black",
                           }}
@@ -160,13 +161,19 @@ const GetCart = () => {
                       <div className="cart-name">
                         <NavLink
                           to={`/products/${el?.product_id}`}
-                          activeStyle={{
+                          style={{
                             textDecoration: "none",
                             color: "black",
                           }}
                         >
                           {el?.Product?.name}
                         </NavLink>
+                        <div className="delete-cart">
+                      <button onClick={() => dispatch(deleteCartThunk(el?.id))}>
+                        Remove
+                      </button>
+                    </div>
+
                       </div>
                       {/* <ul className="error-container">
                         {errors.map((error, idx) => (
@@ -184,13 +191,8 @@ const GetCart = () => {
                         />
                       </div>
                     </div>
-
-                    <div className="delete-cart">
-                      <button onClick={() => dispatch(deleteCartThunk(el?.id))}>
-                        Remove
-                      </button>
                     </div>
-                  </div>
+
                 </>
               ))}
 

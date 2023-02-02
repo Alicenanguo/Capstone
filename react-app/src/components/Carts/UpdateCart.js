@@ -36,6 +36,7 @@ function UpdateCart({ cart, total, setTotal, priceList,sum}) {
 console.log('total-in-update',total)
     return (
         <div className='update-container'>
+            <div className='update-cart-quantity'>
          <select
                 id="number"
                 type="number"
@@ -55,8 +56,9 @@ console.log('total-in-update',total)
                     {num}
                   </option>
                 ))}
-              </select>
-        <div>
+                </select>
+                </div>
+        <div className='update-cart-price'>
                 ${price.toFixed(2)}
 
             </div>
