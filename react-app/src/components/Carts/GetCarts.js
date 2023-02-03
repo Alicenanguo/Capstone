@@ -199,8 +199,8 @@ const GetCart = () => {
                   <div className="checkout-box">
                     <div className="credit-card">How you'll pay</div>
                      <ul className='paymentMethod'>
-                            <li className='options'>
-                                <div className='pay-part'>
+                            <div className='options'>
+                                <div className='circle'>
                                     <input
                                         id='cc'
                                         name='payment'
@@ -210,16 +210,18 @@ const GetCart = () => {
                                         onChange={e => setPaymentMethod(e.target.value)}
                                         checked={paymentMethod === 'cc'}
                                     />
-                                </div>
+                        </div>
+                        <div className="4-card">
                                 <label htmlFor='cc'>
                                     <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-visa"></i></span>
                                     <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-mastercard"></i></span>
                                     <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-discover"></i></span>
                                     <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-amex"></i></span>
-                                </label>
-                      </li>
+                          </label>
+                          </div>
+                      </div>
                     </ul>
-                    
+
                     <div className="text-pay">You will pay:</div>
 
                   <span className="text-final-price">Item(s) total:</span>

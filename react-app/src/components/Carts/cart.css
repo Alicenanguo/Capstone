@@ -200,3 +200,18 @@ span {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.options {
+    display: flex;
+    margin-left: 0;
+    padding-left: 0;
+
+}
+.paymentMethod {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.credit-card {
+    font-weight: bold;
+}
