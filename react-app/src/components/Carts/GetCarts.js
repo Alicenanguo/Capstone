@@ -118,10 +118,12 @@ const GetCart = () => {
                 </div>
               </div>
 
+              <div className="third-part">
+                <div className="cart-left">
               {carts.map((el) => (
                 <>
-                  <div className="third-part">
-                   
+                  <div className="single-cart">
+
                     <div className="store-info">
                       <img
                         className="icon-store"
@@ -175,11 +177,7 @@ const GetCart = () => {
                     </div>
 
                       </div>
-                      {/* <ul className="error-container">
-                        {errors.map((error, idx) => (
-                          <li key={idx}>{error}</li>
-                        ))}
-                      </ul> */}
+
 
                       <div className="quantity-price">
                         <UpdateCart
@@ -195,14 +193,41 @@ const GetCart = () => {
 
                 </>
               ))}
+                  </div>
+                 <div className="cart-right">
+                  <div className="checkout-box">
+                    <div className="credit-card">How you'll pay</div>
+                    <div>  <ul className='paymentMethod'>
+                            <li className='options'>
+                                <div className='pay-part'>
+                                    <input
+                                        id='cc'
+                                        name='payment'
+                                        type='radio'
+                                        value='cc'
+                                        style={{ width: '32px', height: '32px' }}
+                                        // onChange={e => setPaymentMethod(e.target.value)}
+                                        // checked={paymentMethod === 'cc'}
+                                    />
+                                </div>
+                                <label htmlFor='cc'>
+                                    <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-visa"></i></span>
+                                    <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-mastercard"></i></span>
+                                    <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-discover"></i></span>
+                                    <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-amex"></i></span>
+                                </label>
+                      </li>
+                    </ul>
+                    </div>
+                    <div className="text-pay">You will pay:</div>
 
-              <div className="cart-right">
-                <div className="checkout-box">
-                  <div className="text-pay">You will pay:</div>
                   <span className="text-final-price">Item(s) total:</span>
                   <span>${sum.toFixed(2)}</span>
                 </div>
               </div>
+              </div>
+
+
             </>
           )}
           {!carts.length && (
