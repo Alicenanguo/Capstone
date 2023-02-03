@@ -118,10 +118,11 @@ const GetCart = () => {
                 </div>
               </div>
 
+              <div className="third-part">
+                <div className="cart-left">
               {carts.map((el) => (
                 <>
-                  <div className="third-part">
-                   
+
                     <div className="store-info">
                       <img
                         className="icon-store"
@@ -175,11 +176,7 @@ const GetCart = () => {
                     </div>
 
                       </div>
-                      {/* <ul className="error-container">
-                        {errors.map((error, idx) => (
-                          <li key={idx}>{error}</li>
-                        ))}
-                      </ul> */}
+
 
                       <div className="quantity-price">
                         <UpdateCart
@@ -191,18 +188,22 @@ const GetCart = () => {
                         />
                       </div>
                     </div>
-                    </div>
 
                 </>
               ))}
-
-              <div className="cart-right">
-                <div className="checkout-box">
-                  <div className="text-pay">You will pay:</div>
+                  </div>
+                 <div className="cart-right">
+                  <div className="checkout-box">
+                    <div className="credit-card">How you</div>
+                    <div className="text-pay">You will pay:</div>
+                    
                   <span className="text-final-price">Item(s) total:</span>
                   <span>${sum.toFixed(2)}</span>
                 </div>
               </div>
+              </div>
+
+
             </>
           )}
           {!carts.length && (

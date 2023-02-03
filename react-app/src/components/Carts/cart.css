@@ -169,3 +169,26 @@ span {
     padding:10px;
     font-weight: bold;
 }
+
+.third-part {
+    display:flex;
+    flex-direction: row;
+}
+
+.cart-left {
+    width:100%;
+
+}
+
+.cart-right {
+    width:40%;
+    height: 280px;
+    padding: 2%;
+    margin: 50px 0 50px 50px;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    box-shadow: 0 5px 5px #eeeeee;
+
+
+
+}
