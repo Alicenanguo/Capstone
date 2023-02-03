@@ -118,12 +118,14 @@ span {
     justify-content: space-around;
     margin-top: 8px;
 
+
 }
 
 .cart-img{
-    height:180px;
+    height:200px;
     width:200px;
     border-radius: 12px;
+    object-fit: cover;
 
 }
 
