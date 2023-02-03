@@ -18,6 +18,7 @@ const GetCart = () => {
   const [errors, setErrors] = useState([]);
   const [total, setTotal] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('cc')
 
   // const [priceList, setPriceList] = useState({})
 
@@ -197,7 +198,7 @@ const GetCart = () => {
                  <div className="cart-right">
                   <div className="checkout-box">
                     <div className="credit-card">How you'll pay</div>
-                    <div>  <ul className='paymentMethod'>
+                     <ul className='paymentMethod'>
                             <li className='options'>
                                 <div className='pay-part'>
                                     <input
@@ -206,8 +207,8 @@ const GetCart = () => {
                                         type='radio'
                                         value='cc'
                                         style={{ width: '32px', height: '32px' }}
-                                        // onChange={e => setPaymentMethod(e.target.value)}
-                                        // checked={paymentMethod === 'cc'}
+                                        onChange={e => setPaymentMethod(e.target.value)}
+                                        checked={paymentMethod === 'cc'}
                                     />
                                 </div>
                                 <label htmlFor='cc'>
@@ -218,7 +219,7 @@ const GetCart = () => {
                                 </label>
                       </li>
                     </ul>
-                    </div>
+                    
                     <div className="text-pay">You will pay:</div>
 
                   <span className="text-final-price">Item(s) total:</span>
