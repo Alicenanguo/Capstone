@@ -194,8 +194,9 @@ const GetCart = () => {
 
                 </>
               ))}
-                  </div>
-                 <div className="cart-right">
+                </div>
+          
+                 <div className="cart-right-box">
                   <div className="checkout-box">
                     <div className="credit-card">How you'll pay</div>
                      <ul className='paymentMethod'>
@@ -213,21 +214,30 @@ const GetCart = () => {
                         </div>
                         <div className="4-card">
                                 <label htmlFor='cc'>
-                                    <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-visa"></i></span>
+                            <span className='cards'>
+                              <i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-visa"></i>
+                              {/* <img style={{ fontSize: '2rem' }} src='https://stanfordproofreading.com/wp-content/uploads/2021/02/atm-card-credit-card-debit-card-discover-icon-discover-card-png-512_512.png' /> */}
+                            </span>
                                     <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-mastercard"></i></span>
-                                    <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-discover"></i></span>
                                     <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-amex"></i></span>
+                                    <span className='cards'><i style={{ fontSize: '2rem' }} className="fa-brands fa-cc-discover"></i></span>
                           </label>
                           </div>
                       </div>
                     </ul>
 
-                    <div className="text-pay">You will pay:</div>
+                    {/* <div className="text-pay">You will pay:</div> */}
 
-                  <span className="text-final-price">Item(s) total:</span>
-                  <span>${sum.toFixed(2)}</span>
+                    <div className="text-total"><span className="text-final-price">Item(s) total:</span>
+                      <span>${sum.toFixed(2)}</span>
+                    </div>
+                    <div className="text-discount">Shop discount<span>$0</span></div>
+                    <div className="text-subtotal">Subtotal <span>${sum.toFixed(2)}</span></div>
+                    <div className="text-free-shipping">Just for you: FREE Shipping on your order!</div>
+                    <div><button id='checkout-button' onClick={checkout}>Proceed to checkout</button></div>
                 </div>
-              </div>
+                  </div>
+
               </div>
 
 

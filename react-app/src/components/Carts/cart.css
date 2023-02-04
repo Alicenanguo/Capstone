@@ -185,7 +185,7 @@ span {
 
 }
 
-.cart-right {
+.cart-right-box {
     width:40%;
     height: 280px;
     padding: 2%;
@@ -215,3 +215,4 @@ span {
 .credit-card {
     font-weight: bold;
 }
+
