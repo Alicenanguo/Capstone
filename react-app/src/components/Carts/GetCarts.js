@@ -247,7 +247,7 @@ const GetCart = () => {
 
               </div>
 
-              <div className="fifth-part"></div>
+             
 
 
             </>
