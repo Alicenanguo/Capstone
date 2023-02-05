@@ -40,9 +40,9 @@ const GetOneProduct = () => {
     dispatch(getOneProductThunk(productId)).then(() => setIsLoaded(true));
   }, [dispatch, productId]);
 
-  if (!single) return null;
-  if (!product) return null
-  if (!carts) return null
+  // if (!single) return null;
+  // if (!product) return null
+  // if (!carts) return null
 
 
 
