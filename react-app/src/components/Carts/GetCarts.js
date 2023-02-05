@@ -195,7 +195,8 @@ const GetCart = () => {
                 </>
               ))}
                 </div>
-          
+
+
                  <div className="cart-right-box">
                   <div className="checkout-box">
                     <div className="credit-card">How you'll pay</div>
@@ -227,18 +228,26 @@ const GetCart = () => {
                     </ul>
 
                     {/* <div className="text-pay">You will pay:</div> */}
-
-                    <div className="text-total"><span className="text-final-price">Item(s) total:</span>
+                    <div className="text-under-card">
+                    <div className="text-total"><span className="text-items">Item(s) total:</span>
                       <span>${sum.toFixed(2)}</span>
                     </div>
-                    <div className="text-discount">Shop discount<span>$0</span></div>
-                    <div className="text-subtotal">Subtotal <span>${sum.toFixed(2)}</span></div>
-                    <div className="text-free-shipping">Just for you: FREE Shipping on your order!</div>
-                    <div><button id='checkout-button' onClick={checkout}>Proceed to checkout</button></div>
+                    <div className="text-discount"><span className="text-shop-discount">Shop discount</span><span className="text-0">-$0.00</span></div>
+                    <div className="text-subtotal"><span className="text-subtotal-only">Subtotal</span><span className="subtotal-number">${sum.toFixed(2)}</span></div>
+                    <div className="text-free-shipping"><span className="text-shipping">Shipping</span><span className="text-0">FREE</span></div>
+                      <div><button className='checkout-button' onClick={checkout}>Proceed to checkout</button></div>
+                      </div>
                 </div>
                   </div>
+                  </div>
+
+              <div className="fourth-part">
+              <i class="fa-solid fa-leaf"></i>
+             <span>Etsy offsets carbon emissions from every delivery</span>
 
               </div>
+
+              <div className="fifth-part"></div>
 
 
             </>

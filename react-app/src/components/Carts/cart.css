@@ -122,8 +122,8 @@ span {
 }
 
 .cart-img{
-    height:200px;
-    width:200px;
+    height:169px;
+    width:212px;
     border-radius: 12px;
     object-fit: cover;
 
@@ -187,7 +187,7 @@ span {
 
 .cart-right-box {
     width:40%;
-    height: 280px;
+    height: 320px;
     padding: 2%;
     margin: 50px 0 50px 50px;
     border: 1px solid #eeeeee;
@@ -216,3 +216,59 @@ span {
     font-weight: bold;
 }
 
+.text-under-card {
+    margin-top: 30px;
+}
+
+.text-items,.text-shop-discount,.text-shipping,.text-subtotal {
+    padding-left: 0;
+    font-weight: bold;
+}
+
+.text-total,.text-discount,.text-subtotal,.text-free-shipping{
+    display:flex;
+    justify-content: space-between;
+    padding-top:15px
+}
+
+.text-discount {
+    border-bottom: 1px solid rgb(197, 192, 192);
+    padding-bottom: 10px;
+}
+
+.text-free-shipping {
+    padding-top: 5px;
+}
+
+.text-subtotal{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding-left: 0;
+
+}
+.text-subtotal-only {
+    padding-left: 0;
+}
+.checkout-button {
+    color: white;
+    font-size: 16px;
+    background-color: #222222;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    margin-top: 30px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+}
+.checkout-button:hover {
+    font-size: 16px;
+    scale: 1.02;
+    background-color: #222222dc;
+}
+.fourth-part {
+    display: flex;
+    justify-content: center;
+    padding:20px 0;
+}
