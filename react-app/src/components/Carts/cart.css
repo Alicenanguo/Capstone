@@ -272,3 +272,25 @@ span {
     justify-content: center;
     padding:20px 0;
 }
+.text-empty-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+
+}
+.text-empty-cart {
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+.text-discover-empty{
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.text-discover{
+    text-decoration: underline;
+    color:black
+}

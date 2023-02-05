@@ -243,25 +243,53 @@ const GetCart = () => {
 
               <div className="fourth-part">
               <i class="fa-solid fa-leaf"></i>
-             <span>Etsy offsets carbon emissions from every delivery</span>
+             <span>Nansty offsets carbon emissions from every delivery</span>
 
               </div>
 
-             
+
 
 
             </>
           )}
+              <div className="cart-container">
           {!carts.length && (
-            <div className="cart-one-middle-title">
-              Shopping cart is empty.
-              <div>
-                <NavLink to={`/`}>
+            <>
+            <div className="text-second">
+            <div>
+              <img
+                className="handshake"
+                src="https://static.vecteezy.com/system/resources/previews/003/808/376/original/handshake-heart-symbol-icon-for-web-presentation-logo-infographic-business-idea-inspiration-feed-story-partnership-client-free-vector.jpg"
+                alt={"handshake"}
+                onError={(e) => {
+                  e.currentTarget.src = "/default.jpeg";
+                }}
+              />
+            </div>
+            <div className="text-after-handshake">
+              <span className="text-protect">
+                Nansty Purchase Protection:
+              </span>{" "}
+              Shop confidently on Nansty knowing if something goes wrong
+              with an order, we've got your back.
+            </div>
+          </div>
+            <div className="text-empty-cart">
+              Your cart is empty.
+              <div className="text-discover-empty">
+                <NavLink className="text-discover" to={`/`}>
                   Discover something unique to fill it up!
                 </NavLink>
               </div>
-            </div>
+                </div>
+                <div className="fourth-part">
+              <i class="fa-solid fa-leaf"></i>
+             <span>Nansty offsets carbon emissions from every delivery</span>
+
+              </div>
+              </>
           )}
+          </div>
         </div>
       </>
     )
