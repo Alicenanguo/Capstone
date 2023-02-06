@@ -126,7 +126,11 @@ const GetOneProduct = () => {
                   {/* <div> <CreateCart product={single} isExist={isExist}/></div> */}
 
                   <div>
-                  <CreateCart product={product} check = {check} />
+                  {user &&
+                  user.id &&
+                  single.seller_id !== user.id && (
+                      <CreateCart product={product} check={check} />
+                      )}
                   </div>
 
 
