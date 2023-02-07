@@ -43,7 +43,7 @@ function CreateCart({product, check}) {
     }
     return (
         <form className='create-cart-container' onSubmit={onSubmit}>
-            <div id='cart-select-quantity'>Select the quantity<span className='asterisk'>*</span></div>
+            <div className='cart-select-quantity'>Select the quantity<span className='asterisk'>*</span></div>
             <select
                 id='quantity'
                 name='quantity'
