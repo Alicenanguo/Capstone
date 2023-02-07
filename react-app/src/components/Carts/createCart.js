@@ -24,7 +24,7 @@ function CreateCart({product, check}) {
         }
 
         const cart = {
-            product_id: product.id,
+            product_id: product?.id,
             quantity
         }
 
@@ -42,10 +42,10 @@ function CreateCart({product, check}) {
         history.push('/carts')
     }
     return (
-        <form id='detail-form' onSubmit={onSubmit}>
-            <div id='select-quantity-txt'>Select the quantity{' '}<span className='asterisk'>*</span></div>
+        <form className='create-cart-container' onSubmit={onSubmit}>
+            <div id='cart-select-quantity'>Select the quantity<span className='asterisk'>*</span></div>
             <select
-                id='select-quantity'
+                id='quantity'
                 name='quantity'
                 onChange={(e) => setQuantity(e.target.value)}
                 value={quantity}
@@ -59,7 +59,7 @@ function CreateCart({product, check}) {
                         {num}</option>
                 ))}
             </select>
-            <button id='add-cart-button' type='submit'>Add to cart</button>
+            <button className='add-cart-button' type='submit'>Add to cart</button>
         </form>
     )
     }
