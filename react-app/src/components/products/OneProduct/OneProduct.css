@@ -5,7 +5,7 @@
     margin: 0 auto;
     padding: 0 36px;
     word-wrap: break-word;
-    
+
 
 }
 
@@ -133,4 +133,8 @@
 .all_reviews_one_page {
     border-bottom: 1px solid grey;
     padding:10px
+}
+
+.shipping_text {
+    padding-top: 15px;
 }
