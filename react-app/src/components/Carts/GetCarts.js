@@ -127,7 +127,7 @@ const GetCart = () => {
                         <div className="store-info">
                           <img
                             className="icon-store"
-                            src="https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png"
+                            src="https://png.pngtree.com/png-vector/20190121/ourlarge/pngtree-vector-shop-icon-png-image_334537.jpg"
                             alt={"store"}
                             onError={(e) => {
                               e.currentTarget.src = "/default.jpeg";
