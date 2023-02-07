@@ -125,12 +125,16 @@ const GetOneProduct = () => {
                   <div className="single_price">${single?.price}</div>
                   {/* <div> <CreateCart product={single} isExist={isExist}/></div> */}
 
-                  <div>
+                  <div className="add-to-cart">
                   {user &&
                   user.id &&
                   single.seller_id !== user.id && (
                       <CreateCart product={product} check={check} />
                       )}
+                     <div className="free_shipping">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span className="shipping_text">Hooray! This item ships free to the US.</span>
+                  </div>
                   </div>
 
 
@@ -167,12 +171,12 @@ const GetOneProduct = () => {
                 </div>
 
                 <div className="down_right">
-                <div className="free_shipping">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <span className="shipping_text">Hooray! This item ships free to the US.</span>
-                  </div>
 
-                  <div className='des_text'>{single?.description}</div>
+
+                  <div className='des_text'>
+                    <div>Description</div>
+                    <div>{single?.description}</div>
+                  </div>
 
                   </div>
                 </div>
