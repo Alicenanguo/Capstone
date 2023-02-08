@@ -7,8 +7,10 @@ import './cart.css'
 
 function UpdateCart({ cart, total, setTotal, priceList,sum}) {
     const dispatch = useDispatch()
+    console.log("cart-in-updateCart",cart)
 
     const [quantity, setQuantity] = useState(cart.quantity)
+    console.log("quantity-in-updateCart",quantity)
 
     let price = quantity * cart?.Product?.price
     priceList[cart.id] = price
@@ -52,10 +54,14 @@ console.log('total-in-update',total)
 
               >
                 {[...Array(11).keys()].slice(1).map((num) => (
-                  <option key={num} value={num}>
+                    <option key={num} value={num}>
                     {num}
-                  </option>
+                    </option>
+
                 ))}
+                    <option selected value={quantity}>
+                        {quantity}
+                    </option>
                 </select>
                 </div>
         <div className='update-cart-price'>
