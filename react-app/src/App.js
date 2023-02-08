@@ -85,6 +85,9 @@ function App() {
         {/* <Route exact path="/">
             <GetProducts />
         </Route> */}
+         <Route>
+          <PageNotFound />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
