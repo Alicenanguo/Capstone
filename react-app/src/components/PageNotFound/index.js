@@ -1,23 +1,21 @@
-import React from "react"
-import { useHistory } from "react-router-dom"
-import "./PageNotFound.css"
+import React from "react";
+import { useHistory, NavLink } from "react-router-dom";
+import "./PageNotFound.css";
 
 const PageNotFound = () => {
-  const history = useHistory()
+
 
   return (
     <div className="404-container">
-      <div className="text-404">
-        <h1>Page Not Found</h1>
+          <div className="text-404">
+          <i class="fa-solid fa-face-sad-cry"></i>
+        <span>Sorry! Page Not Found</span>
       </div>
-      <h2 className="notfound-header cursor-pointer" onClick={() => history.push("/")}>Go back to the home page</h2>
-
-      {/* <div
-        className="logo-back"
-        onClick={() => history.push("/")}
-      ></div> */}
+      <div>
+        <NavLink className="text-go-back" to={"/"}>Go back</NavLink>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default PageNotFound
+export default PageNotFound;
