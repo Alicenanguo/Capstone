@@ -199,3 +199,13 @@ def delete_product(id):
         return {"message":"Product successfully deleted"}
     else:
         return {'error': 'You are not the seller of the product.'}
+
+#search
+@product_routes.route("/search/<keyword>")
+def search_product(keyword):
+  products = Product.query.filter(Product.name.like(f"%{keyword}%")).all()
+  return {
+    "Products": [
+      product.to_dict_detail() for product in products
+    ]
+  }

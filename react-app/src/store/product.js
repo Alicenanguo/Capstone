@@ -6,6 +6,7 @@ const CREATE = "products/CREATE";
 //const ADDIMG ='products/ADD_IMG'
 const UPDATE = "products/UPDATE";
 const DELETE = "products/DELETE";
+const SEARCH = 'Products/search'
 
 const LOAD_HOME ="product/LOAD_HOME"
 
@@ -40,6 +41,12 @@ const actionRemove = (productId) => ({
   type: DELETE,
   productId,
 });
+
+const actionSearch = (products) => ({
+  type: SEARCH,
+  products
+
+})
 
 // const actionLoadHome = (product) => ({
 //   type: LOAD_HOME,
@@ -124,12 +131,20 @@ export const deleteProductTHUNK = (productId) => async dispatch => {
     dispatch(actionRemove(productId))
     return res
   }
+}
 
+export const searchThunk = (keyword) = async dipatch => {
+  const res = await fetch(`/api/products/search/${keyword}`)
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(actionSearch(data))
+    return data
+  }
 }
 
 
 // todo: reduce stuff
-const initialState = { allProducts: {}, singleProduct: {} };
+const initialState = { allProducts: {}, singleProduct: {}, searchProduct:{} };
 
 const productReducer = (state = initialState, action) => {
   let newState = {};
@@ -185,9 +200,14 @@ const productReducer = (state = initialState, action) => {
           singleProduct:{}
         }
         delete deleted.allProducts[action.ProductId]
-        return deleted;
+      return deleted;
 
-
+    case SEARCH:
+      newState = { ...state, searchedProducts: {} };
+      action.all.Products.forEach(product => {
+        newState.searchProducts[product.id] = product
+      })
+      return newState;
 
 
     default:
