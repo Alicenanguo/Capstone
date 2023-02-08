@@ -16,6 +16,8 @@ import CreateProduct from "./components/products/CreateProduct";
 import GetCurrentProduct from "./components/products/userProduct";
 import UserReviews from "./components/Reviews/UserReviews";
 import GetCart from "./components/Carts/GetCarts";
+import PageNotFound from "./components/PageNotFound";
+import Checkout from "./components/Carts/Checkout";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -75,9 +77,14 @@ function App() {
           <GetCurrentProduct />
         </ProtectedRoute>
 
+        <ProtectedRoute path='/carts/checkout' exact={true} >
+              <Checkout />
+        </ProtectedRoute>
+
         <ProtectedRoute path='/carts' exact={true} >
               <GetCart />
-            </ProtectedRoute>
+        </ProtectedRoute>
+
 
         <Route path="/" exact={true}>
           <HomePage />
