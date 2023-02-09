@@ -77,7 +77,7 @@ function App() {
           <GetCurrentProduct />
         </ProtectedRoute>
 
-        <Route path='/search/:keyword' exact={true}>
+        <Route path='/search/:keyword'>
             <Search />
         </Route>
 

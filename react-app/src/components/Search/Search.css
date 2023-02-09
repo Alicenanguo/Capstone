@@ -1,1 +1,83 @@
+.search-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 36px;
+ }
+.search-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+.search-main {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0 auto 1.5rem;
+    width: 1220px;
+    min-height: 850px;
+}
 
+.search-result-info {
+    display: grid;
+    grid-template-columns: repeat(4, 308px);
+    grid-template-rows: repeat(10,350px);
+    justify-content: center;
+    column-gap: 12px;
+    row-gap: 12px;
+}
+
+.search-info-list {
+  margin: 0 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.search-product-img-container {
+    width: 100%;
+    height: 250px;
+  }
+.search-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .search-product-name {
+    font-size: 0.9rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    margin: 0.3rem 0 0.2rem;
+    color:black;
+  }
+  .search-product-stars {
+    display: flex;
+    margin-bottom: 6px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .search-product-num-reviews {
+    font-size: 14px;
+    color: #616161;
+    padding-left: 0;
+  }
+  .search-product-price {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: black;
+    padding-left: 7px;
+
+  }
+  .search-link {
+    text-decoration: none;
+  }
+
+.no-search-result {
+    padding-top: 30px;
+    font-weight:lighter;
+  }
+.text-find-else {
+    
+}
