@@ -18,6 +18,7 @@ import UserReviews from "./components/Reviews/UserReviews";
 import GetCart from "./components/Carts/GetCarts";
 import PageNotFound from "./components/PageNotFound";
 import Checkout from "./components/Carts/Checkout";
+import Search from './components/Search/Search'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -72,10 +73,13 @@ function App() {
             <UserReviews />
           </ProtectedRoute >
 
-
         <ProtectedRoute path="/shop-manager" exact={true}>
           <GetCurrentProduct />
         </ProtectedRoute>
+
+        <Route path='/search/:keyword' exact={true}>
+            <Search />
+        </Route>
 
         <ProtectedRoute path='/carts/checkout' exact={true} >
               <Checkout />

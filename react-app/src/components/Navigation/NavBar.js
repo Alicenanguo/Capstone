@@ -5,6 +5,7 @@ import LoginFormModal from "../auth/LoginFormModal";
 import LogoutButton from "../auth/LogoutButton";
 import ProfileButton from "./ProfileButton";
 import CartNav from "./Cart";
+import SearchBar from './SearchBar'
 
 import "./NavBar.css";
 
@@ -24,6 +25,11 @@ const NavBar = () => {
             <div className="home_button">Nansty</div>
           </NavLink>
         </div>
+
+        <div className='header_middle'>
+          <SearchBar />
+        </div>
+
         <div className="header_right">
           {user ? (
             <>
