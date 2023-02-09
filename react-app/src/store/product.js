@@ -133,10 +133,10 @@ export const deleteProductTHUNK = (productId) => async dispatch => {
   }
 }
 
-export const searchThunk = (keyword) = async dipatch => {
+export const searchThunk = (keyword) => async dispatch => {
   const res = await fetch(`/api/products/search/${keyword}`)
   if (res.ok) {
-    const data = await res.json();
+    const data = await res.json()
     dispatch(actionSearch(data))
     return data
   }
@@ -144,7 +144,7 @@ export const searchThunk = (keyword) = async dipatch => {
 
 
 // todo: reduce stuff
-const initialState = { allProducts: {}, singleProduct: {}, searchProduct:{} };
+const initialState = { allProducts: {}, singleProduct: {}, searchProducts:{} };
 
 const productReducer = (state = initialState, action) => {
   let newState = {};
@@ -203,10 +203,12 @@ const productReducer = (state = initialState, action) => {
       return deleted;
 
     case SEARCH:
-      newState = { ...state, searchedProducts: {} };
-      action.all.Products.forEach(product => {
+      newState = { ...state, searchProducts: {} };
+      console.log("action-in-search-reduce",action)
+      action.products?.Products?.forEach(product => {
         newState.searchProducts[product.id] = product
       })
+      console.log("newState_search_reducer:", newState);
       return newState;
 
 
