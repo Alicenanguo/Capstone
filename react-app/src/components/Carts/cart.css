@@ -108,6 +108,7 @@ span {
     width:100%;
     border-radius: 15px;
     margin-top: 10px;
+    object-fit: cover;
 
 
 }
@@ -122,10 +123,12 @@ span {
 }
 
 .cart-img{
-    height:169px;
-    width:212px;
+    /* height:169px;
+    width:212px; */
+    width: 200px;
+    height: 200px;
     border-radius: 12px;
-    object-fit: cover;
+    /* object-fit: cover; */
 
 }
 
