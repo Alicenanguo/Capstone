@@ -36,7 +36,7 @@ const SearchBar = () => {
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <button className="searchBar-button" type="submit">
+        <button className="searchBar-button" type="submit" onClick={onSubmit}>
           <NavLink to={`/search/${keyword}`}>
             <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
             </NavLink>

@@ -36,10 +36,10 @@ const Search = () => {
             ) : (
               <>
                 <div className="no-search-result">
-                  Sorry, we could not find any item for "{keyword}"
+                  Sorry, we could not find any item for "{keyword}"!
                 </div>
                 <div className="text-find-else">
-                  <NavLink to={"/"}>Find somthing you love</NavLink>
+                  <NavLink className="text-find-else"to={"/"}>Find somthing you love</NavLink>
                 </div>
               </>
             )}

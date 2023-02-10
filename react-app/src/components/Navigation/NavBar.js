@@ -52,11 +52,10 @@ const NavBar = () => {
             </>
           ) : (
             <>
-              <div>
+              <div className="not-login-right">
                   <LoginFormModal />
                   <div className='navbar_shooping_cart'>
                   <i class="fa-solid fa-cart-shopping"></i>
-
                     </div>
 
               </div>
