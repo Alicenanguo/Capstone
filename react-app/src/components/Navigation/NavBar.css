@@ -155,12 +155,16 @@
 .shop_manager {
     width:20px;
     margin-right:20px;
+    background-color: white;
+    padding: 15px 20px 15px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
 
 }
 
 .shop_manager:hover {
-    background-color: rgb(226, 223, 223);
-    border-radius: 50%;
+    background-color: #e8e5e5;
     /* padding:10px 10px; */
 }
 
