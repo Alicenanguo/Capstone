@@ -35,7 +35,16 @@ const SearchBar = () => {
           placeholder="Search for anything"
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
-        />
+          // required={true}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              // console.log("press enter")
+              const result = e.target.value
+              history.push(`/search/${keyword}`);
+
+            }
+          }}
+         ></input>
         <button className="searchBar-button" type="submit" onClick={onSubmit}>
           <NavLink to={`/search/${keyword}`}>
             <i className="fa-sharp fa-solid fa-magnifying-glass"></i>

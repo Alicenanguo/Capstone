@@ -38,9 +38,13 @@ const Search = () => {
                 <div className="no-search-result">
                   Sorry, we could not find any item for "{keyword}"!
                 </div>
-                <div className="text-find-else">
-                  <NavLink className="text-find-else"to={"/"}>Find somthing you love</NavLink>
-                </div>
+                  <div className="text-find-else">
+
+                    <NavLink className="text-find-else" to={"/"}>
+                      <i class="fa-solid fa-face-smile"></i>
+                      Find somthing you love here
+                    </NavLink>
+                  </div>
               </>
             )}
           </div>
