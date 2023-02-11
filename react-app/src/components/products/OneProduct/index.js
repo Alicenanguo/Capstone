@@ -174,7 +174,7 @@ const GetOneProduct = () => {
 
 
                   <div className='des_text'>
-                    <div>Description</div>
+                    <div className="text-description">Description</div>
                     <div>{single?.description}</div>
                   </div>
 

@@ -5,11 +5,13 @@ import StarRating from "react-star-ratings";
 
 import { getUserReview } from "../../../store/review";
 import { deleteReview } from "../../../store/review";
+import EditReviewModal from "../EditReviewModal";
 import "./userReview.css";
 
 const UserReviews = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const { reviewId } = useParams()
 
   const sessionUser = useSelector((state) => state.session.user);
   console.log("user_userReviews", sessionUser);
@@ -86,7 +88,12 @@ const UserReviews = () => {
                 </div>
 
                 <div className="userReview_delete_button">
-                  <button onClick={() => handleDeleted(el.id)}>
+                  <div  id="review_edit_button"
+                    to={`/reviews/${reviewId}/edit`}>
+                    <EditReviewModal  />
+
+                  </div>
+                    <button onClick={() => handleDeleted(el.id)}>
                     Delete Review
                   </button>
                   {/* {console.log("el_______", el)} */}

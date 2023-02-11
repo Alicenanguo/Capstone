@@ -41,7 +41,7 @@
 .all_product_price {
     position: absolute;
     z-index: 2;
-    bottom: 45px;
+    bottom: 75px;
     left:10px;
     border:1px solid white;
     border-radius: 15px;
@@ -101,4 +101,12 @@
 
 .fa-face-smile {
     padding-right: 5px;
+}
+
+.all-product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 6px;
+
 }

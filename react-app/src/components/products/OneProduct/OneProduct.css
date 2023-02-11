@@ -101,11 +101,11 @@
 }
 
 .down_left {
-    width: 60%;
+    width: 50%;
     padding:30px 0;
     padding-left: 30px;
-   margin-right: 30px;
-   width: 60%;
+   margin-right:0;
+
    height: 100%;
 
 }
@@ -137,4 +137,13 @@
 
 .shipping_text {
     padding-top: 15px;
+}
+
+.text-description {
+    font-weight: bold;
+}
+
+.down_right{
+    margin-left: 30px;
+    padding-left: 30px;
 }

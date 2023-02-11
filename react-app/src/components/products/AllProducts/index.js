@@ -57,7 +57,9 @@ const GetProducts = () => {
 
                     />
                   </NavLink>
-                  {/* <div>{product.name}</div> */}
+                  <div className="all-product-name">
+                    {product.name}
+                  </div>
                 <div className="all_product_price">${product?.price}</div>
 
                 <div className="all_product_review">
