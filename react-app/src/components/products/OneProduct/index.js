@@ -50,7 +50,7 @@ const GetOneProduct = () => {
     <div className="getOneProduct_container">
       {isLoaded && (
         <div className="single_product">
-          {single.id && (
+          {single?.id && (
             <>
               <div className='upper'>
 

@@ -5,7 +5,7 @@ import EditReview from './EditReview';
 import './EditReview.css'
 
 
-function EditReviewModal({productId}) {
+function EditReviewModal({reviewId}) {
     const [showModal, setShowModal] = useState(false);
 
 
@@ -21,7 +21,7 @@ function EditReviewModal({productId}) {
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-                  {sessionUser && <EditReview productId={productId} setShowModal={setShowModal} />}
+                  {sessionUser && <EditReview reviewId={reviewId} setShowModal={setShowModal} />}
         </Modal>
       )}
     </>
