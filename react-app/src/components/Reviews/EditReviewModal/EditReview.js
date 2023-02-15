@@ -4,6 +4,7 @@ import { NavLink, Route, useParams, useHistory } from "react-router-dom";
 import { editReviewTHUNK, getAllProductReviews } from "../../../store/review";
 import { getOneProductThunk } from "../../../store/product";
 import "./EditReview.css";
+import UserReviews from "../UserReviews";
 
 
 const EditReview = ({ reviewId, setShowModal }) => {
@@ -12,6 +13,8 @@ const EditReview = ({ reviewId, setShowModal }) => {
 
   const user = useSelector((state) => state.session.user);
   const product = useSelector((state) => state.products.singleProduct);
+  const userReview = useSelector(state => state.reviews?.userReviews)
+  console.log("userReview-in-edit0review",userReview)
 
   console.log("-----------------------review");
   const [review, setReview] = useState("");
