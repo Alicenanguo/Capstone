@@ -6,7 +6,7 @@ import { getOneProductThunk } from "../../../store/product";
 import GetProductReviews from "../../Reviews/ProductReviews";
 import CreateReviewsModal from "../../Reviews/CreateReviewModal";
 import { createCartThunk } from "../../../store/cart";
-import CreateCart from "../../Carts/CreateCart";
+import CreateCart from "../../Carts/createCart";
 
 
 import StarRating from "react-star-ratings";

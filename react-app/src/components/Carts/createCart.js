@@ -11,7 +11,7 @@ function CreateCart({product, check}) {
     const dispatch = useDispatch()
 
     const user = useSelector(state => Object.values(state.session)[0])
-    console.log("user_in_createCart",user)
+    // console.log("user_in_createCart",user)
 
     const [quantity, setQuantity] = useState(1)
 
