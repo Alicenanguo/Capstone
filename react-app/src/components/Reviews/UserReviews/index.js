@@ -11,7 +11,7 @@ import "./userReview.css";
 const UserReviews = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { reviewId } = useParams()
+  // const { reviewId } = useParams()
 
   const sessionUser = useSelector((state) => state.session.user);
   console.log("user_userReviews", sessionUser);
@@ -62,7 +62,9 @@ const UserReviews = () => {
               </div>
 
               <div className="user_review_right">
-                <p className="user_list_review_name">{el?.product?.name}</p>
+              <NavLink id='listing_name' to={`/products/${el?.id}`}>
+                  <p className="user_list_review_name">{el?.product?.name}</p>
+                  </NavLink>
 
                 <div className="list_star_group">
                   <div className="user_review_star">
@@ -88,9 +90,9 @@ const UserReviews = () => {
                 </div>
 
                 <div className="userReview_delete_button">
-                  <div  id="review_edit_button"
-                    to={`/reviews/${reviewId}/edit`}>
-                    <EditReviewModal reviews={reviews} reviewId={reviewId} />
+                  <div  id="review_edit_button">
+                     {/* to={`/reviews/${reviewId}/edit`}> */}
+                    <EditReviewModal reviews={reviews} reviewId={el.id} />
 
                   </div>
                     <button onClick={() => handleDeleted(el.id)}>

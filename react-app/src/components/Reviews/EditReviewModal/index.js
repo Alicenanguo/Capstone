@@ -10,6 +10,7 @@ function EditReviewModal({reviews, reviewId}) {
 
 
   const sessionUser = useSelector(state => state.session.user)
+  console.log("user-in-editreview",sessionUser)
   if (!sessionUser)   return null
 
 
@@ -21,7 +22,7 @@ function EditReviewModal({reviews, reviewId}) {
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          {sessionUser && <EditReview reviews={reviews} reviewreviewId={reviewId} setShowModal={setShowModal} />}
+          <EditReview reviews={reviews} reviewId={reviewId} setShowModal={setShowModal} />
         </Modal>
       )}
     </>
