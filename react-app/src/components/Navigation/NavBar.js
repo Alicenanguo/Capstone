@@ -7,6 +7,7 @@ import ProfileButton from "./ProfileButton";
 import CartNav from "./Cart";
 import SearchBar from './SearchBar'
 
+
 import "./NavBar.css";
 
 const NavBar = () => {

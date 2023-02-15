@@ -19,6 +19,7 @@ import GetCart from "./components/Carts/GetCarts";
 import PageNotFound from "./components/PageNotFound";
 import Checkout from "./components/Carts/Checkout";
 import Search from './components/Search/Search'
+import Footer from './components/Navigation/Footer'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -38,6 +39,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+
       <Switch>
         {/* <Route path='/login' exact={true}>
           <LoginFormModal />
@@ -100,6 +102,7 @@ function App() {
           <PageNotFound />
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

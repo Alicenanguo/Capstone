@@ -90,7 +90,7 @@ const UserReviews = () => {
                 <div className="userReview_delete_button">
                   <div  id="review_edit_button"
                     to={`/reviews/${reviewId}/edit`}>
-                    <EditReviewModal reviewId={reviewId} />
+                    <EditReviewModal reviews={reviews} reviewId={reviewId} />
 
                   </div>
                     <button onClick={() => handleDeleted(el.id)}>

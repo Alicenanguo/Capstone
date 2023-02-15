@@ -7,18 +7,18 @@ import "./EditReview.css";
 import UserReviews from "../UserReviews";
 
 
-const EditReview = ({ reviewId, setShowModal }) => {
+const EditReview = ({reviews, reviewId, setShowModal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
   const user = useSelector((state) => state.session.user);
   const product = useSelector((state) => state.products.singleProduct);
-  const userReview = useSelector(state => state.reviews?.userReviews)
-  console.log("userReview-in-edit0review",userReview)
+  // const userReview = useSelector(state => state.reviews?.userReviews)
+  // console.log("userReview-in-edit0review",userReview)
 
   console.log("-----------------------review");
-  const [review, setReview] = useState("");
-  const [stars, setStars] = useState(5);
+  const [review, setReview] = useState(reviews?.review);
+  const [stars, setStars] = useState(reviews?.stars);
 
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -41,9 +41,13 @@ const EditReview = ({ reviewId, setShowModal }) => {
       stars,
     };
 
-    console.log("review_info_in_create_reviews", reviewInfo);
+    console.log("review_info_in_update_reviews", reviewInfo);
 
     const result = await dispatch(editReviewTHUNK(reviewInfo, reviewId));
+    if (result) {
+      dispatch(getOneProductThunk(product.id))
+      setShowModal(false)
+    }
     // console.log("createReviews_result", result);
     //   .then(() => dispatch(getOneProductThunk(productId)))
     //   .then(() => dispatch(getAllProductReviews(productId)))
@@ -85,7 +89,7 @@ const EditReview = ({ reviewId, setShowModal }) => {
     return (
       <>
         <form className="createReviews_form_add" onSubmit={onSubmit}>
-          <h2 className="review_info">Please Leave Your Review</h2>
+          <h2 className="review_info">Edit Review</h2>
 
           {hasSubmitted && validationErrors.length > 0 && (
             <div className="err-div">
@@ -100,7 +104,7 @@ const EditReview = ({ reviewId, setShowModal }) => {
           )}
 
           <label className="review_stars">
-            Rating
+           Update Rating
             <select
               id="stars"
               type="number"
@@ -117,7 +121,7 @@ const EditReview = ({ reviewId, setShowModal }) => {
 
           <div className="create_review_content">
             <label>
-              <div>Review</div>
+              <div>Update Review</div>
 
               <div>
                 <textarea
@@ -135,7 +139,7 @@ const EditReview = ({ reviewId, setShowModal }) => {
 
           <div className="create_product_submit">
             <button type="submit" id="submit_button">
-              Create Review
+              Update Review
             </button>
             <button className="cancel_product_button" onClick={cancelSubmit}>
               Cancel
