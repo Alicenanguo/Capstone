@@ -29,9 +29,11 @@ def one_review(reviewId):
 @review_routes.route("/<int:reviewId>", methods=["PUT"])
 @login_required
 def edit_review(reviewId):
+    print('################')
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
+    print('reviewId',reviewId)
     review = Review.query.get(reviewId)
 
     if review.buyer_id == current_user.id:
