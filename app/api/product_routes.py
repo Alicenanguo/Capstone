@@ -51,35 +51,7 @@ def create_review(id):
     if form.errors:
         return form.errors
 
-# ## add items to cart
-# @product_routes.route('/<int:id>/cart', methods=["POST"])
-# @login_required
-# def add_cart(id):
-#     form = CartForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
 
-#     check_existed =Cart.query.filter(Cart.product_id == id).filter(Cart.user_id == current_user.id).first()
-
-#     print('+++++++++++check if exist in cart',check_existed)
-
-#     if form.validate_on_submit():
-#         if not check_existed:
-#             new_cart = Cart(
-#             user_id = current_user.id,
-#             product_id = id,
-#             quantity = form.data['quantity'],
-#         )
-#             db.session.add(new_cart)
-#             db.session.commit()
-
-#             return new_cart.to_dict()
-#         else:
-#             check_existed.quantity += int(form.data['quantity'])
-#             db.session.commit()
-#             return check_existed.to_dict()
-
-#     if form.errors:
-#             return form.errors
 
 
 # get all products

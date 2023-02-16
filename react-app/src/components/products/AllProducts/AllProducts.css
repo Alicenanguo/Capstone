@@ -40,7 +40,7 @@
 }
 .all_product_price {
     position: absolute;
-    z-index: 2;
+    /* z-index: 2; */
     bottom: 75px;
     left:10px;
     border:1px solid white;
