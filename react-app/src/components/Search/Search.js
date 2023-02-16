@@ -22,8 +22,14 @@ const Search = () => {
   if (isLoaded) {
     searchArr = Object.values(productSearch);
   }
-  console.log("SearchArr", searchArr);
 
+
+  // let searchArr
+  //   searchAr?.map(el => {
+  //   el.name.toLowerCase()
+  // })
+
+  console.log("SearchArr", searchArr);
   return (
     isLoaded && (
       <>

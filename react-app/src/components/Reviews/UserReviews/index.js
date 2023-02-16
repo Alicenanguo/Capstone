@@ -11,7 +11,7 @@ import "./userReview.css";
 const UserReviews = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  // const { reviewId } = useParams()
+  const { reviewId } = useParams()
 
   const sessionUser = useSelector((state) => state.session.user);
   console.log("user_userReviews", sessionUser);
@@ -62,7 +62,7 @@ const UserReviews = () => {
               </div>
 
               <div className="user_review_right">
-              <NavLink id='listing_name' to={`/products/${el?.id}`}>
+              <NavLink id='listing_name' to={`/products/${el?.product.id}`}>
                   <p className="user_list_review_name">{el?.product?.name}</p>
                   </NavLink>
 
@@ -89,15 +89,17 @@ const UserReviews = () => {
                   {el?.createAt?.slice(5, 11)}, {el?.createAt?.slice(12, 17)}
                 </div>
 
-                <div className="userReview_delete_button">
-                  <div  id="review_edit_button">
+                <div className="edit_delete_button">
+                  <div  id="listing_edit_button">
                      {/* to={`/reviews/${reviewId}/edit`}> */}
-                    <EditReviewModal reviews={reviews} reviewId={el.id} />
+                    <EditReviewModal reviews={reviews} reviewId={el?.id} />
 
                   </div>
-                    <button onClick={() => handleDeleted(el.id)}>
+                  <div className="delete-button">
+                    <button className="review_delete_button" onClick={() => handleDeleted(el.id)}>
                     Delete Review
-                  </button>
+                    </button>
+                    </div>
                   {/* {console.log("el_______", el)} */}
                 </div>
               </div>
