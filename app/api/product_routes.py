@@ -203,7 +203,8 @@ def delete_product(id):
 #search
 @product_routes.route("/search/<keyword>")
 def search_product(keyword):
-  products = Product.query.filter(Product.name.like(f"%{keyword}%")).all()
+
+  products = Product.query.filter(Product.name.ilike(f"%{keyword.lower()}%")).all()
   print('++++++++++++++++=product-in-backend-search',products)
   return {
     "Products": [

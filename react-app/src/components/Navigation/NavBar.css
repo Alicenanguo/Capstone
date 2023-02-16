@@ -19,7 +19,9 @@
 
 
 }
-
+.header_middle {
+    min-width: 40%
+}
 .header_right {
     display:flex;
     justify-content: space-between;
