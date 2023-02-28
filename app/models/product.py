@@ -18,7 +18,7 @@ class Product(db.Model):
 
 
     user = db.relationship("User", back_populates="products")
-    
+
     category = db.relationship('Category', back_populates='products')
     product_images = db.relationship("ProductImage", back_populates='product', cascade="all, delete")
     reviews = db.relationship('Review', back_populates='product',cascade="all, delete")
@@ -44,7 +44,8 @@ class Product(db.Model):
             # 'product_image': [image.to_dict() for image in self.product_images]
             'preview_image':self.preview_image,
             'review_nums':len(self.reviews),
-            'average_rating':self.average_rating()
+            'average_rating':self.average_rating(),
+            'images':[image.to_dict() for image in self.images]
         }
 
     def to_dict_detail(self):

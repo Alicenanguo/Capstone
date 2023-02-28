@@ -188,9 +188,11 @@ def search_product(keyword):
 
 
 #AWS upload images
-@product_routes.route("/uploadImage", methods=["POST"])
+@product_routes.route("/<int:id>/images", methods=["POST"])
 @login_required
-def upload_image():
+def upload_image(id):
+    product = Product.query.get(id)
+
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 
@@ -210,8 +212,12 @@ def upload_image():
         return upload, 400
 
     url = upload["url"]
+    preview_image = request.form['preview_image'] == 'true'
     # flask_login allows us to get the current user from the request
-    # new_image = Image(user=current_user, url=url)
-    # db.session.add(new_image)
-    # db.session.commit()
-    return {"url": url}
+    new_image = ProductImage(product_id=id, url=url,preview_image=preview_image)
+    product.images.append(new_image)
+
+    db.session.add(new_image)
+    db.session.commit()
+
+    return {"new_image": new_image.to_dict()}
