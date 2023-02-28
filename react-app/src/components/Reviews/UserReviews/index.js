@@ -62,7 +62,7 @@ const UserReviews = () => {
               </div>
 
               <div className="user_review_right">
-              <NavLink id='listing_name' to={`/products/${el?.product.id}`}>
+              <NavLink id='listing_name' to={`/products/${el?.product?.id}`}>
                   <p className="user_list_review_name">{el?.product?.name}</p>
                   </NavLink>
 
