@@ -7,6 +7,7 @@ import StarRating from 'react-star-ratings'
 import { getCurrentProduct } from "../../../store/product";
 import DeleteProduct from "../DeleteProduct";
 import UpdateProductModal from "../EditProductModal";
+import UploadPicture from "../../Images/Images";
 import './userProduct.css'
 
 
