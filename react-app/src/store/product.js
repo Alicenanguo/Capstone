@@ -3,7 +3,7 @@ const LOAD = "products/LOAD";
 const LOAD_ONE = "products/LOAD_ONE";
 const LOAD_CURRENT = "products/LOAD_CURRENT";
 const CREATE = "products/CREATE";
-//const ADDIMG ='products/ADD_IMG'
+
 const UPDATE = "products/UPDATE";
 const DELETE = "products/DELETE";
 const SEARCH = 'Products/search'
