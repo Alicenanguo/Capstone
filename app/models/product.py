@@ -45,7 +45,7 @@ class Product(db.Model):
             'preview_image':self.preview_image,
             'review_nums':len(self.reviews),
             'average_rating':self.average_rating(),
-            'images':[image.to_dict() for image in self.images]
+            'images':[image.to_dict() for image in self.product_images]
         }
 
     def to_dict_detail(self):
