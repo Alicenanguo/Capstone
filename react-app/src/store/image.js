@@ -4,9 +4,10 @@ const CREATE = 'images/CREATE';
 const DELETE = 'images/DELETE';
 
 // todo:define action creators
-const actionLoad = (image) => ({
+const actionLoad = (id,images) => ({
     type: LOAD,
-    image,
+    id,
+    images,
 });
 
 const actioCreate = (image) => ({
@@ -20,4 +21,11 @@ const actionRemove = (imageId) => ({
   });
 
   // todo:thunks section
-  
+export const getImageTHUNK = (id) => async (dispatch) => {
+    const res = await fetch(`/api/products/${id}/images`)
+
+    if (res.ok) {
+        const images = await res.json();
+        dispatch(actionLoad(id,images))
+    }
+  }
