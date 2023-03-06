@@ -77,7 +77,7 @@ const GetOneProduct = () => {
                     )} */}
 
 
-                  {single?.product_image.length > 0 && (
+                  {single?.product_image?.length > 0 && (
                     single?.product_image.slice(1).map((el) => (
                       <img
                         key={el.id}

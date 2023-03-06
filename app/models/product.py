@@ -41,7 +41,7 @@ class Product(db.Model):
             'name': self.name,
             'price': self.price,
             'description': self.description,
-            # 'product_image': [image.to_dict() for image in self.product_images]
+            'product_image': [image.to_dict() for image in self.product_images],
             'preview_image':self.preview_image,
             'review_nums':len(self.reviews),
             'average_rating':self.average_rating(),
@@ -57,7 +57,7 @@ class Product(db.Model):
             'price': self.price,
             'description': self.description,
             'preview_image':self.preview_image,
-            # 'product_image': [image.to_dict() for image in self.product_images],
+            'product_image': [image.to_dict() for image in self.product_images],
             'review_nums':len(self.reviews),
             'average_rating':self.average_rating(),
             'reviews':[review.to_dict() for review in self.reviews],
