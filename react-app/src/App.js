@@ -21,13 +21,13 @@ import Checkout from "./components/Carts/Checkout";
 import Search from './components/Search/Search';
 import Footer from './components/Navigation/Footer';
 import ReactGA from 'react-ga';
-import RouteChangeTracker from './RouteChangeTracker'
-export const App = () => {
-  //other logics goes here
-  return <div>
-    <RouteChangeTracker />
-  </div>
-}
+import RouteChangeTracker from './components/RouteChangeTracker'
+// export const App = () => {
+//   //other logics goes here
+//   return <div>
+//     <RouteChangeTracker />
+//   </div>
+// }
 const TRACKING_ID = "404989184";
 ReactGA.initialize(TRACKING_ID);
 
@@ -58,6 +58,7 @@ function App() {
   }
 
   return (
+
     <BrowserRouter>
       <NavBar />
 
@@ -122,6 +123,11 @@ function App() {
          <Route>
           <PageNotFound />
         </Route>
+
+        <Route>
+        <RouteChangeTracker />
+        </Route>
+
       </Switch>
       <Footer />
     </BrowserRouter>
