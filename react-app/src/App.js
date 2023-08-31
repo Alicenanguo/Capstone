@@ -18,8 +18,29 @@ import UserReviews from "./components/Reviews/UserReviews";
 import GetCart from "./components/Carts/GetCarts";
 import PageNotFound from "./components/PageNotFound";
 import Checkout from "./components/Carts/Checkout";
-import Search from './components/Search/Search'
-import Footer from './components/Navigation/Footer'
+import Search from './components/Search/Search';
+import Footer from './components/Navigation/Footer';
+import ReactGA from 'react-ga';
+import RouteChangeTracker from './RouteChangeTracker'
+export const App = () => {
+  //other logics goes here
+  return <div>
+    <RouteChangeTracker />
+  </div>
+}
+const TRACKING_ID = "404989184";
+ReactGA.initialize(TRACKING_ID);
+
+ReactGA.event({
+  category: 'User',
+  action: 'Created an Account'
+});
+
+ReactGA.exception({
+  description: 'An error ocurred',
+  fatal: true
+});
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);

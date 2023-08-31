@@ -40,19 +40,19 @@ const CreateProduct = () => {
     if (!price || price <= 0)
       errors.minusPrice="Please enter a price greater than 0";
     if (isNaN(price)) errors.noNumber="Price must be a number";
-    if (!preview_image) errors.noImage = "need a image for the product";
-    if ((!preview_image.startsWith('http://')) && (!preview_image.startsWith('https://')))
-      errors.brokenImage_start = "Url must start with 'http://' or 'https://'";
-    // if ((!preview_image.endsWith("pdf")) && (!preview_image.endsWith("png")) && (!preview_image.endsWith("jpg")) &&
-    //     (!preview_image.endsWith("jpeg")) && (!preview_image.endsWith("jpeg")))
-    //   errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
-    const endArr = ['pdf', 'png', 'jpg', 'jpeg', 'gif']
-    let count = 0;
-    endArr.map(el => {
-      if (preview_image.includes(el)) count++
-    }
-    )
-    if (count === 0) errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
+    // if (!preview_image) errors.noImage = "need a image for the product";
+    // if ((!preview_image.startsWith('http://')) && (!preview_image.startsWith('https://')))
+    //   errors.brokenImage_start = "Url must start with 'http://' or 'https://'";
+    // // if ((!preview_image.endsWith("pdf")) && (!preview_image.endsWith("png")) && (!preview_image.endsWith("jpg")) &&
+    // //     (!preview_image.endsWith("jpeg")) && (!preview_image.endsWith("jpeg")))
+    // //   errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
+    // const endArr = ['pdf', 'png', 'jpg', 'jpeg', 'gif']
+    // let count = 0;
+    // endArr.map(el => {
+    //   if (preview_image.includes(el)) count++
+    // }
+    // )
+    // if (count === 0) errors.brokenImage_end = "Url must end with 'pdf' or 'png' or 'jpg' or 'jpeg' or 'gif'";
 
     setValidationErrors(errors);
 
@@ -71,7 +71,7 @@ const CreateProduct = () => {
       name,
       description,
       price,
-      preview_image,
+      //preview_image,
       category_id,
     };
 
@@ -94,6 +94,15 @@ const CreateProduct = () => {
     setCategoryId(selectedIndex)
   };
   //console.log("errors@@@@@@@@@", validationErrors);
+
+  const updateImage = (e) => {
+    const file = e.target.files[0];
+    setPreviewImage(file);
+
+    const image = document.getElementById("preview_img");
+    image.src = URL.createObjectURL(file);
+
+  };
   return (
     <>
       <form
@@ -179,7 +188,30 @@ const CreateProduct = () => {
           </div>
 
           <div className="create_selling_list">
-            <label>
+          <div>
+                                <label htmlFor='previewImage'>Images{' '}<span style={{color: 'red'}}>*</span></label>
+                                {/* <p>Please enter the url for the product. A good preview image can make your listing more appealing!</p> */}
+                                <p>Please upload images for the listing.</p>
+            </div>
+
+            <div className='preview-img-container'>
+                                <img
+                                    id="preview_img"
+                                    alt="preview image"
+                                    // className={`${
+                                    // previewImage ? "cs-preview-img" : "no-preview-img"
+                                    // }`}
+                                    hidden={preview_image ? false : true}
+                                />
+                                <input
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={updateImage}
+              />
+              
+                            </div>
+                        </div>
+            {/* <label>
               <div className="create_selling_title">Image Url</div>
               <textarea
                 id="previewImage"
@@ -198,8 +230,8 @@ const CreateProduct = () => {
               {hasSubmitted && validationErrors.brokenImage_end && (
                 <div className='errors_info'>*{validationErrors.brokenImage_end}</div>
               )}
-            </label>
-          </div>
+            </label> */}
+          {/* </div> */}
 
           {/* <div className="create_selling_list">
             <label className="create_selling_title">Category</label> */}
